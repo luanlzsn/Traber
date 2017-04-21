@@ -17,5 +17,6 @@ target 'Traber' do
     pod 'Localize-Swift'
     pod 'RxCocoa'
     pod 'YYCategories'
+    pod 'SDWebImage'
     
 end
