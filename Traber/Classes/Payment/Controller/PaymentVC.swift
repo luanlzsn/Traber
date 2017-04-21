@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  PaymentVC.swift
 //  Traber
 //
 //  Created by luan on 2017/4/21.
@@ -8,27 +8,14 @@
 
 import UIKit
 
-class HomeVC: AntController {
+class PaymentVC: AntController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        // Do any additional setup after loading the view.
     }
-    
-    // MARK: 跳转
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Menu" {
-            let menu = segue.destination as! MenuVC
-            weak var weakSelf = self
-            menu.checkSelectMenu(confirmBlock: { (identifier) in
-                if !((identifier as! String).isEmpty) {
-                    weakSelf?.performSegue(withIdentifier: identifier as! String, sender: weakSelf)
-                }
-            })
-        }
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

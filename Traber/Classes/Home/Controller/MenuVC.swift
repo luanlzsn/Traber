@@ -14,14 +14,28 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headPortraitBtn: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
+    var confirm : ConfirmBlock?
+    
     
     let titleArray = ["Home","Notifications","My cases","Payment","Share","Help","Settings","More"]
     let imgArray = ["menu_home","menu_notifications","menu_cases","menu_payment","menu_share","menu_help","menu_setting","menu_more"]
+    let identifierArray = ["","Notifications","MyCases","Payment","Share","Help","Settings",""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         headPortraitBtn.sd_setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492764217372&di=d31292ce1c8c20348b6bb22a3d87323e&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201509%2F10%2F20150910225146_hFfnK.thumb.224_0.jpeg"), for: .normal)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if confirm != nil {
+            confirm = nil
+        }
+    }
+    
+    func checkSelectMenu(confirmBlock: @escaping ConfirmBlock) {
+        confirm = confirmBlock
     }
 
     @IBAction func headPortraitClick(_ sender: UIButton) {
@@ -63,7 +77,10 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        dismiss(animated: true, completion: nil)
+        if confirm != nil {
+            confirm!(identifierArray[indexPath.row])
+        }
+        dismiss(animated: false, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
