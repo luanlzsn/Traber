@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, ‘9.0’
+inhibit_all_warnings!
+
+target 'Traber' do
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
+    
+    # Pods for Traber
+    
+    pod 'Moya'
+    pod 'Material'
+    pod 'SwiftyJSON'
+    pod 'SwiftyFORM'
+    pod 'NVActivityIndicatorView'
+    pod 'SnapKit'
+    pod 'Localize-Swift'
+    pod 'RxCocoa'
+    pod 'YYCategories'
+    
+end

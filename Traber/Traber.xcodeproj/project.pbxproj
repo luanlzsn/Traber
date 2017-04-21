@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B4FFC031EA8E42A00DB1872 /* AntController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFD1EA8E42A00DB1872 /* AntController.swift */; };
+		6B4FFC041EA8E42A00DB1872 /* AntDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFE1EA8E42A00DB1872 /* AntDefault.swift */; };
+		6B4FFC051EA8E42A00DB1872 /* AntNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFF1EA8E42A00DB1872 /* AntNavController.swift */; };
+		6B4FFC061EA8E42A00DB1872 /* AntSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFC001EA8E42A00DB1872 /* AntSingleton.swift */; };
+		6B4FFC071EA8E42A00DB1872 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFC021EA8E42A00DB1872 /* Common.swift */; };
+		6BB8595B1EA8CF0400D638A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8595A1EA8CF0400D638A5 /* AppDelegate.swift */; };
+		6BB859601EA8CF0400D638A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB8595E1EA8CF0400D638A5 /* Main.storyboard */; };
+		6BB859621EA8CF0500D638A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BB859611EA8CF0500D638A5 /* Assets.xcassets */; };
+		6BB859651EA8CF0500D638A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB859631EA8CF0500D638A5 /* LaunchScreen.storyboard */; };
+		6F89872C42EF773F0B1E27C3 /* Pods_Traber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA99E85B261D26CD945A8E9C /* Pods_Traber.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		223C504E7D051457AF1422E2 /* Pods-Traber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traber.release.xcconfig"; path = "Pods/Target Support Files/Pods-Traber/Pods-Traber.release.xcconfig"; sourceTree = "<group>"; };
+		6B4FFBFD1EA8E42A00DB1872 /* AntController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntController.swift; sourceTree = "<group>"; };
+		6B4FFBFE1EA8E42A00DB1872 /* AntDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntDefault.swift; sourceTree = "<group>"; };
+		6B4FFBFF1EA8E42A00DB1872 /* AntNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntNavController.swift; sourceTree = "<group>"; };
+		6B4FFC001EA8E42A00DB1872 /* AntSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntSingleton.swift; sourceTree = "<group>"; };
+		6B4FFC021EA8E42A00DB1872 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		6B4FFC0C1EA8E81A00DB1872 /* Traber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Traber-Bridging-Header.h"; sourceTree = "<group>"; };
+		6BB859571EA8CF0400D638A5 /* Traber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BB8595A1EA8CF0400D638A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6BB8595F1EA8CF0400D638A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6BB859611EA8CF0500D638A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6BB859641EA8CF0500D638A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6BB859661EA8CF0500D638A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF990E95B83428E0541E05ED /* Pods-Traber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Traber/Pods-Traber.debug.xcconfig"; sourceTree = "<group>"; };
+		CA99E85B261D26CD945A8E9C /* Pods_Traber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Traber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6BB859541EA8CF0400D638A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F89872C42EF773F0B1E27C3 /* Pods_Traber.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41772E971B941AAAD898434E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA99E85B261D26CD945A8E9C /* Pods_Traber.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54DD36CD994E6156E1D89106 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF990E95B83428E0541E05ED /* Pods-Traber.debug.xcconfig */,
+				223C504E7D051457AF1422E2 /* Pods-Traber.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B4FFBFB1EA8E42A00DB1872 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6B4FFBFC1EA8E42A00DB1872 /* Ant */,
+				6B4FFC011EA8E42A00DB1872 /* Common */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6B4FFBFC1EA8E42A00DB1872 /* Ant */ = {
+			isa = PBXGroup;
+			children = (
+				6B4FFBFD1EA8E42A00DB1872 /* AntController.swift */,
+				6B4FFBFE1EA8E42A00DB1872 /* AntDefault.swift */,
+				6B4FFBFF1EA8E42A00DB1872 /* AntNavController.swift */,
+				6B4FFC001EA8E42A00DB1872 /* AntSingleton.swift */,
+			);
+			path = Ant;
+			sourceTree = "<group>";
+		};
+		6B4FFC011EA8E42A00DB1872 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6B4FFC021EA8E42A00DB1872 /* Common.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6BB8594E1EA8CF0400D638A5 = {
+			isa = PBXGroup;
+			children = (
+				6B4FFBFB1EA8E42A00DB1872 /* Classes */,
+				6BB859591EA8CF0400D638A5 /* Traber */,
+				6BB859581EA8CF0400D638A5 /* Products */,
+				54DD36CD994E6156E1D89106 /* Pods */,
+				41772E971B941AAAD898434E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6BB859581EA8CF0400D638A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BB859571EA8CF0400D638A5 /* Traber.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6BB859591EA8CF0400D638A5 /* Traber */ = {
+			isa = PBXGroup;
+			children = (
+				6B4FFC0C1EA8E81A00DB1872 /* Traber-Bridging-Header.h */,
+				6BB8595A1EA8CF0400D638A5 /* AppDelegate.swift */,
+				6BB8595E1EA8CF0400D638A5 /* Main.storyboard */,
+				6BB859611EA8CF0500D638A5 /* Assets.xcassets */,
+				6BB859631EA8CF0500D638A5 /* LaunchScreen.storyboard */,
+				6BB859661EA8CF0500D638A5 /* Info.plist */,
+			);
+			path = Traber;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6BB859561EA8CF0400D638A5 /* Traber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BB859691EA8CF0500D638A5 /* Build configuration list for PBXNativeTarget "Traber" */;
+			buildPhases = (
+				04096FFE604672FAB620C98E /* [CP] Check Pods Manifest.lock */,
+				6BB859531EA8CF0400D638A5 /* Sources */,
+				6BB859541EA8CF0400D638A5 /* Frameworks */,
+				6BB859551EA8CF0400D638A5 /* Resources */,
+				B41E69C58DC3AFD8935BAA84 /* [CP] Embed Pods Frameworks */,
+				B8E75E72262DF98C9CB7EF6D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Traber;
+			productName = Traber;
+			productReference = 6BB859571EA8CF0400D638A5 /* Traber.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6BB8594F1EA8CF0400D638A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = luan;
+				TargetAttributes = {
+					6BB859561EA8CF0400D638A5 = {
+						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6BB859521EA8CF0400D638A5 /* Build configuration list for PBXProject "Traber" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6BB8594E1EA8CF0400D638A5;
+			productRefGroup = 6BB859581EA8CF0400D638A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6BB859561EA8CF0400D638A5 /* Traber */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6BB859551EA8CF0400D638A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BB859651EA8CF0500D638A5 /* LaunchScreen.storyboard in Resources */,
+				6BB859621EA8CF0500D638A5 /* Assets.xcassets in Resources */,
+				6BB859601EA8CF0400D638A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04096FFE604672FAB620C98E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B41E69C58DC3AFD8935BAA84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Traber/Pods-Traber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8E75E72262DF98C9CB7EF6D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Traber/Pods-Traber-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6BB859531EA8CF0400D638A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B4FFC031EA8E42A00DB1872 /* AntController.swift in Sources */,
+				6BB8595B1EA8CF0400D638A5 /* AppDelegate.swift in Sources */,
+				6B4FFC041EA8E42A00DB1872 /* AntDefault.swift in Sources */,
+				6B4FFC051EA8E42A00DB1872 /* AntNavController.swift in Sources */,
+				6B4FFC061EA8E42A00DB1872 /* AntSingleton.swift in Sources */,
+				6B4FFC071EA8E42A00DB1872 /* Common.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6BB8595E1EA8CF0400D638A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BB8595F1EA8CF0400D638A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6BB859631EA8CF0500D638A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BB859641EA8CF0500D638A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6BB859671EA8CF0500D638A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6BB859681EA8CF0500D638A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6BB8596A1EA8CF0500D638A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF990E95B83428E0541E05ED /* Pods-Traber.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Traber/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluemobi.Traber;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Traber/Traber-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6BB8596B1EA8CF0500D638A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 223C504E7D051457AF1422E2 /* Pods-Traber.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Traber/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluemobi.Traber;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Traber/Traber-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6BB859521EA8CF0400D638A5 /* Build configuration list for PBXProject "Traber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BB859671EA8CF0500D638A5 /* Debug */,
+				6BB859681EA8CF0500D638A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BB859691EA8CF0500D638A5 /* Build configuration list for PBXNativeTarget "Traber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BB8596A1EA8CF0500D638A5 /* Debug */,
+				6BB8596B1EA8CF0500D638A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6BB8594F1EA8CF0400D638A5 /* Project object */;
+}
