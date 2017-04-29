@@ -13,7 +13,7 @@ class ShareVC: AntController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.init(rgb: 0x15181a)
     }
 
     override func didReceiveMemoryWarning() {
