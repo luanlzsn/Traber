@@ -14,6 +14,8 @@
 		6B4FFC071EA8E42A00DB1872 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFC021EA8E42A00DB1872 /* Common.swift */; };
 		6B82C6061EAA057C00B05FC4 /* MyCasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B82C6051EAA057C00B05FC4 /* MyCasesCell.swift */; };
 		6B82C6081EAA0C7200B05FC4 /* MyCasesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B82C6071EAA0C7200B05FC4 /* MyCasesDetailVC.swift */; };
+		6B9DA2CD1EB460D200C00FC7 /* LookPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DA2CC1EB460D200C00FC7 /* LookPictureVC.swift */; };
+		6B9DA2CF1EB4636200C00FC7 /* LookPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DA2CE1EB4636200C00FC7 /* LookPictureCell.swift */; };
 		6BB6A5B41EAB8BC0000D9AAE /* MyCasesDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6A5B31EAB8BC0000D9AAE /* MyCasesDetailCell.swift */; };
 		6BB6A5B61EAB8BCF000D9AAE /* MyCasesDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6A5B51EAB8BCF000D9AAE /* MyCasesDetailImageCell.swift */; };
 		6BB8595B1EA8CF0400D638A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB8595A1EA8CF0400D638A5 /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 		6B4FFC0C1EA8E81A00DB1872 /* Traber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Traber-Bridging-Header.h"; sourceTree = "<group>"; };
 		6B82C6051EAA057C00B05FC4 /* MyCasesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCasesCell.swift; sourceTree = "<group>"; };
 		6B82C6071EAA0C7200B05FC4 /* MyCasesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCasesDetailVC.swift; sourceTree = "<group>"; };
+		6B9DA2CC1EB460D200C00FC7 /* LookPictureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookPictureVC.swift; sourceTree = "<group>"; };
+		6B9DA2CE1EB4636200C00FC7 /* LookPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookPictureCell.swift; sourceTree = "<group>"; };
 		6BB6A5B31EAB8BC0000D9AAE /* MyCasesDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCasesDetailCell.swift; sourceTree = "<group>"; };
 		6BB6A5B51EAB8BCF000D9AAE /* MyCasesDetailImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCasesDetailImageCell.swift; sourceTree = "<group>"; };
 		6BB859571EA8CF0400D638A5 /* Traber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				6B4FFC021EA8E42A00DB1872 /* Common.swift */,
+				6B9DA2CC1EB460D200C00FC7 /* LookPictureVC.swift */,
+				6B9DA2CE1EB4636200C00FC7 /* LookPictureCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -445,9 +451,11 @@
 				6BD760591EA9A8B70016823B /* MenuVC.swift in Sources */,
 				6BB6A5B41EAB8BC0000D9AAE /* MyCasesDetailCell.swift in Sources */,
 				6BD760771EA9F28E0016823B /* NotificationsCell.swift in Sources */,
+				6B9DA2CD1EB460D200C00FC7 /* LookPictureVC.swift in Sources */,
 				6B4FFC061EA8E42A00DB1872 /* AntSingleton.swift in Sources */,
 				6B4FFC071EA8E42A00DB1872 /* Common.swift in Sources */,
 				6BD760741EA9EA3D0016823B /* ShareVC.swift in Sources */,
+				6B9DA2CF1EB4636200C00FC7 /* LookPictureCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

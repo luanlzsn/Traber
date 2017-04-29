@@ -11,6 +11,7 @@ import UIKit
 class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    let casesNumArray = ["647376","647377","647378","647379","647380"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +19,18 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MyCasesDetail" {
+            let detail = segue.destination as! MyCasesDetailVC
+            detail.caseNumArray = casesNumArray
+            detail.currentPage = sender as! Int
+        }
+    }
+    
     // MARK: UITableViewDelegate,UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return casesNumArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +47,7 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : MyCasesCell = tableView.dequeueReusableCell(withIdentifier: "MyCasesCell", for: indexPath) as! MyCasesCell
+        cell.caseNum.text = "Case " + casesNumArray[indexPath.section]
         if indexPath.section % 2 == 0 {
             cell.statusLabel.text = "Pending"
             cell.statusImage.isHidden = true
@@ -49,7 +60,7 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "MyCasesDetail", sender: indexPath)
+        performSegue(withIdentifier: "MyCasesDetail", sender: indexPath.section)
     }
 
     override func didReceiveMemoryWarning() {

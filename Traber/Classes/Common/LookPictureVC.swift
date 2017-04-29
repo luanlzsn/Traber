@@ -1,31 +1,32 @@
 //
-//  MyCasesDetailVC.swift
+//  LookPictureVC.swift
 //  Traber
 //
-//  Created by luan on 2017/4/21.
+//  Created by luan on 2017/4/29.
 //  Copyright © 2017年 luan. All rights reserved.
 //
 
 import UIKit
 
-class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate {
+class LookPictureVC: AntController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var leftBtn: UIButton!
     @IBOutlet weak var rightBtn: UIButton!
-    @IBOutlet weak var caseNum: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    var caseNumArray = [String]()
+    var imgArray = [String]()
     var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.contentSize = CGSize(width: kScreenWidth * CGFloat(caseNumArray.count), height: 0)
+        leftBtn.setImage(UIImage(named: "case_left_arrow_green")?.byTintColor(UIColor.white), for: .normal)
+        rightBtn.setImage(UIImage(named: "case_right_arrow_green")?.byTintColor(UIColor.white), for: .normal)
+        collectionView.contentSize = CGSize(width: kScreenWidth * CGFloat(imgArray.count), height: 0)
         collectionView.setContentOffset(CGPoint(x: kScreenWidth * CGFloat(currentPage), y: 0), animated: true)
         checkArrowStatus()
     }
-    
+
     @IBAction func leftClick(_ sender: UIButton) {
         currentPage -= 1
         if currentPage < 0 {
@@ -37,30 +38,16 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     
     @IBAction func rightClick(_ sender: UIButton) {
         currentPage += 1
-        if currentPage > caseNumArray.count - 1 {
-            currentPage = caseNumArray.count - 1
+        if currentPage > imgArray.count - 1 {
+            currentPage = imgArray.count - 1
         }
         collectionView.setContentOffset(CGPoint(x: kScreenWidth * CGFloat(currentPage), y: 0), animated: true)
         checkArrowStatus()
     }
     
-    @IBAction func onlineChatClick(_ sender: UIButton) {
-        
-    }
-    
     func checkArrowStatus() {
         leftBtn.isEnabled = (currentPage != 0)
-        rightBtn.isEnabled = (currentPage != caseNumArray.count - 1)
-        caseNum.text = "Case " + caseNumArray[currentPage]
-    }
-    
-    // MARK: 跳转
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "LookPicture" {
-            let lookPicture = segue.destination as! LookPictureVC
-            lookPicture.imgArray = (sender as! [String : Any])["ImageArray"] as! [String]
-            lookPicture.currentPage  = (sender as! [String : Any])["CurrentPage"] as! Int
-        }
+        rightBtn.isEnabled = (currentPage != imgArray.count - 1)
     }
     
     //MARK: - UICollectionViewDelegateFlowLayout
@@ -70,13 +57,17 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     
     // MARK: UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return caseNumArray.count
+        return imgArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : MyCasesDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCasesDetailCell", for: indexPath) as! MyCasesDetailCell
-        cell.imgView.sd_setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492764217372&di=d31292ce1c8c20348b6bb22a3d87323e&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201509%2F10%2F20150910225146_hFfnK.thumb.224_0.jpeg"))
+        let cell : LookPictureCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LookPictureCell", for: indexPath) as! LookPictureCell
+        cell.imgView.sd_setImage(with: URL(string: imgArray[indexPath.row]))
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: UIScrollViewDelegate
@@ -84,7 +75,7 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
         currentPage = Int(scrollView.contentOffset.x / kScreenWidth)
         checkArrowStatus()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
