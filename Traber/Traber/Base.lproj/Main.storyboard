@@ -1256,7 +1256,45 @@
                     <view key="view" contentMode="scaleToFill" id="QXn-KE-j9b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1d-Ca-2As">
+                                <rect key="frame" x="15" y="79" width="345" height="50"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.61568627450000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8R5-bE-Vuy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="    Online Chat" image="online_chat"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vun-6k-hej">
+                                <rect key="frame" x="15" y="139" width="345" height="50"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.61568627450000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="    Call customer service" image="customer_service"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R1d-Ca-2As" firstAttribute="top" secondItem="bCE-wY-prf" secondAttribute="bottom" constant="15" id="9es-jw-WMX"/>
+                            <constraint firstItem="Vun-6k-hej" firstAttribute="centerX" secondItem="QXn-KE-j9b" secondAttribute="centerX" id="GOr-sc-hcH"/>
+                            <constraint firstItem="Vun-6k-hej" firstAttribute="top" secondItem="R1d-Ca-2As" secondAttribute="bottom" constant="10" id="LHz-hH-KjZ"/>
+                            <constraint firstItem="R1d-Ca-2As" firstAttribute="centerX" secondItem="QXn-KE-j9b" secondAttribute="centerX" id="QeP-0q-ALe"/>
+                            <constraint firstItem="Vun-6k-hej" firstAttribute="width" secondItem="R1d-Ca-2As" secondAttribute="width" id="QnH-IG-pjJ"/>
+                            <constraint firstItem="Vun-6k-hej" firstAttribute="height" secondItem="R1d-Ca-2As" secondAttribute="height" id="jtx-56-iHH"/>
+                            <constraint firstItem="R1d-Ca-2As" firstAttribute="width" secondItem="QXn-KE-j9b" secondAttribute="width" constant="-30" id="mdI-aa-1vl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yN5-D9-Uty" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1308,6 +1346,7 @@
         <image name="case_left_arrow_white" width="37" height="37"/>
         <image name="case_right_arrow_green" width="19" height="17"/>
         <image name="case_right_arrow_white" width="37" height="37"/>
+        <image name="customer_service" width="28" height="30"/>
         <image name="down_arrow" width="13" height="8"/>
         <image name="feedback_icon" width="30" height="29"/>
         <image name="google+_icon" width="29" height="29"/>
