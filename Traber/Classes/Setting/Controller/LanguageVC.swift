@@ -1,18 +1,18 @@
 //
-//  SettingVC.swift
+//  LanguageVC.swift
 //  Traber
 //
-//  Created by luan on 2017/4/21.
+//  Created by luan on 2017/4/29.
 //  Copyright © 2017年 luan. All rights reserved.
 //
 
 import UIKit
 
-class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
+class LanguageVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["Profile","Notification","Language","Logout"]
-    let identifierArray = ["Notification","Notification","Language"]
+    let titleArray = ["English","China"]
+    let languageArray = ["en","zh-Hans"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +37,20 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.textLabel?.text = titleArray[indexPath.row]
+        if languageArray[indexPath.row] == LanguageManager.currentLanguageString() {
+            cell.textLabel?.textColor = UIColor.init(rgb: 0x229D68)
+        } else {
+            cell.textLabel?.textColor = UIColor.black
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 3 {
-            
-        } else {
-            performSegue(withIdentifier: identifierArray[indexPath.row], sender: nil)
+        let languageStr = languageArray[indexPath.row]
+        if languageStr != LanguageManager.currentLanguageString() {
+            LanguageManager.saveLanguage(languageString: languageStr)
+            tableView.reloadData()
         }
     }
 
