@@ -18,5 +18,6 @@ target 'Traber' do
     pod 'RxCocoa'
     pod 'YYCategories'
     pod 'SDWebImage'
+    pod 'MBProgressHUD'
     
 end

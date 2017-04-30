@@ -34,6 +34,10 @@ let kAppDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
 let kAppVersion_URL = "http://itunes.apple.com/lookup?id=1107512125"//获取版本信息
 let kAppDownloadURL = "https://itunes.apple.com/cn/app/id1107512125"//下载地址
 
+let kEmailKey = "kEmailKey"
+let kPassWordKey = "kPassWordKey"
+let kIsLoginKey = "kIsLoginKey"
+
 
 struct Platform {
     static let isSimulator: Bool = {

@@ -14,6 +14,15 @@ class HomeVC: AntController {
         super.viewDidLoad()
 
         navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !AntManage.isLogin {
+            let loginNav = UIStoryboard(name: "Login", bundle: Bundle.main).instantiateInitialViewController()
+            present(loginNav!, animated: true, completion: nil)
+        }
     }
     
     // MARK: 跳转

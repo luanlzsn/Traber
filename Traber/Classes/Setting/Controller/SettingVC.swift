@@ -43,7 +43,9 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 3 {
-            
+            AntManage.isLogin = false
+            UserDefaults.standard.set(false, forKey: kIsLoginKey)
+            _ = navigationController?.popToRootViewController(animated: true)
         } else {
             performSegue(withIdentifier: identifierArray[indexPath.row], sender: nil)
         }

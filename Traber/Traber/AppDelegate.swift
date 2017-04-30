@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.init(rgb: 0x15181a)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         
+        AntManage.isLogin = UserDefaults.standard.bool(forKey: kIsLoginKey)
         LanguageManager.setupCurrentLanguage()
         
         return true

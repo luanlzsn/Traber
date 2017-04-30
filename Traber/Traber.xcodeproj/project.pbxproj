@@ -10,6 +10,8 @@
 		6B339CA61EB4B9BC00DB6BF4 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CA51EB4B9BC00DB6BF4 /* LanguageVC.swift */; };
 		6B339CA81EB4BB0500DB6BF4 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CA71EB4BB0500DB6BF4 /* LanguageManager.swift */; };
 		6B339CAB1EB4C62100DB6BF4 /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CAA1EB4C62100DB6BF4 /* NSBundle+Language.m */; };
+		6B339CB01EB4CB5700DB6BF4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B339CAF1EB4CB5700DB6BF4 /* Login.storyboard */; };
+		6B339CB21EB4CBBA00DB6BF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CB11EB4CBBA00DB6BF4 /* LoginVC.swift */; };
 		6B4FFC031EA8E42A00DB1872 /* AntController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFD1EA8E42A00DB1872 /* AntController.swift */; };
 		6B4FFC041EA8E42A00DB1872 /* AntDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFE1EA8E42A00DB1872 /* AntDefault.swift */; };
 		6B4FFC051EA8E42A00DB1872 /* AntNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFF1EA8E42A00DB1872 /* AntNavController.swift */; };
@@ -17,6 +19,10 @@
 		6B4FFC071EA8E42A00DB1872 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFC021EA8E42A00DB1872 /* Common.swift */; };
 		6B82C6061EAA057C00B05FC4 /* MyCasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B82C6051EAA057C00B05FC4 /* MyCasesCell.swift */; };
 		6B82C6081EAA0C7200B05FC4 /* MyCasesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B82C6071EAA0C7200B05FC4 /* MyCasesDetailVC.swift */; };
+		6B8CABE41EB5A922008B4967 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8CABE31EB5A922008B4967 /* LoginTextField.swift */; };
+		6B8CABE61EB5B63E008B4967 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8CABE51EB5B63E008B4967 /* RegisterVC.swift */; };
+		6B8CABE81EB5BC56008B4967 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8CABE71EB5BC56008B4967 /* ForgotPasswordVC.swift */; };
+		6B8CABEA1EB5C0C0008B4967 /* SetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8CABE91EB5C0C0008B4967 /* SetPasswordVC.swift */; };
 		6B9DA2CD1EB460D200C00FC7 /* LookPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DA2CC1EB460D200C00FC7 /* LookPictureVC.swift */; };
 		6B9DA2CF1EB4636200C00FC7 /* LookPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DA2CE1EB4636200C00FC7 /* LookPictureCell.swift */; };
 		6BB6A5B41EAB8BC0000D9AAE /* MyCasesDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB6A5B31EAB8BC0000D9AAE /* MyCasesDetailCell.swift */; };
@@ -44,6 +50,8 @@
 		6B339CA71EB4BB0500DB6BF4 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		6B339CA91EB4C62100DB6BF4 /* NSBundle+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Language.h"; sourceTree = "<group>"; };
 		6B339CAA1EB4C62100DB6BF4 /* NSBundle+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Language.m"; sourceTree = "<group>"; };
+		6B339CAF1EB4CB5700DB6BF4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6B339CB11EB4CBBA00DB6BF4 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		6B4FFBFD1EA8E42A00DB1872 /* AntController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntController.swift; sourceTree = "<group>"; };
 		6B4FFBFE1EA8E42A00DB1872 /* AntDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntDefault.swift; sourceTree = "<group>"; };
 		6B4FFBFF1EA8E42A00DB1872 /* AntNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntNavController.swift; sourceTree = "<group>"; };
@@ -52,6 +60,10 @@
 		6B4FFC0C1EA8E81A00DB1872 /* Traber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Traber-Bridging-Header.h"; sourceTree = "<group>"; };
 		6B82C6051EAA057C00B05FC4 /* MyCasesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCasesCell.swift; sourceTree = "<group>"; };
 		6B82C6071EAA0C7200B05FC4 /* MyCasesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCasesDetailVC.swift; sourceTree = "<group>"; };
+		6B8CABE31EB5A922008B4967 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		6B8CABE51EB5B63E008B4967 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		6B8CABE71EB5BC56008B4967 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		6B8CABE91EB5C0C0008B4967 /* SetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasswordVC.swift; sourceTree = "<group>"; };
 		6B9DA2CC1EB460D200C00FC7 /* LookPictureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookPictureVC.swift; sourceTree = "<group>"; };
 		6B9DA2CE1EB4636200C00FC7 /* LookPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookPictureCell.swift; sourceTree = "<group>"; };
 		6BB6A5B31EAB8BC0000D9AAE /* MyCasesDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCasesDetailCell.swift; sourceTree = "<group>"; };
@@ -105,9 +117,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6B339CAC1EB4CB4B00DB6BF4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6B339CAD1EB4CB4B00DB6BF4 /* Controller */,
+				6B339CAE1EB4CB4B00DB6BF4 /* View */,
+				6B339CAF1EB4CB5700DB6BF4 /* Login.storyboard */,
+				6B8CABE31EB5A922008B4967 /* LoginTextField.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6B339CAD1EB4CB4B00DB6BF4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B339CB11EB4CBBA00DB6BF4 /* LoginVC.swift */,
+				6B8CABE51EB5B63E008B4967 /* RegisterVC.swift */,
+				6B8CABE71EB5BC56008B4967 /* ForgotPasswordVC.swift */,
+				6B8CABE91EB5C0C0008B4967 /* SetPasswordVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6B339CAE1EB4CB4B00DB6BF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6B4FFBFB1EA8E42A00DB1872 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6B339CAC1EB4CB4B00DB6BF4 /* Login */,
 				6BD7605D1EA9E9D20016823B /* Help */,
 				6BD7605F1EA9E9D20016823B /* MyCases */,
 				6BD760611EA9E9D20016823B /* Notifications */,
@@ -384,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B339CB01EB4CB5700DB6BF4 /* Login.storyboard in Resources */,
 				6BB859651EA8CF0500D638A5 /* LaunchScreen.storyboard in Resources */,
 				6BB859621EA8CF0500D638A5 /* Assets.xcassets in Resources */,
 				6BB859601EA8CF0400D638A5 /* Main.storyboard in Resources */,
@@ -447,13 +490,16 @@
 			files = (
 				6BD7606E1EA9EA150016823B /* MyCasesVC.swift in Sources */,
 				6B82C6061EAA057C00B05FC4 /* MyCasesCell.swift in Sources */,
+				6B8CABE81EB5BC56008B4967 /* ForgotPasswordVC.swift in Sources */,
 				6BB6A5B61EAB8BCF000D9AAE /* MyCasesDetailImageCell.swift in Sources */,
 				6BD760721EA9EA2F0016823B /* SettingVC.swift in Sources */,
 				6BD7606C1EA9EA080016823B /* HelpVC.swift in Sources */,
 				6B4FFC031EA8E42A00DB1872 /* AntController.swift in Sources */,
 				6BD760701EA9EA230016823B /* PaymentVC.swift in Sources */,
+				6B8CABEA1EB5C0C0008B4967 /* SetPasswordVC.swift in Sources */,
 				6BD7606A1EA9E9FB0016823B /* NotificationsVC.swift in Sources */,
 				6B339CA61EB4B9BC00DB6BF4 /* LanguageVC.swift in Sources */,
+				6B8CABE41EB5A922008B4967 /* LoginTextField.swift in Sources */,
 				6BD760571EA9A0A20016823B /* HomeVC.swift in Sources */,
 				6BD7605C1EA9B3930016823B /* MenuCell.swift in Sources */,
 				6B339CAB1EB4C62100DB6BF4 /* NSBundle+Language.m in Sources */,
@@ -467,7 +513,9 @@
 				6BD760771EA9F28E0016823B /* NotificationsCell.swift in Sources */,
 				6B9DA2CD1EB460D200C00FC7 /* LookPictureVC.swift in Sources */,
 				6B4FFC061EA8E42A00DB1872 /* AntSingleton.swift in Sources */,
+				6B339CB21EB4CBBA00DB6BF4 /* LoginVC.swift in Sources */,
 				6B4FFC071EA8E42A00DB1872 /* Common.swift in Sources */,
+				6B8CABE61EB5B63E008B4967 /* RegisterVC.swift in Sources */,
 				6BD760741EA9EA3D0016823B /* ShareVC.swift in Sources */,
 				6B9DA2CF1EB4636200C00FC7 /* LookPictureCell.swift in Sources */,
 			);

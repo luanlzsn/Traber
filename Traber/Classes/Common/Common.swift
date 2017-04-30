@@ -120,7 +120,7 @@ class Common: NSObject {
         } else {
             let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
             let login = storyboard.instantiateInitialViewController()
-            controller.navigationController?.pushViewController(login!, animated: true)
+            controller.present(login!, animated: true, completion: nil)
             return false
         }
     }
