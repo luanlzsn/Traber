@@ -10,6 +10,9 @@
 		6B19540E1EB5F3B400C920EC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B19540D1EB5F3B400C920EC /* ProfileVC.swift */; };
 		6B1954111EB5F6E000C920EC /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1954101EB5F6E000C920EC /* ProfileCell.swift */; };
 		6B1954131EB5FBA600C920EC /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1954121EB5FBA600C920EC /* EditProfileVC.swift */; };
+		6B1954161EB6085B00C920EC /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1954141EB6085B00C920EC /* EditProfileCell.swift */; };
+		6B1954171EB6085B00C920EC /* EditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1954151EB6085B00C920EC /* EditProfileCell.xib */; };
+		6B1954191EB6146000C920EC /* DiverLicenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1954181EB6146000C920EC /* DiverLicenseVC.swift */; };
 		6B339CA61EB4B9BC00DB6BF4 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CA51EB4B9BC00DB6BF4 /* LanguageVC.swift */; };
 		6B339CA81EB4BB0500DB6BF4 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CA71EB4BB0500DB6BF4 /* LanguageManager.swift */; };
 		6B339CAB1EB4C62100DB6BF4 /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CAA1EB4C62100DB6BF4 /* NSBundle+Language.m */; };
@@ -52,6 +55,9 @@
 		6B19540D1EB5F3B400C920EC /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		6B1954101EB5F6E000C920EC /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		6B1954121EB5FBA600C920EC /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		6B1954141EB6085B00C920EC /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
+		6B1954151EB6085B00C920EC /* EditProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileCell.xib; sourceTree = "<group>"; };
+		6B1954181EB6146000C920EC /* DiverLicenseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiverLicenseVC.swift; sourceTree = "<group>"; };
 		6B339CA51EB4B9BC00DB6BF4 /* LanguageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		6B339CA71EB4BB0500DB6BF4 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		6B339CA91EB4C62100DB6BF4 /* NSBundle+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Language.h"; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				6B1954101EB5F6E000C920EC /* ProfileCell.swift */,
+				6B1954141EB6085B00C920EC /* EditProfileCell.swift */,
+				6B1954151EB6085B00C920EC /* EditProfileCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +360,7 @@
 				6B339CA51EB4B9BC00DB6BF4 /* LanguageVC.swift */,
 				6B19540D1EB5F3B400C920EC /* ProfileVC.swift */,
 				6B1954121EB5FBA600C920EC /* EditProfileVC.swift */,
+				6B1954181EB6146000C920EC /* DiverLicenseVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -444,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B339CB01EB4CB5700DB6BF4 /* Login.storyboard in Resources */,
+				6B1954171EB6085B00C920EC /* EditProfileCell.xib in Resources */,
 				6BB859651EA8CF0500D638A5 /* LaunchScreen.storyboard in Resources */,
 				6BB859621EA8CF0500D638A5 /* Assets.xcassets in Resources */,
 				6BB859601EA8CF0400D638A5 /* Main.storyboard in Resources */,
@@ -512,6 +522,7 @@
 				6BD760721EA9EA2F0016823B /* SettingVC.swift in Sources */,
 				6BD7606C1EA9EA080016823B /* HelpVC.swift in Sources */,
 				6B4FFC031EA8E42A00DB1872 /* AntController.swift in Sources */,
+				6B1954161EB6085B00C920EC /* EditProfileCell.swift in Sources */,
 				6BD760701EA9EA230016823B /* PaymentVC.swift in Sources */,
 				6B8CABEA1EB5C0C0008B4967 /* SetPasswordVC.swift in Sources */,
 				6BD7606A1EA9E9FB0016823B /* NotificationsVC.swift in Sources */,
@@ -526,6 +537,7 @@
 				6B4FFC041EA8E42A00DB1872 /* AntDefault.swift in Sources */,
 				6B4FFC051EA8E42A00DB1872 /* AntNavController.swift in Sources */,
 				6B339CA81EB4BB0500DB6BF4 /* LanguageManager.swift in Sources */,
+				6B1954191EB6146000C920EC /* DiverLicenseVC.swift in Sources */,
 				6BD760591EA9A8B70016823B /* MenuVC.swift in Sources */,
 				6BB6A5B41EAB8BC0000D9AAE /* MyCasesDetailCell.swift in Sources */,
 				6BD760771EA9F28E0016823B /* NotificationsCell.swift in Sources */,

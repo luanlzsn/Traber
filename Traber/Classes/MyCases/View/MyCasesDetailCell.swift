@@ -58,7 +58,7 @@ class MyCasesDetailCell: UICollectionViewCell,UICollectionViewDelegate,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewController?.performSegue(withIdentifier: "LookPicture", sender: ["ImageArray":imgArray,"CurrentPage":indexPath.row])
+        viewController()?.performSegue(withIdentifier: "LookPicture", sender: ["ImageArray":imgArray,"CurrentPage":indexPath.row])
     }
     
     // MARK: UIScrollViewDelegate

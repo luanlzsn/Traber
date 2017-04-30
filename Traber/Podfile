@@ -19,5 +19,6 @@ target 'Traber' do
     pod 'YYCategories'
     pod 'SDWebImage'
     pod 'MBProgressHUD'
+    pod 'IQKeyboardManagerSwift'
     
 end
