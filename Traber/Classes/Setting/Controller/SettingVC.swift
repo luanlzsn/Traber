@@ -12,7 +12,7 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     let titleArray = ["Profile","Notification","Language","Logout"]
-    let identifierArray = ["Notification","Notification","Language"]
+    let identifierArray = ["Profile","Notification","Language"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

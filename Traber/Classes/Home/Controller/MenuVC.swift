@@ -39,7 +39,10 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     }
 
     @IBAction func headPortraitClick(_ sender: UIButton) {
-        
+        if confirm != nil {
+            confirm!("EditProfile")
+        }
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func termsAndConditionsClick(_ sender: UIButton) {
