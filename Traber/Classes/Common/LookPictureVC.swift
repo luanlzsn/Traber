@@ -14,7 +14,7 @@ class LookPictureVC: AntController,UICollectionViewDelegate,UICollectionViewData
     @IBOutlet weak var leftBtn: UIButton!
     @IBOutlet weak var rightBtn: UIButton!
     
-    var imgArray = [String]()
+    var imgArray = [Any]()
     var currentPage = 0
     
     override func viewDidLoad() {
@@ -62,7 +62,11 @@ class LookPictureVC: AntController,UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : LookPictureCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LookPictureCell", for: indexPath) as! LookPictureCell
-        cell.imgView.sd_setImage(with: URL(string: imgArray[indexPath.row]))
+        if let array = imgArray as? [String] {
+            cell.imgView.sd_setImage(with: URL(string: array[indexPath.row]))
+        } else if let array = imgArray as? [UIImage] {
+            cell.imgView.image = array[indexPath.row]
+        }
         return cell
     }
     

@@ -16,7 +16,6 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var nameLabel: UILabel!
     var confirm : ConfirmBlock?
     
-    
     let titleArray = ["Home","Notifications","My cases","Payment","Share","Help","Settings","More"]
     let imgArray = ["menu_home","menu_notifications","menu_cases","menu_payment","menu_share","menu_help","menu_setting","menu_more"]
     let identifierArray = ["","Notifications","MyCases","Payment","Share","Help","Settings",""]

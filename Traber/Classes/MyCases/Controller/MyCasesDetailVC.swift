@@ -58,7 +58,7 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LookPicture" {
             let lookPicture = segue.destination as! LookPictureVC
-            lookPicture.imgArray = (sender as! [String : Any])["ImageArray"] as! [String]
+            lookPicture.imgArray = (sender as! [String : Any])["ImageArray"] as! [Any]
             lookPicture.currentPage  = (sender as! [String : Any])["CurrentPage"] as! Int
         }
     }
