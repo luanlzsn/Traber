@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eSB-Hy-AcZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eSB-Hy-AcZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -278,7 +278,7 @@
                                 </connections>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-IV-gt5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="544"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking Ticket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UI-cJ-aTU">
                                         <rect key="frame" x="121.5" y="0.0" width="130.5" height="60"/>
@@ -447,14 +447,14 @@
                             <constraint firstItem="7EQ-fn-pIw" firstAttribute="width" secondItem="D29-5D-SCC" secondAttribute="width" constant="-30" id="A3c-Zn-NSG"/>
                             <constraint firstItem="e7i-2A-MK4" firstAttribute="width" secondItem="D29-5D-SCC" secondAttribute="width" id="E8F-sO-ynb"/>
                             <constraint firstItem="R3d-IV-gt5" firstAttribute="centerX" secondItem="D29-5D-SCC" secondAttribute="centerX" id="HPP-EQ-pAc"/>
-                            <constraint firstItem="R3d-IV-gt5" firstAttribute="height" secondItem="D29-5D-SCC" secondAttribute="height" id="Nrn-GF-Oe8"/>
+                            <constraint firstItem="R3d-IV-gt5" firstAttribute="top" secondItem="D29-5D-SCC" secondAttribute="top" id="LQ7-nM-Its"/>
                             <constraint firstItem="7EQ-fn-pIw" firstAttribute="centerX" secondItem="D29-5D-SCC" secondAttribute="centerX" id="Tkp-IX-eah"/>
-                            <constraint firstItem="R3d-IV-gt5" firstAttribute="centerY" secondItem="D29-5D-SCC" secondAttribute="centerY" id="cAd-FV-PlF"/>
                             <constraint firstItem="R3d-IV-gt5" firstAttribute="width" secondItem="D29-5D-SCC" secondAttribute="width" id="dwS-30-kPK"/>
                             <constraint firstItem="e7i-2A-MK4" firstAttribute="centerX" secondItem="D29-5D-SCC" secondAttribute="centerX" id="frO-lU-VJH"/>
                             <constraint firstItem="FbZ-lw-JAd" firstAttribute="top" secondItem="e7i-2A-MK4" secondAttribute="bottom" id="ojx-bR-oF2"/>
                             <constraint firstItem="FbZ-lw-JAd" firstAttribute="top" secondItem="7EQ-fn-pIw" secondAttribute="bottom" constant="-120" id="sTJ-p9-Qo2"/>
                             <constraint firstItem="e7i-2A-MK4" firstAttribute="top" secondItem="sKD-Va-jeo" secondAttribute="bottom" constant="-64" id="tWm-6S-YJa"/>
+                            <constraint firstItem="7EQ-fn-pIw" firstAttribute="top" secondItem="R3d-IV-gt5" secondAttribute="bottom" constant="70" id="tfG-D1-d1Z"/>
                             <constraint firstItem="dwO-mh-LUy" firstAttribute="width" secondItem="7EQ-fn-pIw" secondAttribute="width" id="tlW-HE-A0y"/>
                         </constraints>
                     </view>
@@ -2889,7 +2889,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eSB-Hy-AcZ" customClass="AntNavController" customModule="Traber" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dsL-aj-EQD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dsL-aj-EQD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2935,7 +2935,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Jb7-kZ-q4b"/>
         <segue reference="5cm-h1-S7r"/>
-        <segue reference="Stz-X2-oj5"/>
+        <segue reference="uRf-pC-Pqa"/>
         <segue reference="FuS-Nm-unt"/>
     </inferredMetricsTieBreakers>
 </document>
