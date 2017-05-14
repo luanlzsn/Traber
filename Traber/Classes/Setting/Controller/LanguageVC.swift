@@ -11,7 +11,7 @@ import UIKit
 class LanguageVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["English","China"]
+    let titleArray = ["English","Chinese"]
     let languageArray = ["en","zh-Hans"]
     
     override func viewDidLoad() {

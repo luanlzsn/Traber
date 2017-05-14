@@ -13,20 +13,18 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     @IBOutlet weak var typeBtn: SpinnerButton!
     @IBOutlet weak var cityBtn: SpinnerButton!
     @IBOutlet weak var dateBtn: UIButton!
-    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var unitNo: UITextField!
+    @IBOutlet weak var postCode: UITextField!
     @IBOutlet weak var addressField: UITextField!
-    @IBOutlet weak var photoBtnTop: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
-        checkTextFieldLeftView(textField: nameField)
+        checkTextFieldLeftView(textField: unitNo)
+        checkTextFieldLeftView(textField: postCode)
         checkTextFieldLeftView(textField: addressField)
-        photoBtnTop.constant = -100
-        nameField.isHidden = true
-        addressField.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,18 +36,8 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     }
     
     @IBAction func typeClick(_ sender: SpinnerButton) {
-        weak var weakSelf = self
         sender.show(view: view, array: ["Parking","Traffic violation"]) { (type) in
             sender.setTitle(type, for: .normal)
-            if type == "Parking" {
-                weakSelf?.photoBtnTop.constant = 0
-                weakSelf?.nameField.isHidden = false
-                weakSelf?.addressField.isHidden = false
-            } else {
-                weakSelf?.photoBtnTop.constant = -100
-                weakSelf?.nameField.isHidden = true
-                weakSelf?.addressField.isHidden = true
-            }
         }
     }
     
@@ -72,15 +60,17 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             AntManage.showDelayToast(message: "Please choose Infraction Date!")
             return
         }
-        if typeBtn.currentTitle == "Parking" {
-            if (nameField.text?.isEmpty)! {
-                AntManage.showDelayToast(message: "Car owenr's name is required!")
-                return
-            }
-            if (nameField.text?.isEmpty)! {
-                AntManage.showDelayToast(message: "Car owenr's address is required!")
-                return
-            }
+        if (unitNo.text?.isEmpty)! {
+            AntManage.showDelayToast(message: "Unit No. is required!")
+            return
+        }
+        if (postCode.text?.isEmpty)! {
+            AntManage.showDelayToast(message: "Post Code is required!")
+            return
+        }
+        if (addressField.text?.isEmpty)! {
+            AntManage.showDelayToast(message: "Car owenr's address is required!")
+            return
         }
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         weak var weakSelf = self
@@ -128,7 +118,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             })
         } else if segue.identifier == "Ticket" {
             let ticket = segue.destination as! TicketVC
-            ticket.dataDic = ["Type":typeBtn.currentTitle!,"City":cityBtn.currentTitle!,"Date":dateBtn.currentTitle!,"Name":nameField.text!,"Address":addressField.text!]
+            ticket.dataDic = ["Type":typeBtn.currentTitle!,"City":cityBtn.currentTitle!,"Date":dateBtn.currentTitle!,"UnitNo":unitNo.text!,"PostCode":postCode.text!,"Address":addressField.text!]
             ticket.imageArray.append(sender as! UIImage)
         }
     }

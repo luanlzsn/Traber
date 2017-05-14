@@ -11,8 +11,8 @@ import UIKit
 class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["Profile","Notification","Language","Logout"]
-    let identifierArray = ["Profile","Notification","Language"]
+    let titleArray = ["Profile","Change Password","Push Notification","Language","Logout"]
+    let identifierArray = ["Profile","ChangePassword","","Language"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +35,21 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = titleArray[indexPath.row]
-        return cell
+        if indexPath.row == 2 {
+            let cell: PushNotificationCell = tableView.dequeueReusableCell(withIdentifier: "PushNotificationCell", for: indexPath) as! PushNotificationCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            cell.textLabel?.text = titleArray[indexPath.row]
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 3 {
+        if indexPath.row == 2 {
+            
+        } else if indexPath.row == 3 {
             AntManage.isLogin = false
             UserDefaults.standard.set(false, forKey: kIsLoginKey)
             _ = navigationController?.popToRootViewController(animated: true)

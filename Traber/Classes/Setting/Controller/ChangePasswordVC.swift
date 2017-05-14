@@ -1,28 +1,46 @@
 //
-//  DiverLicenseVC.swift
+//  ChangePasswordVC.swift
 //  Traber
 //
-//  Created by luan on 2017/4/30.
+//  Created by luan on 2017/5/14.
 //  Copyright © 2017年 luan. All rights reserved.
 //
 
 import UIKit
 
-class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,EditProfile_Delegate {
+class ChangePasswordVC: AntController,UITableViewDelegate,UITableViewDataSource,EditProfile_Delegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["Car Owner's Name","License Address","License City","License Province","License PostCode"]
-    var detailArray: [String] = ["","","","",""]
+    let titleArray = ["Password","Your new password","Confirm your password"]
+    var detailArray: [String] = ["","",""]
     var editIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.register(UINib(nibName: "EditProfileCell", bundle: Bundle.main), forCellReuseIdentifier: "EditProfileCell")
     }
     
     func checkFooterButtonClick(button: UIButton) {
-        _ = navigationController?.popViewController(animated: true)
+        UIApplication.shared.keyWindow?.endEditing(true)
+        for str in detailArray {
+            if str.isEmpty {
+                AntManage.showDelayToast(message: titleArray[detailArray.index(of: str)!] + " is required!")
+                return
+            }
+        }
+        if detailArray[0] != UserDefaults.standard.object(forKey: kPassWordKey) as! String {
+            AntManage.showDelayToast(message: NSLocalizedString("Password is error!", comment: ""))
+            return
+        }
+        if detailArray[1] != detailArray[2] {
+            AntManage.showDelayToast(message: NSLocalizedString("Two password is different!", comment: ""))
+            return
+        }
+        UserDefaults.standard.set(detailArray[1], forKey: kPassWordKey)
+        UserDefaults.standard.synchronize()
+        AntManage.showDelayToast(message: NSLocalizedString("Change password success", comment: ""))
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: EditProfile_Delegate
@@ -59,7 +77,7 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
         let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
         sectionLabel.font = UIFont.systemFont(ofSize: 12)
         sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
-        sectionLabel.text = "Car Owner's Information"
+        sectionLabel.text = "Change Your Password"
         header.addSubview(sectionLabel)
         let lineView = UIView(frame: CGRect(x: 0, y: 54, width: kScreenWidth, height: 1))
         lineView.backgroundColor = UIColor.init(rgb: 0xc7c7cc)
@@ -71,7 +89,7 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 100))
         let button = UIButton(type: .custom)
         button.frame = CGRect(x: 15, y: 25, width: kScreenWidth - 30, height: 50)
-        button.setTitle("Update Information", for: .normal)
+        button.setTitle("Change Your Password", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.backgroundColor = UIColor.init(rgb: 0x229d68)
         button.layer.masksToBounds = true
@@ -87,6 +105,7 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
         cell.titleLabel.text = titleArray[indexPath.row]
         cell.textField.placeholder = titleArray[indexPath.row]
         cell.textField.text = detailArray[indexPath.row]
+        cell.textField.isSecureTextEntry = true
         cell.indexPath = indexPath
         cell.delegate = self
         cell.lineView.backgroundColor = (editIndexPath == indexPath) ? UIColor.init(rgb: 0x229d68) : UIColor.init(rgb: 0xc7c7cc)

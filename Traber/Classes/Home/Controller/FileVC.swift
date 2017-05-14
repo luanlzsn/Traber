@@ -37,7 +37,7 @@ class FileVC: AntController {
     }
     
     @IBAction func sendFormClick(_ sender: UIButton) {
-        _ = navigationController?.popViewController(animated: true)
+        performSegue(withIdentifier: "InformationReview", sender: nil)
     }
     
     func checkTextFieldLeftView(textField: UITextField) {
