@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, ‘9.0’
+platform :ios, '9.0'
 inhibit_all_warnings!
 
 target 'Traber' do
@@ -8,17 +8,13 @@ target 'Traber' do
     
     # Pods for Traber
     
-    pod 'Moya'
     pod 'Material'
-    pod 'SwiftyJSON'
-    pod 'SwiftyFORM'
-    pod 'NVActivityIndicatorView'
-    pod 'SnapKit'
-    pod 'Localize-Swift'
-    pod 'RxCocoa'
     pod 'YYCategories'
     pod 'SDWebImage'
     pod 'MBProgressHUD'
     pod 'IQKeyboardManagerSwift'
+    pod 'AFNetworking'
+    pod 'MJExtension'
+    pod 'MJRefresh'
     
 end
