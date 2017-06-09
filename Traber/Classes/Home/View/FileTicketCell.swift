@@ -13,7 +13,13 @@ class FileTicketCell: UITableViewCell {
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var explain: UILabel!
     @IBOutlet weak var button: UIButton!
-    var identifier: String!
+    var ticketButtonClick: ConfirmBlock?
+    
+    deinit {
+        if ticketButtonClick != nil {
+            ticketButtonClick = nil
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +27,9 @@ class FileTicketCell: UITableViewCell {
     }
 
     @IBAction func buttonClick(_ sender: UIButton) {
-        viewController()?.performSegue(withIdentifier: identifier, sender: nil)
+        if ticketButtonClick != nil {
+            ticketButtonClick!(sender)
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

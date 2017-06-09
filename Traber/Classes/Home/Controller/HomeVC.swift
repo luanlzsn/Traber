@@ -11,7 +11,7 @@ import UIKit
 class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var typeBtn: SpinnerButton!
-    @IBOutlet weak var cityBtn: SpinnerButton!
+    @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var dateBtn: UIButton!
     @IBOutlet weak var unitNo: UITextField!
     @IBOutlet weak var postCode: UITextField!
@@ -22,6 +22,8 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
 
         navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
+        checkTextFieldLeftView(textField: cityField)
+        checkCityTextFieldRightView()
         checkTextFieldLeftView(textField: unitNo)
         checkTextFieldLeftView(textField: postCode)
         checkTextFieldLeftView(textField: addressField)
@@ -32,7 +34,17 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
         if !AntManage.isLogin {
             let loginNav = UIStoryboard(name: "Login", bundle: Bundle.main).instantiateInitialViewController()
             present(loginNav!, animated: true, completion: nil)
+        } else if AntManage.userModel!.identity.isEmpty {
+            getUserInfo()
         }
+    }
+    
+    func getUserInfo() {
+        AntManage.postRequest(path: "user/info", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+            let token = AntManage.userModel!.token
+            AntManage.userModel = UserModel.mj_object(withKeyValues: response)
+            AntManage.userModel?.token = token
+        }, failureResult: {})
     }
     
     @IBAction func typeClick(_ sender: SpinnerButton) {
@@ -41,18 +53,12 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
         }
     }
     
-    @IBAction func cityClick(_ sender: SpinnerButton) {
-        sender.show(view: view, array: ["East Cydney","East Myrnafurt","New Tavaresland","East Enola","Lake Destin"]) { (address) in
-            sender.setTitle(address, for: .normal)
-        }
-    }
-    
     @IBAction func photoClick(_ sender: UIButton) {
         if typeBtn.currentTitle == "Ticket Type" {
             AntManage.showDelayToast(message: "Please choose Ticket Type!")
             return
         }
-        if cityBtn.currentTitle == "City" {
+        if (cityField.text?.isEmpty)! {
             AntManage.showDelayToast(message: "Please choose City!")
             return
         }
@@ -118,8 +124,8 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             })
         } else if segue.identifier == "Ticket" {
             let ticket = segue.destination as! TicketVC
-            ticket.dataDic = ["Type":typeBtn.currentTitle!,"City":cityBtn.currentTitle!,"Date":dateBtn.currentTitle!,"UnitNo":unitNo.text!,"PostCode":postCode.text!,"Address":addressField.text!]
-            ticket.imageArray.append(sender as! UIImage)
+            ticket.dataDic = ["Type":typeBtn.currentTitle!,"City":cityField.text!,"Date":dateBtn.currentTitle!,"UnitNo":unitNo.text!,"PostCode":postCode.text!,"Address":addressField.text!]
+            ticket.image = sender as! UIImage
         }
     }
     
@@ -142,6 +148,14 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textField.height))
         textField.leftView = leftView
         textField.leftViewMode = .always
+    }
+    
+    func checkCityTextFieldRightView() {
+        let rightView = UIImageView(image: UIImage(named: "location"))
+        rightView.contentMode = .center
+        rightView.frame = CGRect(x: 0, y: 0, width: 45, height: cityField.height)
+        cityField.rightView = rightView
+        cityField.rightViewMode = .always
     }
     
     override func didReceiveMemoryWarning() {

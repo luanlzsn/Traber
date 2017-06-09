@@ -49,9 +49,11 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 2 {
             
-        } else if indexPath.row == 3 {
+        } else if indexPath.row == 4 {
             AntManage.isLogin = false
-            UserDefaults.standard.set(false, forKey: kIsLoginKey)
+            AntManage.userModel = nil
+            UserDefaults.standard.set(false, forKey: kisRemember)
+            UserDefaults.standard.synchronize()
             _ = navigationController?.popToRootViewController(animated: true)
         } else {
             performSegue(withIdentifier: identifierArray[indexPath.row], sender: nil)

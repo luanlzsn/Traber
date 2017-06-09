@@ -12,8 +12,9 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
 
     @IBOutlet weak var tableView: UITableView!
     let titleArray = ["Car Owner's Name","License Address","License City","License Province","License PostCode"]
-    var detailArray: [String] = ["","","","",""]
+    var detailArray = [AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode]
     var editIndexPath: IndexPath?
+    weak var editProfile: EditProfileVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,28 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
     }
     
     func checkFooterButtonClick(button: UIButton) {
-        _ = navigationController?.popViewController(animated: true)
+        UIApplication.shared.keyWindow?.endEditing(true)
+        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token] as [String : Any]
+        params["firstname"] = editProfile!.detailArray[0]
+        params["lastname"] = editProfile!.detailArray[1]
+        params["email"] = editProfile!.detailArray[2]
+        params["phone"] = editProfile!.detailArray[3]
+        if editProfile!.image != nil {
+            params["image"] = "data:image/jpeg;base64," + UIImageJPEGRepresentation(editProfile!.image!, 0.1)!.base64EncodedString()
+            params["imageType"] = "jpeg"
+        }
+        params["licenseName"] = detailArray[0]
+        params["licenseAddress"] = detailArray[1]
+        params["licenseCity"] = detailArray[2]
+        params["licensePro"] = detailArray[3]
+        params["licensePostcode"] = detailArray[4]
+        
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/edit", params: params, successResult: { (response) in
+            AntManage.showDelayToast(message: NSLocalizedString("update use info success", comment: ""))
+            NotificationCenter.default.post(name: NSNotification.Name("UpdateInfoSuccess"), object: nil)
+            weakSelf?.navigationController?.popViewController(animated: true)
+        }, failureResult: {})
     }
     
     // MARK: EditProfile_Delegate

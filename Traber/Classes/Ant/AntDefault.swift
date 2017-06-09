@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 import SDWebImage
 import YYCategories
+import MJExtension
 
-func LeomanLog<N>(message:N,fileName:String = #file,methodName:String = #function,lineNumber:Int = #line){
+func AntLog<N>(message:N,fileName:String = #file,methodName:String = #function,lineNumber:Int = #line){
     #if DEBUG
         print("类\(fileName as NSString)的\(methodName)方法第\(lineNumber)行:\(message)");
     #endif
 }
+
 #if DEBUG
     let kRequestBaseUrl = "http://123.59.155.131:8080/ruanfan/api/"
 #else
@@ -36,7 +38,8 @@ let kAppDownloadURL = "https://itunes.apple.com/cn/app/id1107512125"//下载地�
 
 let kEmailKey = "kEmailKey"
 let kPassWordKey = "kPassWordKey"
-let kIsLoginKey = "kIsLoginKey"
+let kisRemember = "kisRemember"
+
 
 
 struct Platform {

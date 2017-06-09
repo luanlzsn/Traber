@@ -11,26 +11,32 @@ import UIKit
 class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let casesNumArray = ["647376","647377","647378","647379","647380"]
+    var ticketArray = [TicketModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        weak var weakSelf = self
+        AntManage.postRequest(path: "ticket", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+            weakSelf?.ticketArray = TicketModel.mj_objectArray(withKeyValuesArray: response["tickets"]) as! [TicketModel]
+            weakSelf?.tableView.reloadData()
+        }, failureResult: {
+            weakSelf?.navigationController?.popViewController(animated: true)
+        })
     }
     
     // MARK: 跳转
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MyCasesDetail" {
             let detail = segue.destination as! MyCasesDetailVC
-            detail.caseNumArray = casesNumArray
+//            detail.caseNumArray = casesNumArray
             detail.currentPage = sender as! Int
         }
     }
     
     // MARK: UITableViewDelegate,UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return casesNumArray.count
+        return ticketArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,14 +53,14 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : MyCasesCell = tableView.dequeueReusableCell(withIdentifier: "MyCasesCell", for: indexPath) as! MyCasesCell
-        cell.caseNum.text = "Case " + casesNumArray[indexPath.section]
-        if indexPath.section % 2 == 0 {
-            cell.statusLabel.text = "Pending"
-            cell.statusImage.isHidden = true
-        } else {
-            cell.statusLabel.text = "Paid"
-            cell.statusImage.isHidden = false
-        }
+        let model = ticketArray[indexPath.section]
+        cell.caseNum.text = "Case " + model.caseNumber
+        cell.statusLabel.text = model.statusID
+        cell.statusImage.isHidden = !(model.statusID == "Paid")
+        cell.infractionDate.text = model.infractionDate
+        cell.city.text = ""
+        cell.fileDate.text = model.submitTm.components(separatedBy: " ").first
+        cell.courtDate.text = ""
         return cell
     }
     

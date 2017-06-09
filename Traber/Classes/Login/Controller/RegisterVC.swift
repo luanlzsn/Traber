@@ -28,6 +28,7 @@ class RegisterVC: AntController {
     }
     
     @IBAction func registerClick(_ sender: UIButton) {
+        UIApplication.shared.keyWindow?.endEditing(true)
         if !rememberBtn.isSelected {
             AntManage.showDelayToast(message: "Please choice agreement!")
             return
@@ -52,8 +53,11 @@ class RegisterVC: AntController {
             AntManage.showDelayToast(message: "Two passwords are different!")
             return
         }
-        AntManage.showDelayToast(message: "Register success!")
-        _ = navigationController?.popViewController(animated: true)
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/register", params: ["source":"home","identity":email.text!,"password":password.text!,"retypePwd":confirmPassword.text!,"firstname":firstName.text!,"lastname":lastName.text!,"agree":"true","referenceID":""], successResult: { (response) in
+            AntManage.showDelayToast(message: "Register success!")
+            weakSelf?.navigationController?.popViewController(animated: true)
+        }, failureResult: {})
     }
     
     @IBAction func loginClick(_ sender: UIButton) {

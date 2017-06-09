@@ -19,33 +19,36 @@ class LoginVC: AntController {
 
         emailField.text = UserDefaults.standard.string(forKey: kEmailKey)
         passwordField.text = UserDefaults.standard.string(forKey: kPassWordKey)
+        if UserDefaults.standard.bool(forKey: kisRemember) {
+            loginClick()
+        }
     }
 
     @IBAction func rememberClick(_ sender: UIButton) {
         rememberBtn.isSelected = !rememberBtn.isSelected
     }
     
-    @IBAction func loginClick(_ sender: UIButton) {
+    @IBAction func loginClick() {
+        UIApplication.shared.keyWindow?.endEditing(true)
         if !Common.isValidateEmail(email: emailField.text!) {
-            AntManage.showDelayToast(message: "Please enter the corrent email!")
+            AntManage.showDelayToast(message: NSLocalizedString("Please enter the corrent email!", comment: ""))
             return
         }
         if (passwordField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Password is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("Password is required!", comment: ""))
             return
         }
-        if rememberBtn.isSelected {
-            UserDefaults.standard.set(emailField.text, forKey: kEmailKey)
-            UserDefaults.standard.set(passwordField.text, forKey: kPassWordKey)
-            UserDefaults.standard.set(true, forKey: kIsLoginKey)
-        } else {
-            UserDefaults.standard.set(nil, forKey: kEmailKey)
-            UserDefaults.standard.set(nil, forKey: kPassWordKey)
-        }
-        UserDefaults.standard.synchronize()
-        AntManage.isLogin = true
-        AntManage.showDelayToast(message: "Login success!")
-        dismiss(animated: true, completion: nil)
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/login", params: ["source":"home", "identity":emailField.text!, "password":passwordField.text!], successResult: { (response) in
+            UserDefaults.standard.set(weakSelf?.emailField.text, forKey: kEmailKey)
+            UserDefaults.standard.set(weakSelf?.passwordField.text, forKey: kPassWordKey)
+            UserDefaults.standard.set(weakSelf?.rememberBtn.isSelected, forKey: kisRemember)
+            UserDefaults.standard.synchronize()
+            AntManage.isLogin = true
+            AntManage.userModel = UserModel.mj_object(withKeyValues: response)
+            AntManage.showDelayToast(message: NSLocalizedString("Login success!", comment: ""))
+            weakSelf?.dismiss(animated: true, completion: nil)
+        }, failureResult: {})
     }
     
     @IBAction func facebookLoginClick(_ sender: UIButton) {

@@ -13,18 +13,50 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    let titleArray = ["First Name","Last Name","E-mail","Photo"]
-    var detailArray = ["","","",""]
+    let titleArray = ["First Name","Last Name","E-mail","Phone"]
+    var detailArray = [AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone]
     var editRow = -1
+    var image: UIImage?
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("UpdateInfoSuccess"), object: nil)
         tableView.register(UINib(nibName: "EditProfileCell", bundle: Bundle.main), forCellReuseIdentifier: "EditProfileCell")
-        imgView.sd_setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492764217372&di=d31292ce1c8c20348b6bb22a3d87323e&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201509%2F10%2F20150910225146_hFfnK.thumb.224_0.jpeg"))
+        nameLabel.text = AntManage.userModel!.firstname + " " + AntManage.userModel!.lastname
+        imgView.sd_setImage(with: URL(string: AntManage.userModel!.image), placeholderImage: nil, options: .refreshCached)
         imgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.choosePhotoClick)))
+        if AntManage.userModel!.identity.isEmpty {
+            getUserInfo()
+        }
     }
 
+    func getUserInfo() {
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/info", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+            let token = AntManage.userModel!.token
+            AntManage.userModel = UserModel.mj_object(withKeyValues: response)
+            AntManage.userModel?.token = token
+            weakSelf?.nameLabel.text = AntManage.userModel!.firstname + " " + AntManage.userModel!.lastname
+            weakSelf?.imgView.sd_setImage(with: URL(string: AntManage.userModel!.image), placeholderImage: nil, options: .refreshCached)
+            weakSelf?.detailArray = [AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone]
+            weakSelf?.tableView.reloadData()
+        }, failureResult: {
+            weakSelf?.navigationController?.popViewController(animated: true)
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DiverLicense" {
+            let diver = segue.destination as! DiverLicenseVC
+            diver.editProfile = self
+        }
+    }
+    
     func choosePhotoClick() {
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         weak var weakSelf = self
@@ -71,6 +103,7 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
         picker.dismiss(animated: true) {
             let image = info[UIImagePickerControllerEditedImage]
             weakSelf?.imgView.image = image as? UIImage
+            weakSelf?.image = image as? UIImage
         }
     }
     

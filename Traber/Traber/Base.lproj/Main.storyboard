@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eSB-Hy-AcZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eSB-Hy-AcZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -59,33 +59,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="X6a-hP-KsP">
                                         <rect key="frame" x="331.5" y="46" width="13" height="8"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euS-fi-EyB" customClass="SpinnerButton" customModule="Traber" customModuleProvider="target">
-                                        <rect key="frame" x="14.5" y="85" width="345" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="City">
-                                            <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="cityClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uhf-nU-xbq"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="7TZ-e5-uNF">
-                                        <rect key="frame" x="330.5" y="95.5" width="14" height="19"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBj-OA-2Mt">
                                         <rect key="frame" x="14.5" y="140" width="345" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,6 +86,25 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="4qh-bA-aR2">
                                         <rect key="frame" x="327.5" y="152" width="17" height="16"/>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9Z-5k-0i3">
+                                        <rect key="frame" x="15" y="85" width="345" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Unit No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-dV-MWq">
                                         <rect key="frame" x="14.5" y="195" width="345" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,34 +181,32 @@
                                     <constraint firstItem="YH2-Ts-5Kn" firstAttribute="centerX" secondItem="62q-wH-uJx" secondAttribute="centerX" id="0Qt-Pq-OLg"/>
                                     <constraint firstItem="62q-wH-uJx" firstAttribute="width" secondItem="9Hm-Oo-hsO" secondAttribute="width" id="0fq-z0-rpe"/>
                                     <constraint firstItem="9Hm-Oo-hsO" firstAttribute="centerX" secondItem="7fc-p4-z9S" secondAttribute="centerX" id="202-t3-4Nt"/>
+                                    <constraint firstItem="jBj-OA-2Mt" firstAttribute="top" secondItem="K9Z-5k-0i3" secondAttribute="bottom" constant="15" id="2LP-hy-3XY"/>
                                     <constraint firstItem="62q-wH-uJx" firstAttribute="top" secondItem="cxL-dV-MWq" secondAttribute="bottom" constant="15" id="3SO-Lf-bZb"/>
                                     <constraint firstItem="cxL-dV-MWq" firstAttribute="centerX" secondItem="7fc-p4-z9S" secondAttribute="centerX" id="3gi-GP-ITi"/>
                                     <constraint firstAttribute="trailing" secondItem="9Hm-Oo-hsO" secondAttribute="trailing" constant="15" id="4ad-vF-bgP"/>
-                                    <constraint firstItem="euS-fi-EyB" firstAttribute="centerX" secondItem="7fc-p4-z9S" secondAttribute="centerX" id="85l-Be-MxK"/>
                                     <constraint firstItem="YH2-Ts-5Kn" firstAttribute="width" secondItem="62q-wH-uJx" secondAttribute="width" id="8jU-PJ-e18"/>
                                     <constraint firstItem="9Hm-Oo-hsO" firstAttribute="top" secondItem="7fc-p4-z9S" secondAttribute="top" constant="30" id="Bft-Rd-yBd"/>
                                     <constraint firstItem="YH2-Ts-5Kn" firstAttribute="top" secondItem="62q-wH-uJx" secondAttribute="bottom" constant="15" id="Chs-Cw-MxR"/>
                                     <constraint firstAttribute="bottom" secondItem="PHX-Ln-jqH" secondAttribute="bottom" constant="100" id="Csn-fZ-pUp"/>
                                     <constraint firstItem="aS9-4D-0ej" firstAttribute="top" secondItem="YH2-Ts-5Kn" secondAttribute="bottom" id="CzE-yD-hpV"/>
+                                    <constraint firstItem="K9Z-5k-0i3" firstAttribute="top" secondItem="9Hm-Oo-hsO" secondAttribute="bottom" constant="15" id="JwL-bE-YKT"/>
                                     <constraint firstItem="X6a-hP-KsP" firstAttribute="centerY" secondItem="9Hm-Oo-hsO" secondAttribute="centerY" id="NW4-mI-WeD"/>
                                     <constraint firstItem="jBj-OA-2Mt" firstAttribute="centerX" secondItem="7fc-p4-z9S" secondAttribute="centerX" id="PzD-D1-VwG"/>
                                     <constraint firstItem="aS9-4D-0ej" firstAttribute="centerX" secondItem="7fc-p4-z9S" secondAttribute="centerX" id="QMS-lt-Kfj"/>
+                                    <constraint firstItem="K9Z-5k-0i3" firstAttribute="width" secondItem="9Hm-Oo-hsO" secondAttribute="width" id="QiC-SN-97e"/>
                                     <constraint firstItem="jBj-OA-2Mt" firstAttribute="width" secondItem="9Hm-Oo-hsO" secondAttribute="width" id="SVs-7Y-O8O"/>
                                     <constraint firstItem="jBj-OA-2Mt" firstAttribute="height" secondItem="9Hm-Oo-hsO" secondAttribute="height" id="Shi-aB-NJa"/>
-                                    <constraint firstItem="euS-fi-EyB" firstAttribute="width" secondItem="9Hm-Oo-hsO" secondAttribute="width" id="TP8-n6-wqQ"/>
                                     <constraint firstItem="cxL-dV-MWq" firstAttribute="height" secondItem="9Hm-Oo-hsO" secondAttribute="height" id="TRc-q7-CrA"/>
+                                    <constraint firstItem="K9Z-5k-0i3" firstAttribute="centerX" secondItem="9Hm-Oo-hsO" secondAttribute="centerX" id="YZw-IV-Lrr"/>
                                     <constraint firstItem="PHX-Ln-jqH" firstAttribute="centerX" secondItem="7fc-p4-z9S" secondAttribute="centerX" id="YjN-ug-xW9"/>
                                     <constraint firstItem="PHX-Ln-jqH" firstAttribute="top" secondItem="aS9-4D-0ej" secondAttribute="bottom" id="cPI-3w-RAN"/>
-                                    <constraint firstItem="jBj-OA-2Mt" firstAttribute="top" secondItem="euS-fi-EyB" secondAttribute="bottom" constant="15" id="cuo-dm-lY8"/>
                                     <constraint firstItem="cxL-dV-MWq" firstAttribute="top" secondItem="jBj-OA-2Mt" secondAttribute="bottom" constant="15" id="hzk-S2-L15"/>
                                     <constraint firstItem="X6a-hP-KsP" firstAttribute="trailing" secondItem="9Hm-Oo-hsO" secondAttribute="trailing" constant="-15" id="jNN-5c-U7T"/>
                                     <constraint firstItem="cxL-dV-MWq" firstAttribute="width" secondItem="9Hm-Oo-hsO" secondAttribute="width" id="mi5-1Y-F1I"/>
-                                    <constraint firstItem="7TZ-e5-uNF" firstAttribute="trailing" secondItem="euS-fi-EyB" secondAttribute="trailing" constant="-15" id="pHj-cI-cDZ"/>
-                                    <constraint firstItem="euS-fi-EyB" firstAttribute="top" secondItem="9Hm-Oo-hsO" secondAttribute="bottom" constant="15" id="pUw-B7-3oq"/>
-                                    <constraint firstItem="euS-fi-EyB" firstAttribute="height" secondItem="9Hm-Oo-hsO" secondAttribute="height" id="sA1-en-rM2"/>
+                                    <constraint firstItem="K9Z-5k-0i3" firstAttribute="height" secondItem="9Hm-Oo-hsO" secondAttribute="height" id="n0g-ap-Hzx"/>
                                     <constraint firstItem="9Hm-Oo-hsO" firstAttribute="width" secondItem="7fc-p4-z9S" secondAttribute="width" constant="-30" id="sPy-DW-a51"/>
                                     <constraint firstItem="62q-wH-uJx" firstAttribute="height" secondItem="9Hm-Oo-hsO" secondAttribute="height" id="uru-x8-uEZ"/>
-                                    <constraint firstItem="7TZ-e5-uNF" firstAttribute="centerY" secondItem="euS-fi-EyB" secondAttribute="centerY" id="vBs-Xd-ORS"/>
                                     <constraint firstItem="4qh-bA-aR2" firstAttribute="trailing" secondItem="jBj-OA-2Mt" secondAttribute="trailing" constant="-15" id="vTo-ES-a5t"/>
                                     <constraint firstItem="4qh-bA-aR2" firstAttribute="centerY" secondItem="jBj-OA-2Mt" secondAttribute="centerY" id="wnI-EE-Nb3"/>
                                     <constraint firstItem="62q-wH-uJx" firstAttribute="centerX" secondItem="7fc-p4-z9S" secondAttribute="centerX" id="zB6-OP-HyI"/>
@@ -254,7 +244,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressField" destination="YH2-Ts-5Kn" id="Ndt-j3-wn1"/>
-                        <outlet property="cityBtn" destination="euS-fi-EyB" id="X4E-ed-bdY"/>
+                        <outlet property="cityField" destination="K9Z-5k-0i3" id="Y8g-hg-5Xo"/>
                         <outlet property="dateBtn" destination="jBj-OA-2Mt" id="OQ8-Ca-tmf"/>
                         <outlet property="postCode" destination="62q-wH-uJx" id="dl0-41-mlg"/>
                         <outlet property="typeBtn" destination="9Hm-Oo-hsO" id="TxC-2O-sBW"/>
@@ -3031,7 +3021,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eSB-Hy-AcZ" customClass="AntNavController" customModule="Traber" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dsL-aj-EQD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dsL-aj-EQD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3059,7 +3049,6 @@
         <image name="google+_icon" width="29" height="29"/>
         <image name="home_share_bg" width="355" height="173"/>
         <image name="linkedin_icon" width="29" height="29"/>
-        <image name="location" width="14" height="19"/>
         <image name="menu_header" width="282" height="136"/>
         <image name="menu_home" width="21" height="21"/>
         <image name="menu_icon" width="25" height="19"/>
@@ -3074,10 +3063,10 @@
         <image name="up_arrow" width="17" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Kd-Du-1Ow"/>
         <segue reference="y0B-0t-ilS"/>
+        <segue reference="3Kd-Du-1Ow"/>
         <segue reference="yWb-5z-Hnv"/>
-        <segue reference="Stz-X2-oj5"/>
+        <segue reference="SDA-er-8Vt"/>
         <segue reference="FuS-Nm-unt"/>
     </inferredMetricsTieBreakers>
 </document>

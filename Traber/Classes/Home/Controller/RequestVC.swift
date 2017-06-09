@@ -17,7 +17,7 @@ class RequestVC: AntController {
     }
 
     @IBAction func backToHomeClick() {
-        _ = navigationController?.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {

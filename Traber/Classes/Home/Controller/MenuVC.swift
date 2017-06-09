@@ -23,7 +23,23 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        headPortraitBtn.sd_setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492764217372&di=d31292ce1c8c20348b6bb22a3d87323e&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201509%2F10%2F20150910225146_hFfnK.thumb.224_0.jpeg"), for: .normal)
+        nameLabel.text = AntManage.userModel!.firstname
+        headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal)
+        headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal, placeholderImage: nil, options: .refreshCached)
+        if AntManage.userModel!.identity.isEmpty {
+            getUserInfo()
+        }
+    }
+    
+    func getUserInfo() {
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/info", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+            let token = AntManage.userModel!.token
+            AntManage.userModel = UserModel.mj_object(withKeyValues: response)
+            AntManage.userModel?.token = token
+            weakSelf?.nameLabel.text = AntManage.userModel!.firstname
+            weakSelf?.headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal, placeholderImage: nil, options: .refreshCached)
+        }, failureResult: {})
     }
     
     override func viewDidDisappear(_ animated: Bool) {

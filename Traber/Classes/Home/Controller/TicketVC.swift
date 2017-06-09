@@ -18,7 +18,7 @@ class TicketVC: AntController {
     @IBOutlet weak var postCodeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     var dataDic: [String : String]!
-    var imageArray = [UIImage]()
+    var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +33,19 @@ class TicketVC: AntController {
         unitNoLabel.text = dataDic["UnitNo"]
         postCodeLabel.text = dataDic["PostCode"]
         addressLabel.text = dataDic["Address"]
-        imgView.image = imageArray.first
+        imgView.image = image
     }
     
     // MARK: 跳转
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LookPicture" {
             let lookPicture = segue.destination as! LookPictureVC
-            lookPicture.imgArray = imageArray
+            lookPicture.imgArray = [image]
             lookPicture.currentPage  = 0
+        } else if segue.identifier == "FileTicket" {
+            let fileTicket = segue.destination as! FileTicketVC
+            fileTicket.dataDic = dataDic
+            fileTicket.image = image
         }
     }
     

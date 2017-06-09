@@ -37,10 +37,13 @@ class ChangePasswordVC: AntController,UITableViewDelegate,UITableViewDataSource,
             AntManage.showDelayToast(message: NSLocalizedString("Two password is different!", comment: ""))
             return
         }
-        UserDefaults.standard.set(detailArray[1], forKey: kPassWordKey)
-        UserDefaults.standard.synchronize()
-        AntManage.showDelayToast(message: NSLocalizedString("Change password success", comment: ""))
-        _ = navigationController?.popToRootViewController(animated: true)
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/updatePassword", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "password":detailArray[0], "new_password":detailArray[1], "r_new_password":detailArray[2], "token":AntManage.userModel!.token, "source":"home"], successResult: { (_) in
+            UserDefaults.standard.set(weakSelf?.detailArray[1], forKey: kPassWordKey)
+            UserDefaults.standard.synchronize()
+            AntManage.showDelayToast(message: NSLocalizedString("Change password success", comment: ""))
+            weakSelf?.navigationController?.popToRootViewController(animated: true)
+        }, failureResult: {})
     }
     
     // MARK: EditProfile_Delegate

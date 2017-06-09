@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         
-        AntManage.isLogin = UserDefaults.standard.bool(forKey: kIsLoginKey)
         LanguageManager.setupCurrentLanguage()
         
         return true
