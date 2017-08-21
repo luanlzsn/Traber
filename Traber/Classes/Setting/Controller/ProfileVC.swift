@@ -15,7 +15,7 @@ class ProfileVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var nameLabel: UILabel!
     let sectionTitleArray = ["","Car Owner's Information","Personal Information"]
     let titleArray = [["First Name:","Last Name:","E-mail:","Phone:","Store credit:"],["Name:","Address:","City:","Country:","Province:","Postcode:"],["Address:","City:","Country:","Province:"]]
-    let detailArray = [["Shawn","Barret","barret@gmail.com","707-674-0029","$0.00"],["Name","Address","City","Country","Province","Postcode"],["2370 Davis Avenue","San Jose","USA","Province Name"]]
+    let detailArray = [[AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone,"$\(AntManage.userModel!.store_credit)"],[AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licenseCountry,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode],[AntManage.userModel!.address,AntManage.userModel!.city,AntManage.userModel!.country,AntManage.userModel!.province]]
     
     override func viewDidLoad() {
         super.viewDidLoad()

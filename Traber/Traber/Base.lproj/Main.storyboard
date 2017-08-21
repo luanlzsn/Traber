@@ -2566,6 +2566,9 @@
                                         <real key="value" value="2.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="PNa-h3-yLG" kind="show" identifier="OnlineChat" id="lbu-Ci-Ios"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vun-6k-hej">
                                 <rect key="frame" x="15" y="139" width="345" height="50"/>
@@ -2578,6 +2581,9 @@
                                         <real key="value" value="2.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="callCustomerServiceClick:" destination="ffs-W0-9zA" eventType="touchUpInside" id="tpf-aD-FY9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2852,6 +2858,81 @@
             </objects>
             <point key="canvasLocation" x="1906" y="2259"/>
         </scene>
+        <!--Online Chat-->
+        <scene sceneID="AJn-Ry-fra">
+            <objects>
+                <viewController title="Online Chat" id="PNa-h3-yLG" customClass="OnlineChatVC" customModule="Traber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2y5-tn-sov"/>
+                        <viewControllerLayoutGuide type="bottom" id="1lX-C1-s71"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V9Z-Vx-0EE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xtz-IZ-zEs">
+                                <rect key="frame" x="14.5" y="79" width="345" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="hSQ-9N-1hc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="PNa-h3-yLG" id="O70-kk-Ac9"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type your message..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bph-PA-dAL">
+                                <rect key="frame" x="19.5" y="87" width="138" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzZ-5V-5Me">
+                                <rect key="frame" x="14.5" y="299" width="345" height="50"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.61568627450000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sik-Mw-2oe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitClick:" destination="PNa-h3-yLG" eventType="touchUpInside" id="HjZ-OW-dCy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bph-PA-dAL" firstAttribute="top" secondItem="xtz-IZ-zEs" secondAttribute="top" constant="8" id="83f-B5-gVc"/>
+                            <constraint firstItem="xtz-IZ-zEs" firstAttribute="top" secondItem="2y5-tn-sov" secondAttribute="bottom" constant="15" id="Adw-Mt-R5J"/>
+                            <constraint firstItem="bzZ-5V-5Me" firstAttribute="top" secondItem="xtz-IZ-zEs" secondAttribute="bottom" constant="20" id="FHD-fF-Xrm"/>
+                            <constraint firstItem="bph-PA-dAL" firstAttribute="leading" secondItem="xtz-IZ-zEs" secondAttribute="leading" constant="5" id="NzX-UC-YXU"/>
+                            <constraint firstItem="bzZ-5V-5Me" firstAttribute="centerX" secondItem="V9Z-Vx-0EE" secondAttribute="centerX" id="Q0i-Nt-XaP"/>
+                            <constraint firstItem="xtz-IZ-zEs" firstAttribute="centerX" secondItem="V9Z-Vx-0EE" secondAttribute="centerX" id="Zv2-yo-zEG"/>
+                            <constraint firstItem="xtz-IZ-zEs" firstAttribute="width" secondItem="V9Z-Vx-0EE" secondAttribute="width" constant="-30" id="s0B-C5-bKo"/>
+                            <constraint firstItem="bzZ-5V-5Me" firstAttribute="width" secondItem="xtz-IZ-zEs" secondAttribute="width" id="yZq-ca-evV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="placeholder" destination="bph-PA-dAL" id="wbE-lS-O1I"/>
+                        <outlet property="textView" destination="xtz-IZ-zEs" id="neE-Yl-9rg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbA-uz-MvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2814" y="2259"/>
+        </scene>
         <!--Change Password-->
         <scene sceneID="4gW-HY-baS">
             <objects>
@@ -2887,7 +2968,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuV-QE-xUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2814" y="2259"/>
+            <point key="canvasLocation" x="3790" y="2259"/>
         </scene>
         <!--Language-->
         <scene sceneID="ORk-MB-68Y">
@@ -2943,7 +3024,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3up-9z-eJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3790" y="2259"/>
+            <point key="canvasLocation" x="4886" y="2259"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="GDp-dp-VBp">
@@ -3035,7 +3116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYU-Ku-YkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4886" y="2259"/>
+            <point key="canvasLocation" x="5908" y="2259"/>
         </scene>
         <!--Diver's License Information-->
         <scene sceneID="qtO-uu-Hdm">
@@ -3072,7 +3153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOc-PR-O9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5969" y="2259"/>
+            <point key="canvasLocation" x="6905" y="2259"/>
         </scene>
         <!--Ant Nav Controller-->
         <scene sceneID="pst-Vo-z9O">
