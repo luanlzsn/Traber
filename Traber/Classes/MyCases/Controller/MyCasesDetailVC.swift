@@ -15,15 +15,25 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     @IBOutlet weak var caseNum: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var caseNumArray = [String]()
+    var ticketArray = [TicketModel]()
     var currentPage = 0
+    var ticketDic = [Int:TicketModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.contentSize = CGSize(width: kScreenWidth * CGFloat(caseNumArray.count), height: 0)
+        collectionView.contentSize = CGSize(width: kScreenWidth * CGFloat(ticketArray.count), height: 0)
         collectionView.setContentOffset(CGPoint(x: kScreenWidth * CGFloat(currentPage), y: 0), animated: true)
         checkArrowStatus()
+        getTicketDetail(ticketId: ticketArray[currentPage].ticketID)
+    }
+    
+    func getTicketDetail(ticketId: Int) {
+        weak var weakSelf = self
+        AntManage.postRequest(path: "ticket/getTicket", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "ticketID":ticketId], successResult: { (response) in
+            weakSelf?.ticketDic[ticketId] = TicketModel.mj_object(withKeyValues: response["ticket"])
+            weakSelf?.collectionView.reloadData()
+        }, failureResult: {})
     }
     
     @IBAction func leftClick(_ sender: UIButton) {
@@ -37,8 +47,8 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     
     @IBAction func rightClick(_ sender: UIButton) {
         currentPage += 1
-        if currentPage > caseNumArray.count - 1 {
-            currentPage = caseNumArray.count - 1
+        if currentPage > ticketArray.count - 1 {
+            currentPage = ticketArray.count - 1
         }
         collectionView.setContentOffset(CGPoint(x: kScreenWidth * CGFloat(currentPage), y: 0), animated: true)
         checkArrowStatus()
@@ -50,8 +60,12 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     
     func checkArrowStatus() {
         leftBtn.isEnabled = (currentPage != 0)
-        rightBtn.isEnabled = (currentPage != caseNumArray.count - 1)
-        caseNum.text = "Case " + caseNumArray[currentPage]
+        rightBtn.isEnabled = (currentPage != ticketArray.count - 1)
+        let model = ticketArray[currentPage]
+        caseNum.text = "Case " + model.caseNumber
+        if ticketDic[model.ticketID] == nil {
+            getTicketDetail(ticketId: model.ticketID)
+        }
     }
     
     // MARK: 跳转
@@ -70,12 +84,22 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     
     // MARK: UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return caseNumArray.count
+        return ticketArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : MyCasesDetailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCasesDetailCell", for: indexPath) as! MyCasesDetailCell
-        cell.imgView.sd_setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492764217372&di=d31292ce1c8c20348b6bb22a3d87323e&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201509%2F10%2F20150910225146_hFfnK.thumb.224_0.jpeg"))
+        let model = ticketDic[ticketArray[indexPath.row].ticketID]
+        if model != nil {
+            let imgStr = model!.image.components(separatedBy: ",").last!
+            let imgData = Data(base64Encoded: imgStr, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+            cell.imgView.image = UIImage(data: imgData!)
+            cell.imgArray = [UIImage(data: imgData!)!]
+        } else {
+            cell.imgView.image = nil
+            cell.imgArray = [UIImage]()
+        }
+        cell.collectionView.reloadData()
         return cell
     }
     

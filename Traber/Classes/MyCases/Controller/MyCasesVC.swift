@@ -29,7 +29,7 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MyCasesDetail" {
             let detail = segue.destination as! MyCasesDetailVC
-//            detail.caseNumArray = casesNumArray
+            detail.ticketArray = ticketArray
             detail.currentPage = sender as! Int
         }
     }

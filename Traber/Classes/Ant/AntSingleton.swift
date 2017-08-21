@@ -16,7 +16,7 @@ let AntManage = AntSingleton.sharedInstance
 class AntSingleton: NSObject {
     
     static let sharedInstance = AntSingleton()
-    var manager = AFHTTPSessionManager(baseURL: URL(string: "http://traber.auroraeducationonline.info//Api/"))
+    var manager = AFHTTPSessionManager(baseURL: URL(string: "http://traber.auroraeducationonline.info/Api/"))
     var progress : MBProgressHUD?
     var progressCount = 0//转圈数量
     var isLogin = false//是否登录

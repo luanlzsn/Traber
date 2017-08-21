@@ -21,14 +21,14 @@ class FileTicketVC: AntController,UITableViewDelegate,UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
-    func addTicket() {
-        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "isDriverlicense":"1", "imageType":"jpeg"] as [String : Any]
+    func addTicket(_ identifier: String) {
+        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "isDriverlicense":"1", "imageType":"jpeg", "evidence":"Yes", "trial_language":"", "interpreter":"no", "amount":"", "carType":"", "unit_number":AntManage.userModel!.unit_number] as [String : Any]
         params["ticketType"] = (dataDic["Type"] == "Parking") ? "1" : "2"
         params["image"] = "data:image/jpeg;base64," + UIImageJPEGRepresentation(image, 0.1)!.base64EncodedString()
         params["fight_type"] = "Paralegal"
         weak var weakSelf = self
         AntManage.postRequest(path: "ticket/add", params: params, successResult: { (response) in
-            weakSelf?.performSegue(withIdentifier: "Request", sender: nil)
+            weakSelf?.performSegue(withIdentifier: identifier, sender: nil)
         }, failureResult: {})
     }
     
@@ -58,11 +58,11 @@ class FileTicketVC: AntController,UITableViewDelegate,UITableViewDataSource {
         weak var weakSelf = self
         cell.ticketButtonClick = { (_) in
             if indexPath.section == 0 {
-                
+                weakSelf?.addTicket("File")
             } else if indexPath.section == 1 {
-                weakSelf?.addTicket()
+                weakSelf?.addTicket("Request")
             } else {
-                
+                weakSelf?.addTicket("InformationReview")
             }
         }
         return cell

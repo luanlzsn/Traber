@@ -15,8 +15,7 @@ class MyCasesDetailCell: UICollectionViewCell,UICollectionViewDelegate,UICollect
     @IBOutlet weak var rightBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var imgView: UIImageView!
-    let imgArray = ["https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492877012680&di=cfb554748dfa9b8a73ab360fc46eda8d&imgtype=0&src=http%3A%2F%2Fimage.bitauto.com%2Fdealer%2Fnews%2F100083481%2Faf60db2d-b527-479b-85db-1b40dd5f063d.jpg","https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1493442218&di=acf285df9882654682adc603c680e308&src=http://news.ynxxb.com/Upload/News/2013-6/11/N10856972328/s01534751996.jpg","https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493452326356&di=e0c3dcf32ee1e340c22c25f24fb785d1&imgtype=0&src=http%3A%2F%2Fe.hznews.com%2Fdata%2Fdjsb%2F2016%2F0502%2FA6502C_6.jpg"]
-    
+    var imgArray = [UIImage]()
     
     @IBAction func leftClick(_ sender: Any) {
         pageControl.currentPage -= 1
@@ -53,7 +52,7 @@ class MyCasesDetailCell: UICollectionViewCell,UICollectionViewDelegate,UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : MyCasesDetailImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCasesDetailImageCell", for: indexPath) as! MyCasesDetailImageCell
-        cell.imgView.sd_setImage(with: URL(string: imgArray[indexPath.row]))
+        cell.imgView.image = imgArray[indexPath.row]
         return cell
     }
     

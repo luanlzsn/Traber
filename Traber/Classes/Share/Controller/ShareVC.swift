@@ -15,7 +15,11 @@ class ShareVC: AntController {
 
         view.backgroundColor = UIColor.init(rgb: 0x15181a)
     }
-
+    
+    @IBAction func shareClick(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShareWeb", sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

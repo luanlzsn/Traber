@@ -16,7 +16,7 @@ class InfractionDateVC: AntController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        datePicker.maximumDate = Date.init()
     }
     
     func checkInfractionDate(confirmBlock: @escaping ConfirmBlock) {

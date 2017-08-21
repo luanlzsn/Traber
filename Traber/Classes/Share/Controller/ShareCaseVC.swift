@@ -11,30 +11,48 @@ import UIKit
 class ShareCaseVC: AntController,UICollectionViewDelegate,UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var ticketArray = [TicketModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        weak var weakSelf = self
+        AntManage.postRequest(path: "ticket", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+            weakSelf?.ticketArray = TicketModel.mj_objectArray(withKeyValuesArray: response["tickets"]) as! [TicketModel]
+            weakSelf?.collectionView.reloadData()
+        }, failureResult: {
+            weakSelf?.navigationController?.popViewController(animated: true)
+        })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
 
     @IBAction func cancelClick(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func shareClick(_ sender: UIButton) {
-        
-    }
-    
     // MARK: UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return ticketArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ShareCaseCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShareCaseCell", for: indexPath) as! ShareCaseCell
-        cell.statusImage.isHidden = true
-        cell.imgView.sd_setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492877012680&di=cfb554748dfa9b8a73ab360fc46eda8d&imgtype=0&src=http%3A%2F%2Fimage.bitauto.com%2Fdealer%2Fnews%2F100083481%2Faf60db2d-b527-479b-85db-1b40dd5f063d.jpg"))
+        let model = ticketArray[indexPath.section]
+        cell.caseNum.text = "Case " + model.caseNumber
+        cell.statusLabel.text = model.statusID
+        cell.statusImage.isHidden = !(model.statusID == "Paid")
+        let imgStr = model.image.components(separatedBy: ",").last!
+        let imgData = Data(base64Encoded: imgStr, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+        cell.imgView.image = UIImage(data: imgData!)
         return cell
     }
     

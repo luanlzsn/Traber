@@ -16,6 +16,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     @IBOutlet weak var unitNo: UITextField!
     @IBOutlet weak var postCode: UITextField!
     @IBOutlet weak var addressField: UITextField!
+    var isClear = true//是否清理数据
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,15 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
         } else if AntManage.userModel!.identity.isEmpty {
             getUserInfo()
         }
+        if isClear {
+            typeBtn.setTitle("Ticket Type", for: .normal)
+            cityField.text = ""
+            dateBtn.setTitle("Infraction Date", for: .normal)
+            unitNo.text = ""
+            postCode.text = ""
+            addressField.text = ""
+        }
+        isClear = true
     }
     
     func getUserInfo() {
@@ -58,10 +68,6 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             AntManage.showDelayToast(message: "Please choose Ticket Type!")
             return
         }
-        if (cityField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Please choose City!")
-            return
-        }
         if dateBtn.currentTitle == "Infraction Date" {
             AntManage.showDelayToast(message: "Please choose Infraction Date!")
             return
@@ -70,12 +76,16 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             AntManage.showDelayToast(message: "Unit No. is required!")
             return
         }
-        if (postCode.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Post Code is required!")
+        if (addressField.text?.isEmpty)! {
+            AntManage.showDelayToast(message: "Car owner's address is required!")
             return
         }
-        if (addressField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Car owenr's address is required!")
+        if (cityField.text?.isEmpty)! {
+            AntManage.showDelayToast(message: "Please choose City!")
+            return
+        }
+        if (postCode.text?.isEmpty)! {
+            AntManage.showDelayToast(message: "Post Code is required!")
             return
         }
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -104,6 +114,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
         picker.allowsEditing = true
         picker.sourceType = sourceType
         navigationController?.present(picker, animated: true, completion: nil)
+        isClear = false
     }
     
     // MARK: 跳转
@@ -113,7 +124,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             weak var weakSelf = self
             menu.checkSelectMenu(confirmBlock: { (identifier) in
                 if !((identifier as! String).isEmpty) {
-                    weakSelf?.performSegue(withIdentifier: identifier as! String, sender: weakSelf)
+                    weakSelf?.perform(#selector(weakSelf!.performSegue(withIdentifier:sender:)), with: identifier as! String, afterDelay: 0.01)
                 }
             })
         } else if segue.identifier == "InfractionDate" {

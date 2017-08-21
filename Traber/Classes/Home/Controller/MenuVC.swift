@@ -16,9 +16,9 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var nameLabel: UILabel!
     var confirm : ConfirmBlock?
     
-    let titleArray = ["Home","Notifications","My cases","Payment","Share","Help","Settings","More"]
-    let imgArray = ["menu_home","menu_notifications","menu_cases","menu_payment","menu_share","menu_help","menu_setting","menu_more"]
-    let identifierArray = ["","Notifications","MyCases","Payment","Share","Help","Settings",""]
+    let titleArray = ["Home","Notifications","My cases"/*,"Payment"*/,"Share","Help","Settings","More"]
+    let imgArray = ["menu_home","menu_notifications","menu_cases"/*,"menu_payment"*/,"menu_share","menu_help","menu_setting","menu_more"]
+    let identifierArray = ["","ShareCase","MyCases"/*,"Payment"*/,"Share","Help","Settings",""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,11 +85,12 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
         let cell : MenuCell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         cell.imgView.image = UIImage(named: imgArray[indexPath.row])
         cell.title.text = titleArray[indexPath.row]
-        if indexPath.row == 1 {
-            cell.number.isHidden = false
-        } else {
-            cell.number.isHidden = true
-        }
+//        if indexPath.row == 1 {
+//            cell.number.isHidden = false
+//        } else {
+//            cell.number.isHidden = true
+//        }
+        cell.number.isHidden = true
         return cell
     }
     
