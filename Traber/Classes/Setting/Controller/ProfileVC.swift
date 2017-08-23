@@ -13,8 +13,8 @@ class ProfileVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    let sectionTitleArray = ["","Car Owner's Information","Personal Information"]
-    let titleArray = [["First Name:","Last Name:","E-mail:","Phone:","Store credit:"],["Name:","Address:","City:","Country:","Province:","Postcode:"],["Address:","City:","Country:","Province:"]]
+    let sectionTitleArray = ["", "Car Owner's Information", "Personal Information"]
+    let titleArray = [["First Name", "Last Name", "E-mail", "Phone", "Store credit"],["Name", "Address", "City","Country", "Province", "Postcode"],["Address", "City", "Country", "Province"]]
     let detailArray = [[AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone,"$\(AntManage.userModel!.store_credit)"],[AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licenseCountry,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode],[AntManage.userModel!.address,AntManage.userModel!.city,AntManage.userModel!.country,AntManage.userModel!.province]]
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class ProfileVC: AntController,UITableViewDelegate,UITableViewDataSource {
         let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
         sectionLabel.font = UIFont.systemFont(ofSize: 12)
         sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
-        sectionLabel.text = sectionTitleArray[section]
+        sectionLabel.text = NSLocalizedString(sectionTitleArray[section], comment: "")
         header.addSubview(sectionLabel)
         let lineView = UIView(frame: CGRect(x: 0, y: 54, width: kScreenWidth, height: 1))
         lineView.backgroundColor = UIColor.init(rgb: 0xc7c7cc)
@@ -56,7 +56,7 @@ class ProfileVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ProfileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
-        cell.titleLabel.text = titleArray[indexPath.section][indexPath.row]
+        cell.titleLabel.text = NSLocalizedString(titleArray[indexPath.section][indexPath.row], comment: "") + ":"
         cell.detailLabel.text = detailArray[indexPath.section][indexPath.row]
         return cell
     }

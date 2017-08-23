@@ -1,0 +1,75 @@
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "49h-ha-FLD"; */
+"49h-ha-FLD.placeholder" = "电子邮件";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "5fo-JV-bSJ"; */
+"5fo-JV-bSJ.placeholder" = "电子邮件";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "7kc-H5-NwX"; */
+"7kc-H5-NwX.placeholder" = "姓氏";
+
+/* Class = "UIViewController"; title = "Register"; ObjectID = "C72-E6-mVF"; */
+"C72-E6-mVF.title" = "注册";
+
+/* Class = "UIViewController"; title = "Login"; ObjectID = "DSx-46-aRV"; */
+"DSx-46-aRV.title" = "登录";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "F50-NL-t86"; */
+"F50-NL-t86.placeholder" = "密码";
+
+/* Class = "UIButton"; normalTitle = "Forgot password?"; ObjectID = "Fvp-0d-UF6"; */
+"Fvp-0d-UF6.normalTitle" = "忘记密码？";
+
+/* Class = "UILabel"; text = "or"; ObjectID = "Hfz-wW-4F7"; */
+"Hfz-wW-4F7.text" = "或";
+
+/* Class = "UITextField"; placeholder = "Confirm your password"; ObjectID = "Kgs-Ff-i8z"; */
+"Kgs-Ff-i8z.placeholder" = "确认您的密码";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "P5F-wk-mtI"; */
+"P5F-wk-mtI.placeholder" = "名字";
+
+/* Class = "UIButton"; normalTitle = "SEND"; ObjectID = "YIs-Ml-CIy"; */
+"YIs-Ml-CIy.normalTitle" = "SEND";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "YsB-Ai-Qpm"; */
+"YsB-Ai-Qpm.placeholder" = "确认密码";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "ZoQ-4q-qRp"; */
+"ZoQ-4q-qRp.title" = "登录";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "ayU-zb-fb1"; */
+"ayU-zb-fb1.placeholder" = "密码";
+
+/* Class = "UIButton"; normalTitle = "  Remember me"; ObjectID = "cCa-bw-9iL"; */
+"cCa-bw-9iL.normalTitle" = "  记住我";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "eMB-g3-wqC"; */
+"eMB-g3-wqC.placeholder" = "电子邮件";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "ij0-zp-NYi"; */
+"ij0-zp-NYi.placeholder" = "密码";
+
+/* Class = "UITextField"; placeholder = "Code"; ObjectID = "mwR-33-PQd"; */
+"mwR-33-PQd.placeholder" = "代码";
+
+/* Class = "UIViewController"; title = "Forgot Password"; ObjectID = "nNk-2U-DeW"; */
+"nNk-2U-DeW.title" = "忘记密码";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "nQB-6u-ptw"; */
+"nQB-6u-ptw.normalTitle" = "注册";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "p9g-g6-6yF"; */
+"p9g-g6-6yF.normalTitle" = "注册";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "pf1-Qo-CFL"; */
+"pf1-Qo-CFL.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "qPB-9C-Qs9"; */
+"qPB-9C-Qs9.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "CONFIRM"; ObjectID = "xvX-0x-X3m"; */
+"xvX-0x-X3m.normalTitle" = "确认";
+
+/* Class = "UIViewController"; title = "Set Password"; ObjectID = "ycx-5D-d1p"; */
+"ycx-5D-d1p.title" = "设置密码";

@@ -31,11 +31,11 @@ class LoginVC: AntController {
     @IBAction func loginClick() {
         UIApplication.shared.keyWindow?.endEditing(true)
         if !Common.isValidateEmail(email: emailField.text!) {
-            AntManage.showDelayToast(message: NSLocalizedString("Please enter the corrent email!", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Please enter the correct email", comment: ""))
             return
         }
         if (passwordField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: NSLocalizedString("Password is required!", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Password is required", comment: ""))
             return
         }
         weak var weakSelf = self
@@ -46,7 +46,7 @@ class LoginVC: AntController {
             UserDefaults.standard.synchronize()
             AntManage.isLogin = true
             AntManage.userModel = UserModel.mj_object(withKeyValues: response)
-            AntManage.showDelayToast(message: NSLocalizedString("Login success!", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Login success", comment: ""))
             weakSelf?.dismiss(animated: true, completion: nil)
         }, failureResult: {})
     }

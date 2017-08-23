@@ -1,0 +1,379 @@
+
+/* Class = "UIViewController"; title = "Ticket EZ"; ObjectID = "0WW-I8-c7s"; */
+"0WW-I8-c7s.title" = "Ticket EZ";
+
+/* Class = "UILabel"; text = "Infraction Date:"; ObjectID = "3W3-sE-scx"; */
+"3W3-sE-scx.text" = "违规日期:";
+
+/* Class = "UILabel"; text = "There are many variations of passages of Lorem lpsum available,but the majority have suffered."; ObjectID = "3ZE-5K-ajc"; */
+"3ZE-5K-ajc.text" = "对于乘客Lorem lpsum还有一些变化，但是大部分已经解决。";
+
+/* Class = "UILabel"; text = "Shawn Barrett"; ObjectID = "3qC-p6-cxW"; */
+"3qC-p6-cxW.text" = "Shawn Barrett";
+
+/* Class = "UILabel"; text = "Elmer Dunn"; ObjectID = "5Bn-DO-6Gj"; */
+"5Bn-DO-6Gj.text" = "Elmer Dunn";
+
+/* Class = "UILabel"; text = "2017/03/07"; ObjectID = "5Kg-ha-scU"; */
+"5Kg-ha-scU.text" = "2017/03/07";
+
+/* Class = "UILabel"; text = "2017/03/07"; ObjectID = "5Rg-fQ-mEn"; */
+"5Rg-fQ-mEn.text" = "2017/03/07";
+
+/* Class = "UITextField"; placeholder = "Post code:"; ObjectID = "62q-wH-uJx"; */
+"62q-wH-uJx.placeholder" = "邮政编码:";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "6IN-oM-xZW"; */
+"6IN-oM-xZW.text" = "1";
+
+/* Class = "UILabel"; text = "Parking Ticket"; ObjectID = "7UI-cJ-aTU"; */
+"7UI-cJ-aTU.text" = "停车告票";
+
+/* Class = "UILabel"; text = "2017/03/07"; ObjectID = "817-RE-roJ"; */
+"817-RE-roJ.text" = "2017/03/07";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "8Ib-ql-Fwk"; */
+"8Ib-ql-Fwk.text" = "1";
+
+/* Class = "UIViewController"; title = "Ticket EZ"; ObjectID = "90t-N3-Aow"; */
+"90t-N3-Aow.title" = "Ticket EZ";
+
+/* Class = "UIButton"; normalTitle = "Ticket Type"; ObjectID = "9Hm-Oo-hsO"; */
+"9Hm-Oo-hsO.normalTitle" = "告票类型";
+
+/* Class = "UIViewController"; title = "My case"; ObjectID = "AXl-KV-oE1"; */
+"AXl-KV-oE1.title" = "我的案例";
+
+/* Class = "UILabel"; text = "Post Code:"; ObjectID = "AYA-1R-6HM"; */
+"AYA-1R-6HM.text" = "邮政编码:";
+
+/* Class = "UILabel"; text = "Case 647376"; ObjectID = "BKd-h9-4pV"; */
+"BKd-h9-4pV.text" = "Case 647376";
+
+/* Class = "UIButton"; normalTitle = "Learn more"; ObjectID = "BMw-Di-YNm"; */
+"BMw-Di-YNm.normalTitle" = "了解详情";
+
+/* Class = "UIViewController"; title = "首页"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "首页";
+
+/* Class = "UIButton"; normalTitle = "Please choose"; ObjectID = "CMy-m3-0Vr"; */
+"CMy-m3-0Vr.normalTitle" = "请选择";
+
+/* Class = "UIButton"; normalTitle = "  Pay"; ObjectID = "CcL-tD-m3s"; */
+"CcL-tD-m3s.normalTitle" = "  支付";
+
+/* Class = "UIButton"; normalTitle = "Edit Profile"; ObjectID = "D81-cc-YVe"; */
+"D81-cc-YVe.normalTitle" = "编辑个人资料";
+
+/* Class = "UILabel"; text = "Message"; ObjectID = "DMA-6c-jDb"; */
+"DMA-6c-jDb.text" = "消息";
+
+/* Class = "UIViewController"; title = "File Ticket"; ObjectID = "DUf-RE-z6k"; */
+"DUf-RE-z6k.title" = "告票";
+
+/* Class = "UIBarButtonItem"; title = "Confirm"; ObjectID = "DxQ-cl-6FD"; */
+"DxQ-cl-6FD.title" = "确认";
+
+/* Class = "UILabel"; text = "Service change:"; ObjectID = "E23-xW-xLG"; */
+"E23-xW-xLG.text" = "服务更改:";
+
+/* Class = "UILabel"; text = "File Date:"; ObjectID = "EO5-V1-Sdk"; */
+"EO5-V1-Sdk.text" = "文件日期:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Eu7-zG-G1Q"; */
+"Eu7-zG-G1Q.text" = "Label";
+
+/* Class = "UIViewController"; title = "Ticket EZ"; ObjectID = "F0c-fp-Tfg"; */
+"F0c-fp-Tfg.title" = "Ticket EZ";
+
+/* Class = "UILabel"; text = "Trial language"; ObjectID = "Fco-bS-thZ"; */
+"Fco-bS-thZ.text" = "法庭语言";
+
+/* Class = "UIButton"; normalTitle = "Proceed to Payment"; ObjectID = "Fs4-OQ-5oY"; */
+"Fs4-OQ-5oY.normalTitle" = "处理付款";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Gkf-5X-pc9"; */
+"Gkf-5X-pc9.text" = "Title";
+
+/* Class = "UILabel"; text = "Infraction Date:"; ObjectID = "Gz4-eo-apU"; */
+"Gz4-eo-apU.text" = "违规日期:";
+
+/* Class = "UILabel"; text = "2017/03/07"; ObjectID = "H3W-vt-Dpa"; */
+"H3W-vt-Dpa.text" = "2017/03/07";
+
+/* Class = "UIButton"; normalTitle = "    Online Chat"; ObjectID = "HBY-bS-aAe"; */
+"HBY-bS-aAe.normalTitle" = "    线上聊天";
+
+/* Class = "UILabel"; text = "2017/03/07"; ObjectID = "HKl-Nt-NAC"; */
+"HKl-Nt-NAC.text" = "2017/03/07";
+
+/* Class = "UIViewController"; title = "Notifications"; ObjectID = "HsD-PF-QaF"; */
+"HsD-PF-QaF.title" = "通知";
+
+/* Class = "UILabel"; text = "Lawyer"; ObjectID = "I7B-SH-Jb0"; */
+"I7B-SH-Jb0.text" = "Lawyer";
+
+/* Class = "UILabel"; text = "Information Review"; ObjectID = "I8c-GA-JVP"; */
+"I8c-GA-JVP.text" = "信息查询";
+
+/* Class = "UILabel"; text = "if you use thie site regularly and would like to help keep the site on the Internet,please consider a small sum to help pay for the hosting and bandwidth bill."; ObjectID = "IMb-Sl-kML"; */
+"IMb-Sl-kML.text" = "if you use thie site regularly and would like to help keep the site on the Internet,please consider a small sum to help pay for the hosting and bandwidth bill.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ij1-zv-epr"; */
+"Ij1-zv-epr.text" = "Label";
+
+/* Class = "UIViewController"; title = "菜单"; ObjectID = "J1y-XU-lKq"; */
+"J1y-XU-lKq.title" = "菜单";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "J2D-1u-Idr"; */
+"J2D-1u-Idr.text" = "Title";
+
+/* Class = "UIViewController"; title = "Share Invite Code"; ObjectID = "Jca-5P-mIO"; */
+"Jca-5P-mIO.title" = "共享邀请代码";
+
+/* Class = "UILabel"; text = "2370 Davis Avenue"; ObjectID = "Ji8-mb-efP"; */
+"Ji8-mb-efP.text" = "2370 Davis Avenue";
+
+/* Class = "UILabel"; text = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit..."; ObjectID = "Jzr-Lt-i1K"; */
+"Jzr-Lt-i1K.text" = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit...";
+
+/* Class = "UITextField"; placeholder = "city"; ObjectID = "K9Z-5k-0i3"; */
+"K9Z-5k-0i3.placeholder" = "城市";
+
+/* Class = "UILabel"; text = "Driver's License Information"; ObjectID = "KDn-Gh-Ggo"; */
+"KDn-Gh-Ggo.text" = "驾照信息";
+
+/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
+"MFc-YW-DVB.text" = "Phasellus vel blandit neque。 Aenean
+pretium sollicitudin ex， in euismod magna
+vehicula sit amet。";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "Mvk-U7-ubW"; */
+"Mvk-U7-ubW.normalTitle" = "确认";
+
+/* Class = "UIButton"; normalTitle = "File"; ObjectID = "N0U-pq-WHv"; */
+"N0U-pq-WHv.normalTitle" = "文件";
+
+/* Class = "UILabel"; text = "Status:"; ObjectID = "NfG-uI-1eD"; */
+"NfG-uI-1eD.text" = "状态:";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "O2l-Tw-pAl"; */
+"O2l-Tw-pAl.text" = "主页";
+
+/* Class = "UIViewController"; title = "Ticket EZ"; ObjectID = "ODW-3C-Mqd"; */
+"ODW-3C-Mqd.title" = "Ticket EZ";
+
+/* Class = "UILabel"; text = "Take a photo of ticket"; ObjectID = "PHX-Ln-jqH"; */
+"PHX-Ln-jqH.text" = "拍摄告票的照片";
+
+/* Class = "UIViewController"; title = "Online Chat"; ObjectID = "PNa-h3-yLG"; */
+"PNa-h3-yLG.title" = "线上聊天";
+
+/* Class = "UIButton"; normalTitle = "Please choose"; ObjectID = "PfC-GL-v31"; */
+"PfC-GL-v31.normalTitle" = "请选择";
+
+/* Class = "UILabel"; text = "Choose what to do"; ObjectID = "PlE-ui-QPv"; */
+"PlE-ui-QPv.text" = "选择要做什么";
+
+/* Class = "UILabel"; text = "Shawn Barrett"; ObjectID = "Pmk-wJ-hWq"; */
+"Pmk-wJ-hWq.text" = "Shawn Barrett";
+
+/* Class = "UILabel"; text = "16m ago"; ObjectID = "QVM-6H-FIC"; */
+"QVM-6H-FIC.text" = "16m ago";
+
+/* Class = "UIViewController"; title = "Profile"; ObjectID = "Qc8-eb-MsQ"; */
+"Qc8-eb-MsQ.title" = "个人资料";
+
+/* Class = "UIButton"; normalTitle = "    Online Chat"; ObjectID = "R1d-Ca-2As"; */
+"R1d-Ca-2As.normalTitle" = "    线上聊天";
+
+/* Class = "UILabel"; text = "File Ticket"; ObjectID = "SA0-Jo-TXt"; */
+"SA0-Jo-TXt.text" = "告票";
+
+/* Class = "UILabel"; text = "Service change:"; ObjectID = "SIS-A8-vWD"; */
+"SIS-A8-vWD.text" = "服务更改:";
+
+/* Class = "UILabel"; text = "Shawn Barrett"; ObjectID = "Tn1-90-Ivy"; */
+"Tn1-90-Ivy.text" = "Shawn Barrett";
+
+/* Class = "UINavigationItem"; title = "Ticket EZ"; ObjectID = "UhP-Y2-Wlx"; */
+"UhP-Y2-Wlx.title" = "Ticket EZ";
+
+/* Class = "UILabel"; text = "    elsiegray657465"; ObjectID = "V3v-u4-ku3"; */
+"V3v-u4-ku3.text" = "    elsiegray657465";
+
+/* Class = "UIButton"; normalTitle = "    Call customer service"; ObjectID = "Vun-6k-hej"; */
+"Vun-6k-hej.normalTitle" = "    呼叫客户服务";
+
+/* Class = "UILabel"; text = "UI at consectetur nisl, gravida egestats nisl. Aliquam at ligula est...MORE"; ObjectID = "W0w-HR-5JW"; */
+"W0w-HR-5JW.text" = "UI at consectetur nisl, gravida egestats nisl. Aliquam at ligula est...MORE";
+
+/* Class = "UIButton"; normalTitle = "My case"; ObjectID = "W8m-cQ-bbf"; */
+"W8m-cQ-bbf.normalTitle" = "我的案例";
+
+/* Class = "UITextField"; placeholder = "Car owner's address:"; ObjectID = "YH2-Ts-5Kn"; */
+"YH2-Ts-5Kn.placeholder" = "车主地址:";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "YPV-2Y-jIy"; */
+"YPV-2Y-jIy.text" = "通知";
+
+/* Class = "UILabel"; text = "Case 647376"; ObjectID = "YZp-8A-wjB"; */
+"YZp-8A-wjB.text" = "Case 647376";
+
+/* Class = "UIViewController"; title = "Language"; ObjectID = "ZGx-at-G7F"; */
+"ZGx-at-G7F.title" = "语言";
+
+/* Class = "UILabel"; text = "Elsie Gray"; ObjectID = "ZcN-zV-Osp"; */
+"ZcN-zV-Osp.text" = "Elsie Gray";
+
+/* Class = "UILabel"; text = "Share Invite Code"; ObjectID = "Zde-Io-o6M"; */
+"Zde-Io-o6M.text" = "共享邀请代码";
+
+/* Class = "UILabel"; text = "You have successfully requested our legal services. We will reply in 24 hours."; ObjectID = "aRV-kN-c9f"; */
+"aRV-kN-c9f.text" = "您已成功申请我们的法律服务。我们将在24小时内回复。";
+
+/* Class = "UILabel"; text = "New York"; ObjectID = "atX-gg-4ha"; */
+"atX-gg-4ha.text" = "New York";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "bN6-w8-cg0"; */
+"bN6-w8-cg0.text" = "0";
+
+/* Class = "UILabel"; text = "Type your message..."; ObjectID = "bph-PA-dAL"; */
+"bph-PA-dAL.text" = "输入您的消息...";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "bzZ-5V-5Me"; */
+"bzZ-5V-5Me.normalTitle" = "提交";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "c08-Af-DbQ"; */
+"c08-Af-DbQ.text" = "Title";
+
+/* Class = "UITextField"; placeholder = "Unit no:"; ObjectID = "cxL-dV-MWq"; */
+"cxL-dV-MWq.placeholder" = "单位号码:";
+
+/* Class = "UILabel"; text = "Pending"; ObjectID = "e0j-xF-XNA"; */
+"e0j-xF-XNA.text" = "待处理";
+
+/* Class = "UILabel"; text = "Court Date:"; ObjectID = "ei6-AC-aFP"; */
+"ei6-AC-aFP.text" = "法庭日期:";
+
+/* Class = "UILabel"; text = "Car owner's address:"; ObjectID = "ewX-ea-vwu"; */
+"ewX-ea-vwu.text" = "车主地址:";
+
+/* Class = "UIViewController"; title = "Help"; ObjectID = "ffs-W0-9zA"; */
+"ffs-W0-9zA.title" = "帮助";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "fvb-Wl-07k"; */
+"fvb-Wl-07k.text" = "通知";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "fxk-iR-Hhg"; */
+"fxk-iR-Hhg.title" = "取消";
+
+/* Class = "UIViewController"; title = "Ticket EZ"; ObjectID = "g93-9V-O74"; */
+"g93-9V-O74.title" = "Ticket EZ";
+
+/* Class = "UILabel"; text = "New York"; ObjectID = "gLa-Uz-nry"; */
+"gLa-Uz-nry.text" = "New York";
+
+/* Class = "UILabel"; text = "$5.99"; ObjectID = "gsa-Wv-PKb"; */
+"gsa-Wv-PKb.text" = "$5.99";
+
+/* Class = "UILabel"; text = "$5.99"; ObjectID = "hHT-Sq-kF4"; */
+"hHT-Sq-kF4.text" = "$5.99";
+
+/* Class = "UIViewController"; title = "Edit Profile"; ObjectID = "haA-Y6-YcQ"; */
+"haA-Y6-YcQ.title" = "编辑个人资料";
+
+/* Class = "UITextField"; placeholder = "Type in"; ObjectID = "hb9-wJ-Sh8"; */
+"hb9-wJ-Sh8.placeholder" = "输入";
+
+/* Class = "UIButton"; normalTitle = "Terms & Conditions"; ObjectID = "iih-8F-aNv"; */
+"iih-8F-aNv.normalTitle" = "条款和条件";
+
+/* Class = "UIButton"; normalTitle = "Infraction Date"; ObjectID = "jBj-OA-2Mt"; */
+"jBj-OA-2Mt.normalTitle" = "违规日期";
+
+/* Class = "UILabel"; text = "Unit no:"; ObjectID = "jKk-iv-mOe"; */
+"jKk-iv-mOe.text" = "单位号码:";
+
+/* Class = "UILabel"; text = "Language interpreter"; ObjectID = "k7B-RH-WUu"; */
+"k7B-RH-WUu.text" = "翻译员";
+
+/* Class = "UILabel"; text = "Case 647376"; ObjectID = "kJe-jU-Qfw"; */
+"kJe-jU-Qfw.text" = "Case 647376";
+
+/* Class = "UILabel"; text = "Pay"; ObjectID = "kQo-47-HNb"; */
+"kQo-47-HNb.text" = "支付";
+
+/* Class = "UILabel"; text = "Pending"; ObjectID = "kwY-ob-F7S"; */
+"kwY-ob-F7S.text" = "待处理";
+
+/* Class = "UILabel"; text = "Do you want to challange offences office's evidence?"; ObjectID = "meG-gi-aUC"; */
+"meG-gi-aUC.text" = "你愿意挑战警官的证词或者证据吗?";
+
+/* Class = "UILabel"; text = "Follow us on social:"; ObjectID = "miI-KW-TN2"; */
+"miI-KW-TN2.text" = "关注我们的社交网站:";
+
+/* Class = "UIViewController"; title = "Driver's License Information"; ObjectID = "oRw-qe-Xga"; */
+"oRw-qe-Xga.title" = "驾照信息";
+
+/* Class = "UIViewController"; title = "My case"; ObjectID = "pQK-Ix-eI8"; */
+"pQK-Ix-eI8.title" = "我的案例";
+
+/* Class = "UILabel"; text = "Status:"; ObjectID = "pm6-WK-zxf"; */
+"pm6-WK-zxf.text" = "状态:";
+
+/* Class = "UIViewController"; title = "SHARE"; ObjectID = "qiT-os-io8"; */
+"qiT-os-io8.title" = "共享";
+
+/* Class = "UILabel"; text = "Congratulations!"; ObjectID = "r6P-Zj-jtZ"; */
+"r6P-Zj-jtZ.text" = "恭喜!";
+
+/* Class = "UILabel"; text = "Lorem lpsum is simply dummy text of the printing and typesetting industry. Lorem lpsum has been the industry's standard dummy."; ObjectID = "rLr-gu-jYz"; */
+"rLr-gu-jYz.text" = "Lorem lpsum is simply dummy text of the printing and typesetting industry. Lorem lpsum has been the industry's standard dummy.";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "rTz-js-vRC"; */
+"rTz-js-vRC.text" = "日期:";
+
+/* Class = "UIButton"; normalTitle = "Send Form"; ObjectID = "rVL-85-sTO"; */
+"rVL-85-sTO.normalTitle" = "发送表单";
+
+/* Class = "UILabel"; text = "$5.99"; ObjectID = "rcP-Sx-gig"; */
+"rcP-Sx-gig.text" = "$5.99";
+
+/* Class = "UILabel"; text = "City:"; ObjectID = "rfg-uG-vud"; */
+"rfg-uG-vud.text" = "城市:";
+
+/* Class = "UILabel"; text = "    elsiegray657465"; ObjectID = "s8s-pX-A4q"; */
+"s8s-pX-A4q.text" = "    elsiegray657465";
+
+/* Class = "UILabel"; text = "Ut at consectetur nisl, gravida egestas nisl. Aliquam at ligula est. Phasellus lacus odio, ultrices ac volutpat eget, vehicula lobortis enim. Donec a auctor elit."; ObjectID = "tTh-xy-r77"; */
+"tTh-xy-r77.text" = "Ut at consectetur nisl, gravida egestas nisl. Aliquam at ligula est. Phasellus lacus odio, ultrices ac volutpat eget, vehicula lobortis enim. Donec a auctor elit.";
+
+/* Class = "UIViewController"; title = "Payment"; ObjectID = "uRg-Le-Nbp"; */
+"uRg-Le-Nbp.title" = "付款";
+
+/* Class = "UILabel"; text = "Leave blank of N/A*"; ObjectID = "ujw-fl-CQH"; */
+"ujw-fl-CQH.text" = "N/A *";
+
+/* Class = "UILabel"; text = "invite you friends,get you tickets fought for free share your ivited code"; ObjectID = "vhq-TR-CAg"; */
+"vhq-TR-CAg.text" = "邀请你的朋友，分享你的邀请码 您的告票不需要出钱";
+
+/* Class = "UILabel"; text = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit..."; ObjectID = "voJ-SH-s9M"; */
+"voJ-SH-s9M.text" = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit...";
+
+/* Class = "UIButton"; normalTitle = "Back to home"; ObjectID = "wFt-pv-vnH"; */
+"wFt-pv-vnH.normalTitle" = "返回首页";
+
+/* Class = "UILabel"; text = "Amount of fine:"; ObjectID = "wUn-ao-5GV"; */
+"wUn-ao-5GV.text" = "罚款金额:";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "xNm-OZ-05M"; */
+"xNm-OZ-05M.title" = "设置";
+
+/* Class = "UIViewController"; title = "Change Password"; ObjectID = "xa7-Lr-Udk"; */
+"xa7-Lr-Udk.title" = "修改密码";
+
+/* Class = "UILabel"; text = "City:"; ObjectID = "zHY-mW-qBB"; */
+"zHY-mW-qBB.text" = "城市:";

@@ -11,7 +11,7 @@ import UIKit
 class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["Profile","Change Password","Push Notification","Language","Logout"]
+    let titleArray = ["Profile","Change password","Notification","Language","Logout"]
     let identifierArray = ["Profile","ChangePassword","","Language"]
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-            cell.textLabel?.text = titleArray[indexPath.row]
+            cell.textLabel?.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
             return cell
         }
     }

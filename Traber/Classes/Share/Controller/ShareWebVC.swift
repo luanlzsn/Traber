@@ -31,7 +31,7 @@ class ShareWebVC: AntController,UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         AntManage.hideMessage()
-        AntManage.showDelayToast(message: "Failed to load. Please try again!")
+        AntManage.showDelayToast(message: NSLocalizedString("Failed to load. Please try again", comment: ""))
         navigationController?.popViewController(animated: true)
     }
 

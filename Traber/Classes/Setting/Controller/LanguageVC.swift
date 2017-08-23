@@ -36,7 +36,7 @@ class LanguageVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = titleArray[indexPath.row]
+        cell.textLabel?.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
         if languageArray[indexPath.row] == LanguageManager.currentLanguageString() {
             cell.textLabel?.textColor = UIColor.init(rgb: 0x229D68)
         } else {
@@ -51,7 +51,15 @@ class LanguageVC: AntController,UITableViewDelegate,UITableViewDataSource {
         if languageStr != LanguageManager.currentLanguageString() {
             LanguageManager.saveLanguage(languageString: languageStr)
             tableView.reloadData()
+            reloadRootViewController()
         }
+    }
+    
+    // MARK: 重载视图
+    func reloadRootViewController() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
     }
 
     override func didReceiveMemoryWarning() {

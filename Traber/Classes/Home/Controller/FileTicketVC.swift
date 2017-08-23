@@ -11,7 +11,7 @@ import UIKit
 class FileTicketVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let sectionArray = [["Title":"File Ticket","Explain":"Ut at consectetur nisl, gravida egestats nisl. Aliquam at ligula est...MORE","Button":"File","Identifier":"File"],["Title":"Request a Paralegal","Explain":"Phasellus lacus odio, ultrices ac volutpat eget, vehicula. lobortis.enim...MORE","Button":"Request","Identifier":"Request"],["Title":"Pay the Fine","Explain":"Donec a auctor elit. Mauris ornare finibus nunc.et interdum dolor blandit...MORE","Button":"Pay","Identifier":"InformationReview"]]
+    let sectionArray = [["Title":"File Ticket", "Explain":"UI at consectetur nisl, gravida egestats nisl. Aliquam at ligula est...MORE", "Button":"File", "Identifier":"File"],["Title":"Request a Paralegal", "Explain":"Phasellus lacus odio, ultrices ac volutpat eget, vehicula. lobortis.enim...MORE", "Button":"Request", "Identifier":"Request"],["Title":"Pay the Fine", "Explain":"Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit...MORE", "Button":"Pay", "Identifier":"InformationReview"]]
     var dataDic: [String : String]!
     var image: UIImage!
     

@@ -18,16 +18,16 @@ class ForgotPasswordVC: AntController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        codeBtn.setTitle("GET CODE", for: .normal)
-        codeBtn.setTitleColor(UIColor.init(rgb: 0x229d68), for: .normal)
-        codeBtn.setTitleColor(UIColor.gray, for: .disabled)
-        codeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        codeBtn.contentHorizontalAlignment = .left
-        codeBtn.addTarget(self, action: #selector(self.obtainCodeClick), for: .touchUpInside)
-        let btnWidth = "GET CODE".width(for: UIFont.systemFont(ofSize: 14))
-        codeBtn.frame = CGRect(x: 0, y: 0, width: btnWidth + 10, height: 45)
-        codeField.rightView = codeBtn
-        codeField.rightViewMode = .always
+//        codeBtn.setTitle("GET CODE", for: .normal)
+//        codeBtn.setTitleColor(UIColor.init(rgb: 0x229d68), for: .normal)
+//        codeBtn.setTitleColor(UIColor.gray, for: .disabled)
+//        codeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+//        codeBtn.contentHorizontalAlignment = .left
+//        codeBtn.addTarget(self, action: #selector(self.obtainCodeClick), for: .touchUpInside)
+//        let btnWidth = "GET CODE".width(for: UIFont.systemFont(ofSize: 14))
+//        codeBtn.frame = CGRect(x: 0, y: 0, width: btnWidth + 10, height: 45)
+//        codeField.rightView = codeBtn
+//        codeField.rightViewMode = .always
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,19 +37,26 @@ class ForgotPasswordVC: AntController {
 
     @IBAction func nextClick(_ sender: UIButton) {
         if !Common.isValidateEmail(email: emailField.text!) {
-            AntManage.showDelayToast(message: "Please enter the corrent email!")
+            AntManage.showDelayToast(message: NSLocalizedString("Please enter the correct email", comment: ""))
             return
         }
-        if (codeField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Code is required!")
-            return
-        }
-        performSegue(withIdentifier: "SetPassword", sender: nil)
+//        if (codeField.text?.isEmpty)! {
+//            AntManage.showDelayToast(message: "Code is required!")
+//            return
+//        }
+//        performSegue(withIdentifier: "SetPassword", sender: nil)
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/forget", params: ["identity":emailField.text!, "source":"home"], successResult: { (_) in
+            AntManage.showDelayToast(message: "Please check your email")
+            weakSelf?.navigationController?.popViewController(animated: true)
+        }, failureResult: {
+            
+        })
     }
     
     func obtainCodeClick() {
         if !Common.isValidateEmail(email: emailField.text!) {
-            AntManage.showDelayToast(message: "Please enter the corrent email!")
+            AntManage.showDelayToast(message: NSLocalizedString("Please enter the correct email", comment: ""))
             return
         }
         count = 60

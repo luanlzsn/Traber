@@ -127,7 +127,7 @@ extension SpinnerButton : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "cell"
         let cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-        cell.textLabel?.text = strArray[indexPath.row]
+        cell.textLabel?.text = NSLocalizedString(strArray[indexPath.row], comment: "")
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         cell.textLabel?.textAlignment = .center
         cell.selectionStyle = .none
@@ -136,6 +136,6 @@ extension SpinnerButton : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.dim(string: strArray[indexPath.row])
+        self.dim(string: NSLocalizedString(strArray[indexPath.row], comment: ""))
     }
 }

@@ -30,32 +30,32 @@ class RegisterVC: AntController {
     @IBAction func registerClick(_ sender: UIButton) {
         UIApplication.shared.keyWindow?.endEditing(true)
         if !rememberBtn.isSelected {
-            AntManage.showDelayToast(message: "Please choice agreement!")
+            AntManage.showDelayToast(message: NSLocalizedString("Please choice agreement", comment: ""))
             return
         }
         if (firstName.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "First Name is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("First Name is required", comment: ""))
             return
         }
         if (lastName.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Last Name is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("Last Name is required", comment: ""))
             return
         }
         if !Common.isValidateEmail(email: email.text!) {
-            AntManage.showDelayToast(message: "Please enter the corrent email!")
+            AntManage.showDelayToast(message: NSLocalizedString("Please enter the correct email", comment: ""))
             return
         }
         if (password.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Password is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("Password is required", comment: ""))
             return
         }
         if password.text != confirmPassword.text {
-            AntManage.showDelayToast(message: "Two passwords are different!")
+            AntManage.showDelayToast(message: NSLocalizedString("Two passwords are different", comment: ""))
             return
         }
         weak var weakSelf = self
         AntManage.postRequest(path: "user/register", params: ["source":"home","identity":email.text!,"password":password.text!,"retypePwd":confirmPassword.text!,"firstname":firstName.text!,"lastname":lastName.text!,"agree":"true","referenceID":""], successResult: { (response) in
-            AntManage.showDelayToast(message: "Register success!")
+            AntManage.showDelayToast(message: NSLocalizedString("Successful registration", comment: ""))
             weakSelf?.navigationController?.popViewController(animated: true)
         }, failureResult: {})
     }

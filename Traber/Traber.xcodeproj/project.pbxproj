@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3528E71F4C08C90088E524 /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = 0F3528E61F4C08C90088E524 /* AutoGenStrings.py */; };
+		0F3528EE1F4C0AD00088E524 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F3528F01F4C0AD00088E524 /* Localizable.strings */; };
+		0F3528F31F4C0C4B0088E524 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3528F51F4C0C4B0088E524 /* Login.storyboard */; };
 		0F58A1651EE6A77100ADADE3 /* AntModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58A1641EE6A77100ADADE3 /* AntModel.swift */; };
 		0FF34E9C1F4AC37700931414 /* ShareWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF34E9B1F4AC37700931414 /* ShareWebVC.swift */; };
 		0FF8D07C1F4AE7C600C6FA73 /* OnlineChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8D07B1F4AE7C600C6FA73 /* OnlineChatVC.swift */; };
@@ -19,7 +22,6 @@
 		6B339CA61EB4B9BC00DB6BF4 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CA51EB4B9BC00DB6BF4 /* LanguageVC.swift */; };
 		6B339CA81EB4BB0500DB6BF4 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CA71EB4BB0500DB6BF4 /* LanguageManager.swift */; };
 		6B339CAB1EB4C62100DB6BF4 /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CAA1EB4C62100DB6BF4 /* NSBundle+Language.m */; };
-		6B339CB01EB4CB5700DB6BF4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B339CAF1EB4CB5700DB6BF4 /* Login.storyboard */; };
 		6B339CB21EB4CBBA00DB6BF4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B339CB11EB4CBBA00DB6BF4 /* LoginVC.swift */; };
 		6B4FFC031EA8E42A00DB1872 /* AntController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFD1EA8E42A00DB1872 /* AntController.swift */; };
 		6B4FFC041EA8E42A00DB1872 /* AntDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FFBFE1EA8E42A00DB1872 /* AntDefault.swift */; };
@@ -66,6 +68,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3528E61F4C08C90088E524 /* AutoGenStrings.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AutoGenStrings.py; sourceTree = "<group>"; };
+		0F3528EA1F4C09D30088E524 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		0F3528EB1F4C0A210088E524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0F3528F11F4C0AD10088E524 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F3528F21F4C0AD30088E524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0F3528F61F4C0C4E0088E524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		0F3528F81F4C0C500088E524 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
+		0F3528F91F4C0C590088E524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Login.strings"; sourceTree = "<group>"; };
 		0F58A1641EE6A77100ADADE3 /* AntModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntModel.swift; sourceTree = "<group>"; };
 		0FF34E9B1F4AC37700931414 /* ShareWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWebVC.swift; sourceTree = "<group>"; };
 		0FF8D07B1F4AE7C600C6FA73 /* OnlineChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineChatVC.swift; sourceTree = "<group>"; };
@@ -80,7 +90,6 @@
 		6B339CA71EB4BB0500DB6BF4 /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		6B339CA91EB4C62100DB6BF4 /* NSBundle+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Language.h"; sourceTree = "<group>"; };
 		6B339CAA1EB4C62100DB6BF4 /* NSBundle+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Language.m"; sourceTree = "<group>"; };
-		6B339CAF1EB4CB5700DB6BF4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		6B339CB11EB4CBBA00DB6BF4 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		6B4FFBFD1EA8E42A00DB1872 /* AntController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntController.swift; sourceTree = "<group>"; };
 		6B4FFBFE1EA8E42A00DB1872 /* AntDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntDefault.swift; sourceTree = "<group>"; };
@@ -142,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3528E51F4C08C90088E524 /* RunScript */ = {
+			isa = PBXGroup;
+			children = (
+				0F3528E61F4C08C90088E524 /* AutoGenStrings.py */,
+			);
+			path = RunScript;
+			sourceTree = "<group>";
+		};
 		41772E971B941AAAD898434E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +192,7 @@
 			children = (
 				6B339CAD1EB4CB4B00DB6BF4 /* Controller */,
 				6B339CAE1EB4CB4B00DB6BF4 /* View */,
-				6B339CAF1EB4CB5700DB6BF4 /* Login.storyboard */,
+				0F3528F51F4C0C4B0088E524 /* Login.storyboard */,
 				6B8CABE31EB5A922008B4967 /* LoginTextField.swift */,
 			);
 			path = Login;
@@ -202,6 +219,7 @@
 		6B4FFBFB1EA8E42A00DB1872 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0F3528E51F4C08C90088E524 /* RunScript */,
 				6B339CAC1EB4CB4B00DB6BF4 /* Login */,
 				6BD7605D1EA9E9D20016823B /* Help */,
 				6BD7605F1EA9E9D20016823B /* MyCases */,
@@ -280,6 +298,7 @@
 				6BB859611EA8CF0500D638A5 /* Assets.xcassets */,
 				6BB859631EA8CF0500D638A5 /* LaunchScreen.storyboard */,
 				6BB859661EA8CF0500D638A5 /* Info.plist */,
+				0F3528F01F4C0AD00088E524 /* Localizable.strings */,
 			);
 			path = Traber;
 			sourceTree = "<group>";
@@ -455,6 +474,7 @@
 				6BB859551EA8CF0400D638A5 /* Resources */,
 				B41E69C58DC3AFD8935BAA84 /* [CP] Embed Pods Frameworks */,
 				B8E75E72262DF98C9CB7EF6D /* [CP] Copy Pods Resources */,
+				0F3528E81F4C08F90088E524 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -490,6 +510,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 6BB8594E1EA8CF0400D638A5;
 			productRefGroup = 6BB859581EA8CF0400D638A5 /* Products */;
@@ -506,9 +527,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B339CB01EB4CB5700DB6BF4 /* Login.storyboard in Resources */,
+				0F3528F31F4C0C4B0088E524 /* Login.storyboard in Resources */,
 				6B1954171EB6085B00C920EC /* EditProfileCell.xib in Resources */,
 				6BB859651EA8CF0500D638A5 /* LaunchScreen.storyboard in Resources */,
+				0F3528EE1F4C0AD00088E524 /* Localizable.strings in Resources */,
+				0F3528E71F4C08C90088E524 /* AutoGenStrings.py in Resources */,
 				6BB859621EA8CF0500D638A5 /* Assets.xcassets in Resources */,
 				6BB859601EA8CF0400D638A5 /* Main.storyboard in Resources */,
 			);
@@ -531,6 +554,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		0F3528E81F4C08F90088E524 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "python ${SRCROOT}/Classes/RunScript/AutoGenStrings.py ${SRCROOT}/${TARGET_NAME}";
 		};
 		B41E69C58DC3AFD8935BAA84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -625,10 +661,31 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0F3528F01F4C0AD00088E524 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F3528F11F4C0AD10088E524 /* en */,
+				0F3528F21F4C0AD30088E524 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		0F3528F51F4C0C4B0088E524 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F3528F61F4C0C4E0088E524 /* Base */,
+				0F3528F81F4C0C500088E524 /* en */,
+				0F3528F91F4C0C590088E524 /* zh-Hans */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
 		6BB8595E1EA8CF0400D638A5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6BB8595F1EA8CF0400D638A5 /* Base */,
+				0F3528EA1F4C09D30088E524 /* en */,
+				0F3528EB1F4C0A210088E524 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -648,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -698,6 +756,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

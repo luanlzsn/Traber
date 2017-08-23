@@ -13,7 +13,7 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    let titleArray = ["First Name","Last Name","E-mail","Phone"]
+    let titleArray = ["First Name", "Last Name", "E-mail", "Phone"]
     var detailArray = [AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone]
     var editRow = -1
     var image: UIImage?
@@ -60,21 +60,21 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
     func choosePhotoClick() {
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         weak var weakSelf = self
-        sheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+        sheet.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: { (_) in
             weakSelf?.takingPictures(sourceType: .camera)
         }))
-        sheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (_) in
+        sheet.addAction(UIAlertAction(title: NSLocalizedString("Gallery", comment: ""), style: .default, handler: { (_) in
             weakSelf?.takingPictures(sourceType: .photoLibrary)
         }))
-        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        sheet.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
         navigationController?.present(sheet, animated: true, completion: nil)
     }
     
     func takingPictures(sourceType: UIImagePickerControllerSourceType) {
         if sourceType == .camera {
             if !UIImagePickerController.isSourceTypeAvailable(sourceType) {
-                let alert = UIAlertController(title: "Reminder", message: "Your device does not have a camera", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "YES", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: NSLocalizedString("Reminder", comment: ""), message: NSLocalizedString("Your device does not have a camera", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("YES", comment: ""), style: .cancel, handler: nil))
                 navigationController?.present(alert, animated: true, completion: nil)
                 return;
             }
@@ -144,14 +144,13 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
         } else {
             return nil
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell: EditProfileCell = tableView.dequeueReusableCell(withIdentifier: "EditProfileCell", for: indexPath) as! EditProfileCell
-            cell.titleLabel.text = titleArray[indexPath.row]
-            cell.textField.placeholder = titleArray[indexPath.row]
+            cell.titleLabel.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
+            cell.textField.placeholder = NSLocalizedString(titleArray[indexPath.row], comment: "")
             cell.textField.text = detailArray[indexPath.row]
             cell.indexPath = indexPath
             cell.delegate = self

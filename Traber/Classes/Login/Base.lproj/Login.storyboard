@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxw-St-aSa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxw-St-aSa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -203,19 +203,19 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="mail_icon"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwR-33-PQd">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwR-33-PQd">
                                 <rect key="frame" x="15" y="239" width="345" height="45"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIs-Ml-CIy">
-                                <rect key="frame" x="14.5" y="314" width="345" height="50"/>
+                                <rect key="frame" x="14.5" y="254" width="345" height="50"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.61568627450000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IE8-t7-vMO"/>
                                 </constraints>
-                                <state key="normal" title="NEXT"/>
+                                <state key="normal" title="SEND"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -233,7 +233,7 @@
                             <constraint firstItem="mwR-33-PQd" firstAttribute="height" secondItem="49h-ha-FLD" secondAttribute="height" id="N0C-m0-Cgk"/>
                             <constraint firstItem="49h-ha-FLD" firstAttribute="top" secondItem="tXT-zA-BVn" secondAttribute="bottom" constant="35" id="Tsh-sr-30I"/>
                             <constraint firstItem="49h-ha-FLD" firstAttribute="centerX" secondItem="gjH-Vh-vAj" secondAttribute="centerX" id="Tzb-kH-W6L"/>
-                            <constraint firstItem="YIs-Ml-CIy" firstAttribute="top" secondItem="mwR-33-PQd" secondAttribute="bottom" constant="30" id="cFQ-YN-Nld"/>
+                            <constraint firstItem="YIs-Ml-CIy" firstAttribute="top" secondItem="49h-ha-FLD" secondAttribute="bottom" constant="30" id="dME-3v-0Gi"/>
                             <constraint firstItem="tXT-zA-BVn" firstAttribute="centerX" secondItem="gjH-Vh-vAj" secondAttribute="centerX" id="ipB-xM-yr9"/>
                             <constraint firstItem="tXT-zA-BVn" firstAttribute="top" secondItem="fSO-r3-Vd3" secondAttribute="bottom" constant="40" id="kL4-3J-mxl"/>
                             <constraint firstItem="YIs-Ml-CIy" firstAttribute="centerX" secondItem="gjH-Vh-vAj" secondAttribute="centerX" id="llA-aD-drz"/>
@@ -389,7 +389,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="lock_icon"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YsB-Ai-Qpm" customClass="LoginTextField" customModule="Traber" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YsB-Ai-Qpm" customClass="LoginTextField" customModule="Traber" customModuleProvider="target">
                                         <rect key="frame" x="15" y="355" width="345" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -531,7 +531,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zxw-St-aSa" customClass="AntNavController" customModule="Traber" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nuu-3J-jhr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nuu-3J-jhr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

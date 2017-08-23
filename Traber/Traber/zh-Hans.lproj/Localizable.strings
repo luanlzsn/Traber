@@ -1,0 +1,112 @@
+/* 
+  Localizable.strings
+  Traber
+
+  Created by luan on 2017/8/22.
+  Copyright © 2017年 luan. All rights reserved.
+*/
+
+// MARK: - Login
+"Password" = "密码";
+"First Name" = "名字";
+"Last Name" = "姓氏";
+
+
+// MARK: - 个人资料
+"Profile" = "个人资料";
+"E-mail" = "电子邮件";
+"Phone" = "电话";
+"Store credit" = "积分";
+"Car Owner's Information" = "车主信息";
+"Name" = "名称";
+"Address" = "地址";
+"City" = "城市";
+"Country" = "国家";
+"Province" = "省";
+"Postcode" = "邮政编码";
+"Personal Information" = "个人信息";
+"Car Owner's Name" = "车主姓名";
+"License Address" = "许可证地址";
+"License City" = "许可证城市";
+"License Province" = "许可证省";
+"License Postcode" = "许可证邮政编码";
+"Update Information" = "更新信息";
+"Change Your Password" = "更改密码";
+"Your new password" = "您的新密码";
+
+// MARK: - 设置
+"Notification" = "通知";
+"Language" = "语言";
+"Logout" = "注销";
+"Change password" = "更改密码";
+"English" = "英文";
+"Chinese" = "中文";
+
+// MARK: - 支付
+"Payment Methods" = "付款方式";
+"Add Payment Method" = "添加付款方式";
+"Promotions" = "促销";
+"Add Promo/Gift Code" = "添加促销/礼品代码";
+
+// MARK: - 菜单
+"Home" = "主页";
+"Notifications" = "通知";
+"Payment" = "付款";
+"Share" = "共享";
+"Help" = "帮助";
+"Settings" = "设置";
+"More" = "更多";
+
+// MARK: - Ticket
+"Ticket Type" = "告票类型";
+"Parking" = "违章停车";
+"Traffic violation" = "交通违章";
+
+"Infraction Date" = "违规日期";
+"Parking Ticket" = "停车告票";
+"Traffic Ticket" = "交通告票";
+"My cases" = "我的案例";
+"Pay" = "支付";
+"File Ticket" = "告票";
+"File" = "文件";
+
+"Request a Paralegal" = "申请法律事务助手";
+"Request" = "请求";
+"Pay the Fine" = "支付罚款";
+
+// MARK: - 提示
+"Please enter the correct email" = "请输入正确的电子邮件";
+"Password is required" = "需要填写密码";
+"New password is required" = "需要填写新密码";
+"Confirm password is required" = "需要填写确认密码";
+"First Name is required" = "需要填写名字";
+"Last Name is required" = "需要填写姓氏";
+"Two passwords are different" = "两个密码不同";
+"Please choice agreement" = "请选择协议";
+"Confirm your password" = "确认您的密码";
+"Login success" = "登录成功";
+"Successful registration" = "成功注册";
+"Set Password success" = "设置密码成功";
+"Password is error" = "密码错误";
+"Two passwords are different" = "两个密码不同";
+"Change password success" = "变更密码成功";
+
+"Car owner's address is required" = "需要填写车主的地址";
+"Please choose Ticket Type" = "请选择告票类型";
+"City is required" = "需要填写城市";
+"Infraction Date is required" = "需要填写违规日期";
+"Unit no is required" = "需要填写单位号码";
+"Post code is required" = "需要填写邮政编码";
+
+"Camera" = "照相机";
+"Gallery" = "图片";
+"Cancel" = "取消";
+
+"Reminder" = "提示";
+"Your device does not have a camera" = "你的设备没有相机";
+"YES" = "确定";
+
+"Failed to load. Please try again" = "加载失败，请重试";
+"network server error" = "网络错误";
+
+

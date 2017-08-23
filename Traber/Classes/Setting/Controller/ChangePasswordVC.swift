@@ -11,7 +11,8 @@ import UIKit
 class ChangePasswordVC: AntController,UITableViewDelegate,UITableViewDataSource,EditProfile_Delegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["Password","Your new password","Confirm your password"]
+    let titleArray = ["Password", "Your new password", "Confirm your password"]
+    let toastArray = ["Password is required", "New password is required", "Confirm password is required"]
     var detailArray: [String] = ["","",""]
     var editIndexPath: IndexPath?
     
@@ -25,16 +26,16 @@ class ChangePasswordVC: AntController,UITableViewDelegate,UITableViewDataSource,
         UIApplication.shared.keyWindow?.endEditing(true)
         for str in detailArray {
             if str.isEmpty {
-                AntManage.showDelayToast(message: titleArray[detailArray.index(of: str)!] + " is required!")
+                AntManage.showDelayToast(message: NSLocalizedString(toastArray[detailArray.index(of: str)!], comment: ""))
                 return
             }
         }
         if detailArray[0] != UserDefaults.standard.object(forKey: kPassWordKey) as! String {
-            AntManage.showDelayToast(message: NSLocalizedString("Password is error!", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Password is error", comment: ""))
             return
         }
         if detailArray[1] != detailArray[2] {
-            AntManage.showDelayToast(message: NSLocalizedString("Two password is different!", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Two passwords are different", comment: ""))
             return
         }
         weak var weakSelf = self
@@ -80,7 +81,7 @@ class ChangePasswordVC: AntController,UITableViewDelegate,UITableViewDataSource,
         let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
         sectionLabel.font = UIFont.systemFont(ofSize: 12)
         sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
-        sectionLabel.text = "Change Your Password"
+        sectionLabel.text = NSLocalizedString("Change Your Password", comment: "")
         header.addSubview(sectionLabel)
         let lineView = UIView(frame: CGRect(x: 0, y: 54, width: kScreenWidth, height: 1))
         lineView.backgroundColor = UIColor.init(rgb: 0xc7c7cc)
@@ -92,7 +93,7 @@ class ChangePasswordVC: AntController,UITableViewDelegate,UITableViewDataSource,
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 100))
         let button = UIButton(type: .custom)
         button.frame = CGRect(x: 15, y: 25, width: kScreenWidth - 30, height: 50)
-        button.setTitle("Change Your Password", for: .normal)
+        button.setTitle(NSLocalizedString("Change Your Password", comment: ""), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.backgroundColor = UIColor.init(rgb: 0x229d68)
         button.layer.masksToBounds = true
@@ -105,8 +106,8 @@ class ChangePasswordVC: AntController,UITableViewDelegate,UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: EditProfileCell = tableView.dequeueReusableCell(withIdentifier: "EditProfileCell", for: indexPath) as! EditProfileCell
-        cell.titleLabel.text = titleArray[indexPath.row]
-        cell.textField.placeholder = titleArray[indexPath.row]
+        cell.titleLabel.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
+        cell.textField.placeholder = NSLocalizedString(titleArray[indexPath.row], comment: "")
         cell.textField.text = detailArray[indexPath.row]
         cell.textField.isSecureTextEntry = true
         cell.indexPath = indexPath

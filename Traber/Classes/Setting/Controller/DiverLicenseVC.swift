@@ -11,7 +11,7 @@ import UIKit
 class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,EditProfile_Delegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["Car Owner's Name","License Address","License City","License Province","License PostCode"]
+    let titleArray = ["Car Owner's Name", "License Address", "License City", "License Province", "License PostCode"]
     var detailArray = [AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode]
     var editIndexPath: IndexPath?
     weak var editProfile: EditProfileVC?
@@ -41,7 +41,6 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
         
         weak var weakSelf = self
         AntManage.postRequest(path: "user/edit", params: params, successResult: { (response) in
-            AntManage.showDelayToast(message: NSLocalizedString("update use info success", comment: ""))
             NotificationCenter.default.post(name: NSNotification.Name("UpdateInfoSuccess"), object: nil)
             weakSelf?.navigationController?.popViewController(animated: true)
         }, failureResult: {})
@@ -81,7 +80,7 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
         let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
         sectionLabel.font = UIFont.systemFont(ofSize: 12)
         sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
-        sectionLabel.text = "Car Owner's Information"
+        sectionLabel.text = NSLocalizedString("Car Owner's Information", comment: "")
         header.addSubview(sectionLabel)
         let lineView = UIView(frame: CGRect(x: 0, y: 54, width: kScreenWidth, height: 1))
         lineView.backgroundColor = UIColor.init(rgb: 0xc7c7cc)
@@ -93,7 +92,7 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 100))
         let button = UIButton(type: .custom)
         button.frame = CGRect(x: 15, y: 25, width: kScreenWidth - 30, height: 50)
-        button.setTitle("Update Information", for: .normal)
+        button.setTitle(NSLocalizedString("Update Information", comment: ""), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.backgroundColor = UIColor.init(rgb: 0x229d68)
         button.layer.masksToBounds = true
@@ -106,8 +105,8 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: EditProfileCell = tableView.dequeueReusableCell(withIdentifier: "EditProfileCell", for: indexPath) as! EditProfileCell
-        cell.titleLabel.text = titleArray[indexPath.row]
-        cell.textField.placeholder = titleArray[indexPath.row]
+        cell.titleLabel.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
+        cell.textField.placeholder = NSLocalizedString(titleArray[indexPath.row], comment: "")
         cell.textField.text = detailArray[indexPath.row]
         cell.indexPath = indexPath
         cell.delegate = self

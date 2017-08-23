@@ -43,7 +43,7 @@ class PaymentVC: AntController,UITableViewDelegate,UITableViewDataSource {
         let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
         sectionLabel.font = UIFont.systemFont(ofSize: 12)
         sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
-        sectionLabel.text = sectionTitleArray[section]
+        sectionLabel.text = NSLocalizedString(sectionTitleArray[section], comment: "")
         header.addSubview(sectionLabel)
         return header
     }
@@ -55,11 +55,11 @@ class PaymentVC: AntController,UITableViewDelegate,UITableViewDataSource {
                 cell.textLabel?.text = paymentMethods[indexPath.row]
                 cell.imageView?.image = UIImage(named: "visa_icon")
             } else {
-                cell.textLabel?.text = "Add Payment Method"
+                cell.textLabel?.text = NSLocalizedString("Add Payment Method", comment: "")
                 cell.imageView?.image = nil
             }
         } else {
-            cell.textLabel?.text = "Add Promo/Gift Code"
+            cell.textLabel?.text = NSLocalizedString("Add Promo/Gift Code", comment: "")
             cell.imageView?.image = nil
         }
         return cell

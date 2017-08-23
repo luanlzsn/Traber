@@ -23,10 +23,10 @@ class TicketVC: AntController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if dataDic["Type"] == "Parking" {
-            typeTitle.text = "Parking Ticket"
+        if dataDic["Type"] == NSLocalizedString("Parking", comment: "") {
+            typeTitle.text = NSLocalizedString("Parking Ticket", comment: "")
         } else {
-            typeTitle.text = "Traffic Ticket"
+            typeTitle.text = NSLocalizedString("Traffic Ticket", comment: "")
         }
         cityLabel.text = dataDic["City"]
         dateLabel.text = dataDic["Date"]

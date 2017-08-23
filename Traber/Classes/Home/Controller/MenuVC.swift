@@ -16,7 +16,7 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var nameLabel: UILabel!
     var confirm : ConfirmBlock?
     
-    let titleArray = ["Home","Notifications","My cases"/*,"Payment"*/,"Share","Help","Settings","More"]
+    let titleArray = ["Home", "Notifications", "My cases"/*,"Payment"*/, "Share", "Help", "Settings", "More"]
     let imgArray = ["menu_home","menu_notifications","menu_cases"/*,"menu_payment"*/,"menu_share","menu_help","menu_setting","menu_more"]
     let identifierArray = ["","ShareCase","MyCases"/*,"Payment"*/,"Share","Help","Settings",""]
     
@@ -84,7 +84,7 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : MenuCell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         cell.imgView.image = UIImage(named: imgArray[indexPath.row])
-        cell.title.text = titleArray[indexPath.row]
+        cell.title.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
 //        if indexPath.row == 1 {
 //            cell.number.isHidden = false
 //        } else {

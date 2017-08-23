@@ -21,14 +21,14 @@ class SetPasswordVC: AntController {
 
     @IBAction func confirmClick(_ sender: Any) {
         if (password.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Password is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("Password is required", comment: ""))
             return
         }
         if password.text != confirmPassword.text {
-            AntManage.showDelayToast(message: "Two passwords are different!")
+            AntManage.showDelayToast(message: NSLocalizedString("Two passwords are different", comment: ""))
             return
         }
-        AntManage.showDelayToast(message: "Set Password success!")
+        AntManage.showDelayToast(message: NSLocalizedString("Set Password success", comment: ""))
         _ = navigationController?.popToRootViewController(animated: true)
     }
     

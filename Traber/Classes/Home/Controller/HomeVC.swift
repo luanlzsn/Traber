@@ -39,9 +39,9 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             getUserInfo()
         }
         if isClear {
-            typeBtn.setTitle("Ticket Type", for: .normal)
+            typeBtn.setTitle(NSLocalizedString("Ticket Type", comment: ""), for: .normal)
             cityField.text = ""
-            dateBtn.setTitle("Infraction Date", for: .normal)
+            dateBtn.setTitle(NSLocalizedString("Infraction Date", comment: ""), for: .normal)
             unitNo.text = ""
             postCode.text = ""
             addressField.text = ""
@@ -58,45 +58,45 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     }
     
     @IBAction func typeClick(_ sender: SpinnerButton) {
-        sender.show(view: view, array: ["Parking","Traffic violation"]) { (type) in
+        sender.show(view: view, array: ["Parking", "Traffic violation"]) { (type) in
             sender.setTitle(type, for: .normal)
         }
     }
     
     @IBAction func photoClick(_ sender: UIButton) {
-        if typeBtn.currentTitle == "Ticket Type" {
-            AntManage.showDelayToast(message: "Please choose Ticket Type!")
+        if typeBtn.currentTitle == NSLocalizedString("Ticket Type", comment: "") {
+            AntManage.showDelayToast(message: NSLocalizedString("Please choose Ticket Type", comment: ""))
             return
         }
-        if dateBtn.currentTitle == "Infraction Date" {
-            AntManage.showDelayToast(message: "Please choose Infraction Date!")
+        if dateBtn.currentTitle == NSLocalizedString("Infraction Date", comment: "") {
+            AntManage.showDelayToast(message: NSLocalizedString("Infraction Date is required", comment: ""))
             return
         }
         if (unitNo.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Unit No. is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("Unit no is required", comment: ""))
             return
         }
         if (addressField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Car owner's address is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("Car owner's address is required", comment: ""))
             return
         }
         if (cityField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Please choose City!")
+            AntManage.showDelayToast(message: NSLocalizedString("City is required", comment: ""))
             return
         }
         if (postCode.text?.isEmpty)! {
-            AntManage.showDelayToast(message: "Post Code is required!")
+            AntManage.showDelayToast(message: NSLocalizedString("Post code is required", comment: ""))
             return
         }
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         weak var weakSelf = self
-        sheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+        sheet.addAction(UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: { (_) in
             weakSelf?.takingPictures(sourceType: .camera)
         }))
-        sheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (_) in
+        sheet.addAction(UIAlertAction(title: NSLocalizedString("Gallery", comment: ""), style: .default, handler: { (_) in
             weakSelf?.takingPictures(sourceType: .photoLibrary)
         }))
-        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        sheet.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
         navigationController?.present(sheet, animated: true, completion: nil)
     }
     
