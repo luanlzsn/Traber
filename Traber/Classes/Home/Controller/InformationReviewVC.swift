@@ -11,6 +11,7 @@ import UIKit
 class InformationReviewVC: AntController {
     
     @IBOutlet weak var fineAmount: UITextField!
+    @IBOutlet weak var fees: UILabel!
     var dataDic: [String : String]!
     var image: UIImage!
 
@@ -18,6 +19,11 @@ class InformationReviewVC: AntController {
         super.viewDidLoad()
 
         checkTextFieldLeftView(textField: fineAmount)
+        if dataDic["FightType"] == "File" {
+            fees.text = "$599"
+        } else {
+            fees.text = "$1.99"
+        }
     }
 
     @IBAction func paymentClick(_ sender: UIButton) {
@@ -30,8 +36,16 @@ class InformationReviewVC: AntController {
             AntManage.showDelayToast(message: NSLocalizedString("Fine amount is number", comment: ""))
             return
         }
-        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "isDriverlicense":"0", "imageType":"jpeg", "evidence":dataDic["Evidence"]!, "trial_language":dataDic["TrialLanguage"]!, "interpreter":dataDic["Interpreter"]!, "amount":599 + Int(fineAmount.text!)!, "carType":"", "unit_number":AntManage.userModel!.unit_number] as [String : Any]
-        params["ticketType"] = (dataDic["Type"] == "Parking") ? "1" : "2"
+        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "imageType":"jpeg", "evidence":dataDic["Evidence"]!, "trial_language":dataDic["TrialLanguage"]!, "interpreter":dataDic["Interpreter"]!, "amount":599 + Int(fineAmount.text!)!, "unit_number":AntManage.userModel!.unit_number] as [String : Any]
+        if dataDic["Type"] == "Parking" {
+            params["ticketType"] = "1"
+            params["isDriverlicense"] = "0"
+            params["carType"] = ""
+        } else {
+            params["ticketType"] = "2"
+            params["isDriverlicense"] = "1"
+            params["carType"] = "1"
+        }
         params["image"] = "data:image/jpeg;base64," + UIImageJPEGRepresentation(image, 0.1)!.base64EncodedString()
         params["fight_type"] = dataDic["FightType"]!
         weak var weakSelf = self
@@ -45,6 +59,7 @@ class InformationReviewVC: AntController {
         if segue.identifier == "TicketPayment" {
             let payment = segue.destination as! TicketPaymentVC
             payment.fineAmountStr = fineAmount.text!
+            payment.feesStr = fees.text!
             payment.ticketID = sender as! Int
         }
     }

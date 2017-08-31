@@ -11,13 +11,16 @@ import UIKit
 class TicketPaymentVC: AntController {
 
     @IBOutlet weak var fineAmount: UILabel!
+    @IBOutlet weak var fees: UILabel!
     var fineAmountStr = ""
+    var feesStr = ""
     var ticketID = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fineAmount.text = fineAmountStr
+        fees.text = feesStr
     }
     
     @IBAction func payClick(_ sender: UIButton) {

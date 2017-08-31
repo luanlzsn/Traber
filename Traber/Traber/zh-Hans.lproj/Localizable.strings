@@ -106,6 +106,9 @@
 "Fine amount is number" = "罚款金额是数字";
 "Pay Success!" = "支付成功！";
 
+"Submit Request" = "确认请求";
+"Cancel Request" = "取消请求";
+
 "Camera" = "照相机";
 "Gallery" = "图片";
 "Cancel" = "取消";

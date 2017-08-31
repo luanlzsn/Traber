@@ -744,6 +744,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fees" destination="gsa-Wv-PKb" id="WSo-rb-XlH"/>
                         <outlet property="fineAmount" destination="y5q-3B-2tY" id="2By-XD-Icf"/>
                         <segue destination="F0c-fp-Tfg" kind="show" identifier="TicketPayment" id="Ch7-Sj-ICC"/>
                     </connections>
@@ -840,6 +841,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fees" destination="rcP-Sx-gig" id="TyG-Rv-bu3"/>
                         <outlet property="fineAmount" destination="hHT-Sq-kF4" id="kWn-Iw-nub"/>
                     </connections>
                 </viewController>
@@ -3263,8 +3265,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="y0B-0t-ilS"/>
-        <segue reference="3Kd-Du-1Ow"/>
-        <segue reference="hT4-0H-xwf"/>
+        <segue reference="yWb-5z-Hnv"/>
+        <segue reference="tSb-ck-YY5"/>
         <segue reference="36S-3x-6re"/>
         <segue reference="uRf-pC-Pqa"/>
         <segue reference="6jp-fB-Mjx"/>

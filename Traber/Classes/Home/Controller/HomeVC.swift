@@ -135,7 +135,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             })
         } else if segue.identifier == "Ticket" {
             let ticket = segue.destination as! TicketVC
-            ticket.dataDic = ["Type":typeBtn.currentTitle!,"City":cityField.text!,"Date":dateBtn.currentTitle!,"UnitNo":unitNo.text!,"PostCode":postCode.text!,"Address":addressField.text!]
+            ticket.dataDic = ["Type":((typeBtn.currentTitle == NSLocalizedString("Parking", comment: "")) ? "Parking" : "Traffic violation"),"City":cityField.text!,"Date":dateBtn.currentTitle!,"UnitNo":unitNo.text!,"PostCode":postCode.text!,"Address":addressField.text!]
             ticket.image = sender as! UIImage
         }
     }
