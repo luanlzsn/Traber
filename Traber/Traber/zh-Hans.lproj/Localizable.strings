@@ -26,10 +26,10 @@
 "Postcode" = "邮政编码";
 "Personal Information" = "个人信息";
 "Car Owner's Name" = "车主姓名";
-"License Address" = "许可证地址";
-"License City" = "许可证城市";
-"License Province" = "许可证省";
-"License Postcode" = "许可证邮政编码";
+"License Address" = "驾照地址";
+"License City" = "驾照城市";
+"License Province" = "驾照省份";
+"License Postcode" = "驾照邮编";
 "Update Information" = "更新信息";
 "Change Your Password" = "更改密码";
 "Your new password" = "您的新密码";
@@ -66,6 +66,7 @@
 "Parking Ticket" = "停车告票";
 "Traffic Ticket" = "交通告票";
 "My cases" = "我的案例";
+"Case" = "案例";
 "Pay" = "支付";
 "File Ticket" = "告票";
 "File" = "文件";
@@ -78,6 +79,16 @@
 "I need interpreter" = "我需要翻译";
 "Yes" = "是";
 "No" = "否";
+
+// MARK: - MyCases
+"Ticket Information" = "罚单信息";
+"Ticket ID" = "罚单ID";
+"Amount" = "金额";
+"Additional Pay" = "附加金额";
+"Court Date" = "法庭日期";
+"Submit Time" = "提交时间";
+"License Name" = "驾照姓名";
+"License Country" = "驾照国家";
 
 // MARK: - 提示
 "Please enter the correct email" = "请输入正确的电子邮件";

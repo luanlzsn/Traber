@@ -388,6 +388,22 @@ vehicula sit amet.";
 /* Class = "UILabel"; text = "Fine Amount"; ObjectID = "nzz-pj-s9A"; */
 "nzz-pj-s9A.text" = "Fine Amount";
 
+//##################################################################################
+//#           AutoGenStrings            2017-08-31 17:09:35
+//##################################################################################
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "1um-Wu-Ido"; */
+"1um-Wu-Ido.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "    Online Chat"; ObjectID = "zhS-6W-peD"; */
+"zhS-6W-peD.normalTitle" = "    Online Chat";
+
+/* Class = "UILabel"; text = "Case 647376"; ObjectID = "M2D-RK-C4f"; */
+"M2D-RK-C4f.text" = "Case 647376";
+
+/* Class = "UIViewController"; title = "My case"; ObjectID = "oI4-26-zrn"; */
+"oI4-26-zrn.title" = "My case";
+
 /* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
 pretium sollicitudin ex, in euismod magna
 vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */

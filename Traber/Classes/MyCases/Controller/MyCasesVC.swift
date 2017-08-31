@@ -31,6 +31,9 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
             let detail = segue.destination as! MyCasesDetailVC
             detail.ticketArray = ticketArray
             detail.currentPage = sender as! Int
+        } else if segue.identifier == "CasesDetail" {
+            let detail = segue.destination as! CasesDetailVC
+            detail.ticketId = ticketArray[sender as! Int].ticketID
         }
     }
     
@@ -60,13 +63,14 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
         cell.infractionDate.text = model.infractionDate
         cell.city.text = ""
         cell.fileDate.text = model.submitTm.components(separatedBy: " ").first
-        cell.courtDate.text = ""
+        cell.courtDate.text = model.courtDate
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "MyCasesDetail", sender: indexPath.section)
+//        performSegue(withIdentifier: "MyCasesDetail", sender: indexPath.section)
+        performSegue(withIdentifier: "CasesDetail", sender: indexPath.section)
     }
 
     override func didReceiveMemoryWarning() {

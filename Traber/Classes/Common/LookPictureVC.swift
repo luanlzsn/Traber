@@ -20,6 +20,10 @@ class LookPictureVC: AntController,UICollectionViewDelegate,UICollectionViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if imgArray.count < 2 {
+            leftBtn.isHidden = true
+            rightBtn.isHidden = true
+        }
         leftBtn.setImage(UIImage(named: "case_left_arrow_green")?.byTintColor(UIColor.white), for: .normal)
         rightBtn.setImage(UIImage(named: "case_right_arrow_green")?.byTintColor(UIColor.white), for: .normal)
         collectionView.contentSize = CGSize(width: kScreenWidth * CGFloat(imgArray.count), height: 0)

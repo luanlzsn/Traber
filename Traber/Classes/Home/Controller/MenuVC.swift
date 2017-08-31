@@ -25,7 +25,7 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
         nameLabel.text = AntManage.userModel!.firstname
         headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal)
-        headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal, placeholderImage: nil, options: .refreshCached)
+        headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal, placeholderImage: UIImage(named: "default_image"), options: .refreshCached)
         if AntManage.userModel!.identity.isEmpty {
             getUserInfo()
         }
@@ -38,7 +38,7 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
             AntManage.userModel = UserModel.mj_object(withKeyValues: response)
             AntManage.userModel?.token = token
             weakSelf?.nameLabel.text = AntManage.userModel!.firstname
-            weakSelf?.headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal, placeholderImage: nil, options: .refreshCached)
+            weakSelf?.headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal, placeholderImage: UIImage(named: "default_image"), options: .refreshCached)
         }, failureResult: {})
     }
     

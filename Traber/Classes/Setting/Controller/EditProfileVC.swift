@@ -28,7 +28,7 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
         NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("UpdateInfoSuccess"), object: nil)
         tableView.register(UINib(nibName: "EditProfileCell", bundle: Bundle.main), forCellReuseIdentifier: "EditProfileCell")
         nameLabel.text = AntManage.userModel!.firstname + " " + AntManage.userModel!.lastname
-        imgView.sd_setImage(with: URL(string: AntManage.userModel!.image), placeholderImage: nil, options: .refreshCached)
+        imgView.sd_setImage(with: URL(string: AntManage.userModel!.image), placeholderImage: UIImage(named: "default_image"), options: .refreshCached)
         imgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.choosePhotoClick)))
         if AntManage.userModel!.identity.isEmpty {
             getUserInfo()
@@ -42,7 +42,7 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
             AntManage.userModel = UserModel.mj_object(withKeyValues: response)
             AntManage.userModel?.token = token
             weakSelf?.nameLabel.text = AntManage.userModel!.firstname + " " + AntManage.userModel!.lastname
-            weakSelf?.imgView.sd_setImage(with: URL(string: AntManage.userModel!.image), placeholderImage: nil, options: .refreshCached)
+            weakSelf?.imgView.sd_setImage(with: URL(string: AntManage.userModel!.image), placeholderImage: UIImage(named: "default_image"), options: .refreshCached)
             weakSelf?.detailArray = [AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone]
             weakSelf?.tableView.reloadData()
         }, failureResult: {

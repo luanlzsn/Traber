@@ -39,6 +39,14 @@ class ShareCaseVC: AntController,UICollectionViewDelegate,UICollectionViewDataSo
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CasesDetail" {
+            let detail = segue.destination as! CasesDetailVC
+            detail.ticketId = (sender as! TicketModel).ticketID
+        }
+    }
+    
     // MARK: UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ticketArray.count
@@ -46,14 +54,17 @@ class ShareCaseVC: AntController,UICollectionViewDelegate,UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ShareCaseCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShareCaseCell", for: indexPath) as! ShareCaseCell
-        let model = ticketArray[indexPath.section]
-        cell.caseNum.text = "Case " + model.caseNumber
+        let model = ticketArray[indexPath.row]
+        cell.caseNum.text = NSLocalizedString("Case", comment: "") + " " + model.caseNumber
+        cell.dateLabel.text = model.infractionDate
         cell.statusLabel.text = model.statusID
         cell.statusImage.isHidden = !(model.statusID == "Paid")
-        let imgStr = model.image.components(separatedBy: ",").last!
-        let imgData = Data(base64Encoded: imgStr, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
-        cell.imgView.image = UIImage(data: imgData!)
+        cell.imgView.setImageWith(URL(string: model.image)!, placeholderImage: UIImage(named: "default_image"))
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CasesDetail", sender: ticketArray[indexPath.row])
     }
     
     override func didReceiveMemoryWarning() {

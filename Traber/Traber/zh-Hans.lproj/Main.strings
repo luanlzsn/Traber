@@ -48,7 +48,7 @@
 "AYA-1R-6HM.text" = "邮政编码:";
 
 /* Class = "UILabel"; text = "Case 647376"; ObjectID = "BKd-h9-4pV"; */
-"BKd-h9-4pV.text" = "Case 647376";
+"BKd-h9-4pV.text" = "案例 647376";
 
 /* Class = "UIButton"; normalTitle = "Learn more"; ObjectID = "BMw-Di-YNm"; */
 "BMw-Di-YNm.normalTitle" = "了解详情";
@@ -387,6 +387,22 @@ vehicula sit amet。";
 
 /* Class = "UILabel"; text = "Fine Amount"; ObjectID = "nzz-pj-s9A"; */
 "nzz-pj-s9A.text" = "罚单金额";
+
+//##################################################################################
+//#           AutoGenStrings            2017-08-31 17:09:35
+//##################################################################################
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "1um-Wu-Ido"; */
+"1um-Wu-Ido.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "    Online Chat"; ObjectID = "zhS-6W-peD"; */
+"zhS-6W-peD.normalTitle" = "    线上聊天";
+
+/* Class = "UILabel"; text = "Case 647376"; ObjectID = "M2D-RK-C4f"; */
+"M2D-RK-C4f.text" = "案例 647376";
+
+/* Class = "UIViewController"; title = "My case"; ObjectID = "oI4-26-zrn"; */
+"oI4-26-zrn.title" = "我的案例";
 
 /* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
 pretium sollicitudin ex, in euismod magna
