@@ -13,6 +13,8 @@ class FileVC: AntController {
     @IBOutlet weak var btnOne: SpinnerButton!
     @IBOutlet weak var btnTwo: SpinnerButton!
     @IBOutlet weak var textField: UITextField!
+    var dataDic: [String : String]!
+    var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +23,13 @@ class FileVC: AntController {
     }
 
     @IBAction func buttonOneClick(_ sender: SpinnerButton) {
-        sender.show(view: view, array: ["Choice A","Choice B","Choice C"]) { (string) in
+        sender.show(view: view, array: ["Yes","No"]) { (string) in
             sender.setTitle(string, for: .normal)
         }
     }
     
     @IBAction func buttonTwoClick(_ sender: SpinnerButton) {
-        sender.show(view: view, array: ["Language A","Language B","Language C"]) { (string) in
+        sender.show(view: view, array: ["I don't need interpreter","I need interpreter"]) { (string) in
             sender.setTitle(string, for: .normal)
         }
     }
@@ -37,7 +39,27 @@ class FileVC: AntController {
     }
     
     @IBAction func sendFormClick(_ sender: UIButton) {
+        if btnOne.currentTitle == NSLocalizedString("Yes", comment: "") {
+            dataDic["Evidence"] = "Yes"
+        } else {
+            dataDic["Evidence"] = "No"
+        }
+        dataDic["TrialLanguage"] = textField.text!
+        if btnTwo.currentTitle == NSLocalizedString("I don't need interpreter", comment: "") {
+            dataDic["Interpreter"] = "No"
+        } else {
+            dataDic["Interpreter"] = "Yes"
+        }
         performSegue(withIdentifier: "InformationReview", sender: nil)
+    }
+    
+    // MARK: - 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "InformationReview" {
+            let info = segue.destination as! InformationReviewVC
+            info.dataDic = dataDic
+            info.image = image
+        }
     }
     
     func checkTextFieldLeftView(textField: UITextField) {

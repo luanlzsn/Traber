@@ -56,8 +56,8 @@
 /* Class = "UIViewController"; title = "首页"; ObjectID = "BYZ-38-t0r"; */
 "BYZ-38-t0r.title" = "首页";
 
-/* Class = "UIButton"; normalTitle = "Please choose"; ObjectID = "CMy-m3-0Vr"; */
-"CMy-m3-0Vr.normalTitle" = "Please choose";
+/* Class = "UIButton"; normalTitle = "I don't need interpreter"; ObjectID = "CMy-m3-0Vr"; */
+"CMy-m3-0Vr.normalTitle" = "I don't need interpreter";
 
 /* Class = "UIButton"; normalTitle = "  Pay"; ObjectID = "CcL-tD-m3s"; */
 "CcL-tD-m3s.normalTitle" = "  Pay";
@@ -171,8 +171,8 @@ vehicula sit amet.";
 /* Class = "UIViewController"; title = "Online Chat"; ObjectID = "PNa-h3-yLG"; */
 "PNa-h3-yLG.title" = "Online Chat";
 
-/* Class = "UIButton"; normalTitle = "Please choose"; ObjectID = "PfC-GL-v31"; */
-"PfC-GL-v31.normalTitle" = "Please choose";
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "PfC-GL-v31"; */
+"PfC-GL-v31.normalTitle" = "Yes";
 
 /* Class = "UILabel"; text = "Choose what to do"; ObjectID = "PlE-ui-QPv"; */
 "PlE-ui-QPv.text" = "Choose what to do";
@@ -276,17 +276,17 @@ vehicula sit amet.";
 /* Class = "UILabel"; text = "New York"; ObjectID = "gLa-Uz-nry"; */
 "gLa-Uz-nry.text" = "New York";
 
-/* Class = "UILabel"; text = "$5.99"; ObjectID = "gsa-Wv-PKb"; */
-"gsa-Wv-PKb.text" = "$5.99";
+/* Class = "UILabel"; text = "$599"; ObjectID = "gsa-Wv-PKb"; */
+"gsa-Wv-PKb.text" = "$599";
 
-/* Class = "UILabel"; text = "$5.99"; ObjectID = "hHT-Sq-kF4"; */
-"hHT-Sq-kF4.text" = "$5.99";
+/* Class = "UILabel"; text = "$0.00"; ObjectID = "hHT-Sq-kF4"; */
+"hHT-Sq-kF4.text" = "$0.00";
 
 /* Class = "UIViewController"; title = "Edit Profile"; ObjectID = "haA-Y6-YcQ"; */
 "haA-Y6-YcQ.title" = "Edit Profile";
 
-/* Class = "UITextField"; placeholder = "Type in"; ObjectID = "hb9-wJ-Sh8"; */
-"hb9-wJ-Sh8.placeholder" = "Type in";
+/* Class = "UITextField"; placeholder = "Trial language"; ObjectID = "hb9-wJ-Sh8"; */
+"hb9-wJ-Sh8.placeholder" = "Trial language";
 
 /* Class = "UIButton"; normalTitle = "Terms & Conditions"; ObjectID = "iih-8F-aNv"; */
 "iih-8F-aNv.normalTitle" = "Terms & Conditions";
@@ -339,8 +339,8 @@ vehicula sit amet.";
 /* Class = "UIButton"; normalTitle = "Send Form"; ObjectID = "rVL-85-sTO"; */
 "rVL-85-sTO.normalTitle" = "Send Form";
 
-/* Class = "UILabel"; text = "$5.99"; ObjectID = "rcP-Sx-gig"; */
-"rcP-Sx-gig.text" = "$5.99";
+/* Class = "UILabel"; text = "$599"; ObjectID = "rcP-Sx-gig"; */
+"rcP-Sx-gig.text" = "$599";
 
 /* Class = "UILabel"; text = "City:"; ObjectID = "rfg-uG-vud"; */
 "rfg-uG-vud.text" = "City:";
@@ -377,3 +377,20 @@ vehicula sit amet.";
 
 /* Class = "UILabel"; text = "City:"; ObjectID = "zHY-mW-qBB"; */
 "zHY-mW-qBB.text" = "City:";
+
+//##################################################################################
+//#           AutoGenStrings            2017-08-31 10:06:19
+//##################################################################################
+
+/* Class = "UITextField"; placeholder = "Fine Amount"; ObjectID = "y5q-3B-2tY"; */
+"y5q-3B-2tY.placeholder" = "Fine Amount";
+
+/* Class = "UILabel"; text = "Fine Amount"; ObjectID = "nzz-pj-s9A"; */
+"nzz-pj-s9A.text" = "Fine Amount";
+
+/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
+"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet.";

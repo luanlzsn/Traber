@@ -74,6 +74,11 @@
 "Request" = "请求";
 "Pay the Fine" = "支付罚款";
 
+"I don't need interpreter" = "我不需要翻译";
+"I need interpreter" = "我需要翻译";
+"Yes" = "是";
+"No" = "否";
+
 // MARK: - 提示
 "Please enter the correct email" = "请输入正确的电子邮件";
 "Password is required" = "需要填写密码";
@@ -97,6 +102,9 @@
 "Infraction Date is required" = "需要填写违规日期";
 "Unit no is required" = "需要填写单位号码";
 "Post code is required" = "需要填写邮政编码";
+"Fine amount is required" = "需要填写罚单金额";
+"Fine amount is number" = "罚款金额是数字";
+"Pay Success!" = "支付成功！";
 
 "Camera" = "照相机";
 "Gallery" = "图片";

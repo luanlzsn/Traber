@@ -22,7 +22,7 @@ class FileTicketVC: AntController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func addTicket(_ identifier: String) {
-        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "isDriverlicense":"1", "imageType":"jpeg", "evidence":"Yes", "trial_language":"", "interpreter":"no", "amount":"", "carType":"", "unit_number":AntManage.userModel!.unit_number] as [String : Any]
+        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "isDriverlicense":"1", "imageType":"jpeg", "evidence":"", "trial_language":"", "interpreter":"", "amount":"", "carType":"", "unit_number":AntManage.userModel!.unit_number] as [String : Any]
         params["ticketType"] = (dataDic["Type"] == "Parking") ? "1" : "2"
         params["image"] = "data:image/jpeg;base64," + UIImageJPEGRepresentation(image, 0.1)!.base64EncodedString()
         params["fight_type"] = "Paralegal"
@@ -30,6 +30,18 @@ class FileTicketVC: AntController,UITableViewDelegate,UITableViewDataSource {
         AntManage.postRequest(path: "ticket/add", params: params, successResult: { (response) in
             weakSelf?.performSegue(withIdentifier: identifier, sender: nil)
         }, failureResult: {})
+    }
+    
+    // MARK: - 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "File" {
+            let file = segue.destination as! FileVC
+            dataDic["FightType"] = "File"
+            file.dataDic = dataDic
+            file.image = image
+        } else {
+            
+        }
     }
     
     // MARK: UITableViewDelegate,UITableViewDataSource
@@ -58,7 +70,8 @@ class FileTicketVC: AntController,UITableViewDelegate,UITableViewDataSource {
         weak var weakSelf = self
         cell.ticketButtonClick = { (_) in
             if indexPath.section == 0 {
-                weakSelf?.addTicket("File")
+//                weakSelf?.addTicket("File")
+                weakSelf?.performSegue(withIdentifier: "File", sender: nil)
             } else if indexPath.section == 1 {
                 weakSelf?.addTicket("Request")
             } else {
