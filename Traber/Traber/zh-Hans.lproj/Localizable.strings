@@ -89,6 +89,7 @@
 "Submit Time" = "提交时间";
 "License Name" = "驾照姓名";
 "License Country" = "驾照国家";
+"Chat History" = "对话记录";
 
 // MARK: - 提示
 "Please enter the correct email" = "请输入正确的电子邮件";
@@ -119,6 +120,10 @@
 
 "Submit Request" = "确认请求";
 "Cancel Request" = "取消请求";
+
+"Message is required" = "需要填写留言";
+
+"NO MORE" = "没有更多";
 
 "Camera" = "照相机";
 "Gallery" = "图片";

@@ -51,7 +51,9 @@ class CasesDetailVC: AntController,UITableViewDelegate,UITableViewDataSource {
     }
 
     @IBAction func onlineChatClick(_ sender: UIButton) {
-        
+        if ticketModel != nil {
+            performSegue(withIdentifier: "OnlineChatList", sender: nil)
+        }
     }
     
     // MARK: 跳转
@@ -60,6 +62,9 @@ class CasesDetailVC: AntController,UITableViewDelegate,UITableViewDataSource {
             let lookPicture = segue.destination as! LookPictureVC
             lookPicture.imgArray = [ticketModel!.image]
             lookPicture.currentPage  = 0
+        } else if segue.identifier == "OnlineChatList" {
+            let chat = segue.destination as! OnlineChatListVC
+            chat.ticketID = ticketModel!.ticketID
         }
     }
     
@@ -96,7 +101,9 @@ class CasesDetailVC: AntController,UITableViewDelegate,UITableViewDataSource {
         if indexPath.section == 0 {
             let cell: CasesDetailImageCell = tableView.dequeueReusableCell(withIdentifier: "CasesDetailImageCell", for: indexPath) as! CasesDetailImageCell
             cell.caseNum.text = NSLocalizedString("Case", comment: "") + " " + ticketModel!.caseNumber
-            cell.caseImage.setImageWith(URL(string: ticketModel!.image)!, placeholderImage: UIImage(named: "default_image"))
+            let imgStr = ticketModel!.image.components(separatedBy: ",").last!
+            let imgData = Data(base64Encoded: imgStr, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+            cell.caseImage.image = UIImage(data: imgData!)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CasesDetailCell", for: indexPath)

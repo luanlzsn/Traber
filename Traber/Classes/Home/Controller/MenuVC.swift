@@ -96,6 +96,10 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == titleArray.count - 1 {
+            AntManage.showDelayToast(message: NSLocalizedString("NO MORE", comment: ""))
+            return
+        }
         if confirm != nil {
             confirm!(identifierArray[indexPath.row])
         }

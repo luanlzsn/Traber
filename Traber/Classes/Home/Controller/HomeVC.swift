@@ -21,7 +21,8 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(checkChatStatus), userInfo: nil, repeats: true)
+        navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon_white")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         checkTextFieldLeftView(textField: cityField)
         checkCityTextFieldRightView()
@@ -47,6 +48,22 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             addressField.text = ""
         }
         isClear = true
+    }
+    
+    // MARK: - 获取chat状态
+    func checkChatStatus() {
+        if AntManage.isLogin {
+            weak var weakSelf = self
+            AntManage.postRequest(path: "chat/status", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+                let hasTicketChat = response["hasTicketChat"] as! Int
+                let hasUserChat = response["hasUserChat"] as! Int
+                if hasTicketChat + hasUserChat > 0 {
+                    weakSelf?.navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                } else {
+                    weakSelf?.navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon_white")
+                }
+            }, failureResult: {})
+        }
     }
     
     func getUserInfo() {

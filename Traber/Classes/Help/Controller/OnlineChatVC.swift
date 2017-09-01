@@ -26,7 +26,7 @@ class OnlineChatVC: AntController,UITextViewDelegate {
             return
         }
         weak var weakSelf = self
-        AntManage.postRequest(path: "user/info", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "agentID":0, "message":textView.text], successResult: { (response) in
+        AntManage.postRequest(path: "chat/add/user", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "agentID":0, "message":textView.text], successResult: { (response) in
             AntManage.showDelayToast(message: "Send message success")
             weakSelf?.navigationController?.popViewController(animated: true)
         }, failureResult: {})

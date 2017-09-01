@@ -74,3 +74,12 @@ class TicketModel: AntModel {
     var isDetail = false//是否请求了详情
     
 }
+
+class ChatModel: AntModel {
+    var chatID = 0
+    var isUser = false
+    var agentID = 0
+    var message = ""
+    var tm = ""
+    
+}

@@ -404,6 +404,41 @@ vehicula sit amet.";
 /* Class = "UIViewController"; title = "My case"; ObjectID = "oI4-26-zrn"; */
 "oI4-26-zrn.title" = "My case";
 
+//##################################################################################
+//#           AutoGenStrings            2017-09-01 15:03:45
+//##################################################################################
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4Zb-C4-ecD"; */
+"4Zb-C4-ecD.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LKO-ph-MdF"; */
+"LKO-ph-MdF.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "fML-Ib-pjf"; */
+"fML-Ib-pjf.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Pc-d2-qzQ"; */
+"0Pc-d2-qzQ.text" = "Label";
+
+/* Class = "UIViewController"; title = "Chat"; ObjectID = "YK7-gq-bLv"; */
+"YK7-gq-bLv.title" = "Chat";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JhX-Yu-vlX"; */
+"JhX-Yu-vlX.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "H6Z-iw-FDW"; */
+"H6Z-iw-FDW.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Es2-RZ-kKL"; */
+"Es2-RZ-kKL.text" = "Label";
+
+//##################################################################################
+//#           AutoGenStrings            2017-09-01 15:06:57
+//##################################################################################
+
+/* Class = "UITextField"; placeholder = "Type your message..."; ObjectID = "7Si-hh-sBi"; */
+"7Si-hh-sBi.placeholder" = "Type your message...";
+
 /* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
 pretium sollicitudin ex, in euismod magna
 vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
