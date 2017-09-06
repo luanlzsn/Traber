@@ -52,7 +52,12 @@ class LoginVC: AntController {
     }
     
     @IBAction func facebookLoginClick(_ sender: UIButton) {
-        
+        weak var weakSelf = self
+        ShareSDK.getUserInfo(SSDKPlatformType.typeFacebook) { (state, user, error) in
+            if state == SSDKResponseState.success {
+                
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

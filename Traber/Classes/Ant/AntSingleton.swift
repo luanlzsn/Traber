@@ -21,6 +21,7 @@ class AntSingleton: NSObject {
     var progressCount = 0//转圈数量
     var isLogin = false//是否登录
     var userModel: UserModel?
+    let kNoHUDPathArray = ["chat/status"]
     
     private override init () {
         manager.responseSerializer.acceptableContentTypes = Set(arrayLiteral: "application/json","text/json","text/javascript","text/html")
@@ -31,7 +32,9 @@ class AntSingleton: NSObject {
     //MARK: - post请求
     func postRequest(path:String, params:[String : Any]?, successResult:@escaping ([String : Any]) -> Void, failureResult:@escaping () -> Void) {
         AntLog(message: "请求接口：\(path),请求参数：\(String(describing: params))")
-        showMessage(message: "")
+        if !kNoHUDPathArray.contains(path) {
+            showMessage(message: "")
+        }
         weak var weakSelf = self
         
         manager.post(path, parameters: params, progress: nil, success: { (task, response) in

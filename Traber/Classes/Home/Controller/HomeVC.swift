@@ -141,7 +141,8 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             weak var weakSelf = self
             menu.checkSelectMenu(confirmBlock: { (identifier) in
                 if !((identifier as! String).isEmpty) {
-                    weakSelf?.perform(#selector(weakSelf!.performSegue(withIdentifier:sender:)), with: identifier as! String, afterDelay: 0.01)
+//                    weakSelf?.perform(#selector(weakSelf!.performSegue(withIdentifier:sender:)), with: identifier as! String, afterDelay: 0.01)
+                    weakSelf?.perform(#selector(weakSelf!.pushController(_:)), with: identifier, afterDelay: 0.01)
                 }
             })
         } else if segue.identifier == "InfractionDate" {
@@ -155,6 +156,10 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             ticket.dataDic = ["Type":((typeBtn.currentTitle == NSLocalizedString("Parking", comment: "")) ? "Parking" : "Traffic violation"),"City":cityField.text!,"Date":dateBtn.currentTitle!,"UnitNo":unitNo.text!,"PostCode":postCode.text!,"Address":addressField.text!]
             ticket.image = sender as! UIImage
         }
+    }
+    
+    func pushController(_ identifier: String) {
+        performSegue(withIdentifier: identifier, sender: nil)
     }
     
     //MARK: UIImagePickerControllerDelegate

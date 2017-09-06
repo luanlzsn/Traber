@@ -34,7 +34,7 @@ class OnlineChatListVC: AntController,UITableViewDelegate,UITableViewDataSource 
             params = ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "chatID":0, "count":count]
         } else {
             path = "chat/ticket"
-            params = ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "chatID":0, "ticketID":ticketID, "count":count]
+            params = ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "chatID":0, "ticketID":ticketID, "countNumber":count]
         }
         
         AntManage.postRequest(path: path, params: params, successResult: { (response) in
@@ -53,7 +53,9 @@ class OnlineChatListVC: AntController,UITableViewDelegate,UITableViewDataSource 
     }
     
     func checkTableView() {
-        tableView.scrollToRow(at: IndexPath(row: chatArray.count - 1, section: 0), at: .none, animated: false)
+        if chatArray.count > 1 {
+            tableView.scrollToRow(at: IndexPath(row: chatArray.count - 1, section: 0), at: .none, animated: false)
+        }
     }
 
     @IBAction func submitMessageClick(_ sender: UIButton) {

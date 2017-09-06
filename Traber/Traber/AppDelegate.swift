@@ -26,8 +26,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         
         LanguageManager.setupCurrentLanguage()
+        initializationShareSDK()
         
         return true
+    }
+    
+    func initializationShareSDK() {
+        ShareSDK.registerActivePlatforms([SSDKPlatformType.typeFacebook.rawValue], onImport: { (platform : SSDKPlatformType) in
+            switch platform {
+                case SSDKPlatformType.typeFacebook:
+                    ShareSDKConnector.connectFacebookMessenger(FacebookConnector.classForCoder())
+                default:
+                    break
+            }
+        }) { (platform : SSDKPlatformType , appInfo : NSMutableDictionary?) in
+            switch platform {
+                case SSDKPlatformType.typeFacebook:
+                    appInfo?.ssdkSetupFacebook(byApiKey: "212344722504668", appSecret: "7f64dc9c433c1ec80cab39658635c9b7", displayName: "traffic ticket",authType: SSDKAuthTypeBoth)
+                default:
+                    break
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

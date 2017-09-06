@@ -6,3 +6,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "NSBundle+Language.h"
 
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import <FacebookConnector/FacebookConnector.h>
+

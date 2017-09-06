@@ -16,5 +16,8 @@ target 'Traber' do
     pod 'AFNetworking'
     pod 'MJExtension'
     pod 'MJRefresh'
+    pod 'ShareSDK3'
+    pod 'MOBFoundation'
+    pod 'ShareSDK3/ShareSDKPlatforms/Facebook'
     
 end
