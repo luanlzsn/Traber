@@ -32,6 +32,7 @@ PODS:
     - MOBFoundation
   - ShareSDK3/ShareSDKPlatforms/Facebook (4.0.1):
     - MOBFoundation
+  - Stripe (11.2.0)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - SDWebImage
   - ShareSDK3
   - ShareSDK3/ShareSDKPlatforms/Facebook
+  - Stripe
   - YYCategories
 
 SPEC CHECKSUMS:
@@ -59,8 +61,9 @@ SPEC CHECKSUMS:
   MOBFoundation: d5e27c4638d911d3c7501aa5df458955d4814359
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
+  Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: 6ad5c6331517a1de41e146e518180a15e88686e2
+PODFILE CHECKSUM: 225e1fc5236f9135d5a1b9371a4d94f6fd162ac1
 
 COCOAPODS: 1.2.1

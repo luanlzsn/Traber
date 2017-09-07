@@ -19,5 +19,6 @@ target 'Traber' do
     pod 'ShareSDK3'
     pod 'MOBFoundation'
     pod 'ShareSDK3/ShareSDKPlatforms/Facebook'
+    pod 'Stripe'
     
 end

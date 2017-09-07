@@ -202,7 +202,7 @@ vehicula sit amet.";
 "UhP-Y2-Wlx.title" = "Ticket EZ";
 
 /* Class = "UILabel"; text = "    elsiegray657465"; ObjectID = "V3v-u4-ku3"; */
-"V3v-u4-ku3.text" = "    elsiegray657465";
+//"V3v-u4-ku3.text" = "    elsiegray657465";
 
 /* Class = "UIButton"; normalTitle = "    Call customer service"; ObjectID = "Vun-6k-hej"; */
 "Vun-6k-hej.normalTitle" = "    Call customer service";
@@ -247,7 +247,7 @@ vehicula sit amet.";
 "bzZ-5V-5Me.normalTitle" = "Submit";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "c08-Af-DbQ"; */
-"c08-Af-DbQ.text" = "Title";
+//"c08-Af-DbQ.text" = "Title";
 
 /* Class = "UITextField"; placeholder = "Unit no:"; ObjectID = "cxL-dV-MWq"; */
 "cxL-dV-MWq.placeholder" = "Unit no:";
@@ -346,7 +346,7 @@ vehicula sit amet.";
 "rfg-uG-vud.text" = "City:";
 
 /* Class = "UILabel"; text = "    elsiegray657465"; ObjectID = "s8s-pX-A4q"; */
-"s8s-pX-A4q.text" = "    elsiegray657465";
+//"s8s-pX-A4q.text" = "    elsiegray657465";
 
 /* Class = "UILabel"; text = "Ut at consectetur nisl, gravida egestas nisl. Aliquam at ligula est. Phasellus lacus odio, ultrices ac volutpat eget, vehicula lobortis enim. Donec a auctor elit."; ObjectID = "tTh-xy-r77"; */
 "tTh-xy-r77.text" = "Ut at consectetur nisl, gravida egestas nisl. Aliquam at ligula est. Phasellus lacus odio, ultrices ac volutpat eget, vehicula lobortis enim. Donec a auctor elit.";
@@ -439,6 +439,37 @@ vehicula sit amet.";
 /* Class = "UITextField"; placeholder = "Type your message..."; ObjectID = "7Si-hh-sBi"; */
 "7Si-hh-sBi.placeholder" = "Type your message...";
 
+//##################################################################################
+//#           AutoGenStrings            2017-09-07 13:47:35
+//##################################################################################
+
+/* Class = "UIButton"; normalTitle = "Submit Payment"; ObjectID = "YBl-t9-N9B"; */
+"YBl-t9-N9B.normalTitle" = "Submit Payment";
+
+/* Class = "UITextField"; placeholder = "Card Number"; ObjectID = "pXf-f6-42A"; */
+"pXf-f6-42A.placeholder" = "Card Number";
+
+/* Class = "UITextField"; placeholder = "Card Holder's Name"; ObjectID = "tIy-wy-AJX"; */
+"tIy-wy-AJX.placeholder" = "Card Holder's Name";
+
+/* Class = "UILabel"; text = "Expiration Date"; ObjectID = "jex-dA-YF6"; */
+"jex-dA-YF6.text" = "Expiration Date";
+
+/* Class = "UILabel"; text = "CVC"; ObjectID = "sHY-6X-MTc"; */
+"sHY-6X-MTc.text" = "CVC";
+
+/* Class = "UILabel"; text = "Your total fee is:"; ObjectID = "WK1-mZ-Jod"; */
+"WK1-mZ-Jod.text" = "Your total fee is:";
+
+/* Class = "UILabel"; text = "Card Holder's Name"; ObjectID = "dKP-yW-8wQ"; */
+"dKP-yW-8wQ.text" = "Card Holder's Name";
+
+/* Class = "UITextField"; placeholder = "MM/YYYY"; ObjectID = "rsQ-l7-qKr"; */
+"rsQ-l7-qKr.placeholder" = "MM/YYYY";
+
+/* Class = "UILabel"; text = "Card Number"; ObjectID = "bzA-dc-Lv3"; */
+"bzA-dc-Lv3.text" = "Card Number";
+
 /* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
 pretium sollicitudin ex, in euismod magna
 vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
@@ -446,9 +477,8 @@ vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
 pretium sollicitudin ex, in euismod magna
 vehicula sit amet.";
 
-//##################################################################################
-//#           AutoGenStrings            2017-09-01 16:18:13
-//##################################################################################
+/* Class = "UITextField"; placeholder = "CVC"; ObjectID = "uVy-9X-QQo"; */
+"uVy-9X-QQo.placeholder" = "CVC";
 
-/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
-"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet.";
+
+"s6s-uj-Xe5.text" = "$0";

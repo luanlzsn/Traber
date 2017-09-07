@@ -87,6 +87,7 @@
 		0F8C47261F59096600DB1965 /* OnlineUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUserCell.swift; sourceTree = "<group>"; };
 		0F8C47281F59098900DB1965 /* OnlineStaffCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineStaffCell.swift; sourceTree = "<group>"; };
 		0FA5234C1F57A924000E3B2E /* TicketPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketPaymentVC.swift; sourceTree = "<group>"; };
+		0FD1653E1F5FCB510025FC12 /* Traber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Traber.entitlements; sourceTree = "<group>"; };
 		0FE085BB1F58053C000D8CC9 /* CasesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesDetailVC.swift; sourceTree = "<group>"; };
 		0FE085C11F5808EE000D8CC9 /* CasesDetailImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesDetailImageCell.swift; sourceTree = "<group>"; };
 		0FF34E9B1F4AC37700931414 /* ShareWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWebVC.swift; sourceTree = "<group>"; };
@@ -314,6 +315,7 @@
 		6BB859591EA8CF0400D638A5 /* Traber */ = {
 			isa = PBXGroup;
 			children = (
+				0FD1653E1F5FCB510025FC12 /* Traber.entitlements */,
 				6B4FFC0C1EA8E81A00DB1872 /* Traber-Bridging-Header.h */,
 				6BB8595A1EA8CF0400D638A5 /* AppDelegate.swift */,
 				6BB8595E1EA8CF0400D638A5 /* Main.storyboard */,
@@ -526,6 +528,11 @@
 						DevelopmentTeam = 4AK99QTKB7;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -834,6 +841,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Traber/Traber.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Traber/Info.plist;
@@ -855,6 +863,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Traber/Traber.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Traber/Info.plist;

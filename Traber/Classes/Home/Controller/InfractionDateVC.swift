@@ -12,15 +12,26 @@ class InfractionDateVC: AntController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     var confirm : ConfirmBlock?
+    var isCardExpirationDate = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        datePicker.maximumDate = Date.init()
+        
+        if isCardExpirationDate {
+            datePicker.minimumDate = Date.init()
+        } else {
+            datePicker.maximumDate = Date.init()
+        }
     }
     
     func checkInfractionDate(confirmBlock: @escaping ConfirmBlock) {
         confirm = confirmBlock
+        isCardExpirationDate = false
+    }
+    
+    func checkCardExpirationDate(confirmBlock: @escaping ConfirmBlock) {
+        confirm = confirmBlock
+        isCardExpirationDate = true
     }
 
     @IBAction func cancelClick(_ sender: UIBarButtonItem) {
@@ -30,7 +41,11 @@ class InfractionDateVC: AntController {
     
     @IBAction func confirmClick(_ sender: UIBarButtonItem) {
         if confirm != nil {
-            confirm!(Common.obtainStringWithDate(date: datePicker.date, formatterStr: "yyyy/MM/dd"))
+            if isCardExpirationDate {
+                confirm!(Common.obtainStringWithDate(date: datePicker.date, formatterStr: "MM/yyyy"))
+            } else {
+                confirm!(Common.obtainStringWithDate(date: datePicker.date, formatterStr: "yyyy/MM/dd"))
+            }
             confirm = nil
         }
         dismiss(animated: true, completion: nil)

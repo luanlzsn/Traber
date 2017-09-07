@@ -19,7 +19,7 @@ func AntLog<N>(message:N,fileName:String = #file,methodName:String = #function,l
 }
 
 #if DEBUG
-    let kRequestBaseUrl = "http://123.59.155.131:8080/ruanfan/api/"
+    let kRequestBaseUrl = "http://123.59.155.131:8080/ruanfan/api/"    
 #else
     let kRequestBaseUrl = "http://123.59.155.131:8080/ruanfan/api/"
 #endif

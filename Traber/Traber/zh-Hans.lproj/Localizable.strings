@@ -123,6 +123,12 @@
 
 "Message is required" = "需要填写留言";
 
+"Card Holder's Name is required" = "需要填写持卡人姓名";
+"Card Number is required" = "需要填写卡号";
+"Expiration Date is required" = "需要填写过期日期";
+"CVC is required" = "需要填写验证号";
+
+
 "NO MORE" = "没有更多";
 
 "Camera" = "照相机";

@@ -14,6 +14,7 @@ class TicketPaymentVC: AntController {
     @IBOutlet weak var fees: UILabel!
     var fineAmountStr = ""
     var feesStr = ""
+    var amout = ""
     var ticketID = 0
     
     override func viewDidLoad() {
@@ -24,11 +25,20 @@ class TicketPaymentVC: AntController {
     }
     
     @IBAction func payClick(_ sender: UIButton) {
-        weak var weakSelf = self
-        AntManage.postRequest(path: "ticket/paySuccess", params: ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID], successResult: { (_) in
-            AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
-            weakSelf?.navigationController?.popToRootViewController(animated: true)
-        }, failureResult: {})
+        performSegue(withIdentifier: "Payment", sender: nil)
+//        weak var weakSelf = self
+//        AntManage.postRequest(path: "ticket/paySuccess", params: ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID], successResult: { (_) in
+//            AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
+//            weakSelf?.navigationController?.popToRootViewController(animated: true)
+//        }, failureResult: {})
+    }
+    
+    // MARK: - 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Payment" {
+            let payment = segue.destination as! PaymentVC
+            payment.amout = amout
+        }
     }
 
     override func didReceiveMemoryWarning() {

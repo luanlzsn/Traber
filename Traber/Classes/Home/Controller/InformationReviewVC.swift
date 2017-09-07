@@ -36,7 +36,13 @@ class InformationReviewVC: AntController {
             AntManage.showDelayToast(message: NSLocalizedString("Fine amount is number", comment: ""))
             return
         }
-        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "imageType":"jpeg", "evidence":dataDic["Evidence"]!, "trial_language":dataDic["TrialLanguage"]!, "interpreter":dataDic["Interpreter"]!, "amount":599 + Int(fineAmount.text!)!, "unit_number":AntManage.userModel!.unit_number] as [String : Any]
+        var amout = ""
+        if dataDic["FightType"] == "File" {
+            amout = "\(599 + Int(fineAmount.text!)!)"
+        } else {
+            amout = String.init(format: "%.2f", 1.99 + Float(fineAmount.text!)!)
+        }
+        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":AntManage.userModel!.licenseName, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "imageType":"jpeg", "evidence":dataDic["Evidence"]!, "trial_language":dataDic["TrialLanguage"]!, "interpreter":dataDic["Interpreter"]!, "amount":amout, "unit_number":AntManage.userModel!.unit_number] as [String : Any]
         if dataDic["Type"] == "Parking" {
             params["ticketType"] = "1"
             params["isDriverlicense"] = "0"
@@ -50,7 +56,7 @@ class InformationReviewVC: AntController {
         params["fight_type"] = dataDic["FightType"]!
         weak var weakSelf = self
         AntManage.postRequest(path: "ticket/add", params: params, successResult: { (response) in
-            weakSelf?.performSegue(withIdentifier: "TicketPayment", sender: response["ticketID"])
+            weakSelf?.performSegue(withIdentifier: "TicketPayment", sender: ["TicketID":response["ticketID"], "Amount":amout])
         }, failureResult: {})
     }
     
@@ -60,7 +66,8 @@ class InformationReviewVC: AntController {
             let payment = segue.destination as! TicketPaymentVC
             payment.fineAmountStr = fineAmount.text!
             payment.feesStr = fees.text!
-            payment.ticketID = sender as! Int
+            payment.ticketID = (sender as! [String : Any])["TicketID"] as! Int
+            payment.amout = (sender as! [String : Any])["Amount"] as! String
         }
     }
     

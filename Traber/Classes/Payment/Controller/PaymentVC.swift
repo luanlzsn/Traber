@@ -7,68 +7,81 @@
 //
 
 import UIKit
+import Stripe
 
-class PaymentVC: AntController,UITableViewDelegate,UITableViewDataSource {
-
-    @IBOutlet weak var tableView: UITableView!
-    let sectionTitleArray = ["Payment Methods","Promotions"]
-    let paymentMethods = ["****5768"]
+class PaymentVC: AntController,UITextFieldDelegate {
+    
+    @IBOutlet weak var totalFee: UILabel!
+    @IBOutlet weak var cardName: UITextField!
+    @IBOutlet weak var cardNumber: UITextField!
+    @IBOutlet weak var expirationDate: UITextField!
+    @IBOutlet weak var cvc: UITextField!
+    var amout = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        totalFee.text = "$" + amout
+    }
 
-        tableView.separatorInset = UIEdgeInsets.zero
-        tableView.layoutMargins = UIEdgeInsets.zero
-    }
-    
-    // MARK: UITableViewDelegate,UITableViewDataSource
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionTitleArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? paymentMethods.count + 1 : 1
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 55
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.01
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 55))
-        let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
-        sectionLabel.font = UIFont.systemFont(ofSize: 12)
-        sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
-        sectionLabel.text = NSLocalizedString(sectionTitleArray[section], comment: "")
-        header.addSubview(sectionLabel)
-        return header
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        if indexPath.section == 0 {
-            if indexPath.row < paymentMethods.count {
-                cell.textLabel?.text = paymentMethods[indexPath.row]
-                cell.imageView?.image = UIImage(named: "visa_icon")
-            } else {
-                cell.textLabel?.text = NSLocalizedString("Add Payment Method", comment: "")
-                cell.imageView?.image = nil
-            }
-        } else {
-            cell.textLabel?.text = NSLocalizedString("Add Promo/Gift Code", comment: "")
-            cell.imageView?.image = nil
+    @IBAction func submitPaymentClick(_ sender: UIButton) {
+        kWindow?.endEditing(true)
+        if cardName.text!.isEmpty {
+            AntManage.showDelayToast(message: NSLocalizedString("Card Holder's Name is required", comment: ""))
+            return
         }
-        return cell
+        if cardNumber.text!.isEmpty {
+            AntManage.showDelayToast(message: NSLocalizedString("Card Number is required", comment: ""))
+            return
+        }
+        if expirationDate.text!.isEmpty {
+            AntManage.showDelayToast(message: NSLocalizedString("Expiration Date is required", comment: ""))
+            return
+        }
+        if cvc.text!.isEmpty {
+            AntManage.showDelayToast(message: NSLocalizedString("CVC is required", comment: ""))
+            return
+        }
+        
+        let cardParams = STPCardParams()
+        cardParams.name = cardName.text
+        cardParams.number = cardNumber.text
+        cardParams.expMonth = UInt(expirationDate.text!.components(separatedBy: "/").first!)!
+        cardParams.expYear = UInt(expirationDate.text!.components(separatedBy: "/").last!)!
+        cardParams.cvc = cvc.text
+        
+        weak var weakSelf = self
+        STPAPIClient.shared().createToken(withCard: cardParams) { (token: STPToken?, error: Error?) in
+            guard let token = token, error == nil else {
+                // Present error to user...
+                return
+            }
+            weakSelf?.submitTokenToBackend(token: token)
+        }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func submitTokenToBackend(token: STPToken) {
+        
     }
-
+    
+    // MARK: - 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ExpirationDate" {
+            let expirationDate = segue.destination as! InfractionDateVC
+            weak var weakSelf = self
+            expirationDate.checkCardExpirationDate(confirmBlock: { (dateStr) in
+                weakSelf?.expirationDate.text = (dateStr as? String) ?? ""
+            })
+        }
+    }
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        kWindow?.endEditing(true)
+        performSegue(withIdentifier: "ExpirationDate", sender: nil)
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
