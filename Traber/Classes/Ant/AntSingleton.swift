@@ -36,7 +36,8 @@ class AntSingleton: NSObject {
             showMessage(message: "")
         }
         weak var weakSelf = self
-        
+        var params = params
+        params?["source"] = UserDefaults.standard.bool(forKey: kIsFacebook) ? "facebook" : "home"
         manager.post(path, parameters: params, progress: nil, success: { (task, response) in
             weakSelf?.requestSuccess(response: response, successResult: successResult, failureResult: failureResult)
         }) { (task, error) in
@@ -51,7 +52,8 @@ class AntSingleton: NSObject {
         AntLog(message: "请求接口：\(path),请求参数：\(String(describing: params))")
         showMessage(message: "")
         weak var weakSelf = self
-        
+        var params = params
+        params?["source"] = UserDefaults.standard.bool(forKey: kIsFacebook) ? "facebook" : "home"
         manager.get(path, parameters: params, progress: nil, success: { (task, response) in
             weakSelf?.requestSuccess(response: response, successResult: successResult, failureResult: failureResult)
         }) { (task, error) in

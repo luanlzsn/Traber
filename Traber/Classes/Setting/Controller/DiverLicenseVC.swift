@@ -24,7 +24,7 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
     
     func checkFooterButtonClick(button: UIButton) {
         UIApplication.shared.keyWindow?.endEditing(true)
-        var params = ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token] as [String : Any]
+        var params = ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token] as [String : Any]
         params["firstname"] = editProfile!.detailArray[0]
         params["lastname"] = editProfile!.detailArray[1]
         params["email"] = editProfile!.detailArray[2]

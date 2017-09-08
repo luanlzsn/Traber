@@ -38,7 +38,10 @@ let kAppDownloadURL = "https://itunes.apple.com/cn/app/id1107512125"//下载地�
 
 let kEmailKey = "kEmailKey"
 let kPassWordKey = "kPassWordKey"
-let kisRemember = "kisRemember"
+let kIsRemember = "kIsRemember"
+let kIsFacebook = "kIsFacebook"//是否是Facebook登录
+let kFacebookUserInfo = "kFacebookUserInfo"//Facebook的登录信息
+
 
 
 

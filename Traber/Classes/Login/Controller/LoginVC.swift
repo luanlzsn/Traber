@@ -17,10 +17,14 @@ class LoginVC: AntController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailField.text = UserDefaults.standard.string(forKey: kEmailKey)
-        passwordField.text = UserDefaults.standard.string(forKey: kPassWordKey)
-        if UserDefaults.standard.bool(forKey: kisRemember) {
-            loginClick()
+        if UserDefaults.standard.bool(forKey: kIsFacebook) {
+            facebookRegister(user: NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: kFacebookUserInfo) as! Data) as! SSDKUser)
+        } else {
+            emailField.text = UserDefaults.standard.string(forKey: kEmailKey)
+            passwordField.text = UserDefaults.standard.string(forKey: kPassWordKey)
+            if UserDefaults.standard.bool(forKey: kIsRemember) {
+                loginClick()
+            }
         }
     }
 
@@ -39,10 +43,11 @@ class LoginVC: AntController {
             return
         }
         weak var weakSelf = self
-        AntManage.postRequest(path: "user/login", params: ["source":"home", "identity":emailField.text!, "password":passwordField.text!], successResult: { (response) in
+        AntManage.postRequest(path: "user/login", params: ["identity":emailField.text!, "password":passwordField.text!], successResult: { (response) in
             UserDefaults.standard.set(weakSelf?.emailField.text, forKey: kEmailKey)
             UserDefaults.standard.set(weakSelf?.passwordField.text, forKey: kPassWordKey)
-            UserDefaults.standard.set(weakSelf?.rememberBtn.isSelected, forKey: kisRemember)
+            UserDefaults.standard.set(weakSelf?.rememberBtn.isSelected, forKey: kIsRemember)
+            UserDefaults.standard.set(false, forKey: kIsFacebook)
             UserDefaults.standard.synchronize()
             AntManage.isLogin = true
             AntManage.userModel = UserModel.mj_object(withKeyValues: response)
@@ -55,9 +60,30 @@ class LoginVC: AntController {
         weak var weakSelf = self
         ShareSDK.getUserInfo(SSDKPlatformType.typeFacebook) { (state, user, error) in
             if state == SSDKResponseState.success {
-                
+                weakSelf?.facebookRegister(user: user!)
             }
         }
+    }
+    
+    func facebookRegister(user: SSDKUser) {
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/register", params: ["identity":user.uid,"password":"","retypePwd":"","firstname":user.rawData["first_name"]!,"lastname":user.rawData["last_name"]!,"agree":"true","referenceID":""], successResult: { (response) in
+            weakSelf?.facebookLoginRequest(user: user)
+        }, failureResult: {})
+    }
+    
+    func facebookLoginRequest(user: SSDKUser) {
+        weak var weakSelf = self
+        AntManage.postRequest(path: "user/login", params: ["identity":user.uid, "password":""], successResult: { (response) in
+            UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: user), forKey: kFacebookUserInfo)
+            UserDefaults.standard.set(user.uid, forKey: kEmailKey)
+            UserDefaults.standard.set(true, forKey: kIsFacebook)
+            UserDefaults.standard.synchronize()
+            AntManage.isLogin = true
+            AntManage.userModel = UserModel.mj_object(withKeyValues: response)
+            AntManage.showDelayToast(message: NSLocalizedString("Login success", comment: ""))
+            weakSelf?.dismiss(animated: true, completion: nil)
+        }, failureResult: {})
     }
     
     override func didReceiveMemoryWarning() {

@@ -30,7 +30,7 @@ class MyCasesDetailVC: AntController,UICollectionViewDelegate,UICollectionViewDa
     
     func getTicketDetail(ticketId: Int) {
         weak var weakSelf = self
-        AntManage.postRequest(path: "ticket/getTicket", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "ticketID":ticketId], successResult: { (response) in
+        AntManage.postRequest(path: "ticket/getTicket", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "ticketID":ticketId], successResult: { (response) in
             weakSelf?.ticketDic[ticketId] = TicketModel.mj_object(withKeyValues: response["ticket"])
             weakSelf?.collectionView.reloadData()
         }, failureResult: {})

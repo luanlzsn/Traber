@@ -51,9 +51,14 @@ class PaymentVC: AntController,UITextFieldDelegate {
         cardParams.cvc = cvc.text
         
         weak var weakSelf = self
+        AntManage.showMessage(message: "")
         STPAPIClient.shared().createToken(withCard: cardParams) { (token: STPToken?, error: Error?) in
+            AntManage.hideMessage()
             guard let token = token, error == nil else {
                 // Present error to user...
+                if error != nil {
+                    AntManage.showDelayToast(message: (error! as NSError).localizedDescription)
+                }
                 return
             }
             weakSelf?.submitTokenToBackend(token: token)

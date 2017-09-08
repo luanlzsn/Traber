@@ -50,9 +50,14 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
         if indexPath.row == 2 {
             
         } else if indexPath.row == 4 {
+            ShareSDK.cancelAuthorize(SSDKPlatformType.typeFacebook)
             AntManage.isLogin = false
             AntManage.userModel = nil
-            UserDefaults.standard.set(false, forKey: kisRemember)
+            UserDefaults.standard.set(false, forKey: kIsRemember)
+            UserDefaults.standard.set(false, forKey: kIsFacebook)
+            UserDefaults.standard.removeObject(forKey: kFacebookUserInfo)
+            UserDefaults.standard.removeObject(forKey: kEmailKey)
+            UserDefaults.standard.removeObject(forKey: kPassWordKey)
             UserDefaults.standard.synchronize()
             _ = navigationController?.popToRootViewController(animated: true)
         } else {

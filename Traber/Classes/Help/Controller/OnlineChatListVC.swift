@@ -31,10 +31,10 @@ class OnlineChatListVC: AntController,UITableViewDelegate,UITableViewDataSource 
         var params = [String : Any]()
         if ticketID == 0 {
             path = "chat/user"
-            params = ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "chatID":0, "count":count]
+            params = ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "chatID":0, "count":count]
         } else {
             path = "chat/ticket"
-            params = ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "chatID":0, "ticketID":ticketID, "countNumber":count]
+            params = ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "chatID":0, "ticketID":ticketID, "countNumber":count]
         }
         
         AntManage.postRequest(path: path, params: params, successResult: { (response) in
@@ -67,12 +67,12 @@ class OnlineChatListVC: AntController,UITableViewDelegate,UITableViewDataSource 
         weak var weakSelf = self
         if ticketID == 0 {
             let agentID = (chatArray.count > 0) ? chatArray.last!.agentID : 0
-            AntManage.postRequest(path: "chat/add/user", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "agentID":agentID, "message":textField.text!], successResult: { (response) in
+            AntManage.postRequest(path: "chat/add/user", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "agentID":agentID, "message":textField.text!], successResult: { (response) in
                 weakSelf?.textField.text = ""
                 weakSelf?.checkChat()
             }, failureResult: {})
         } else {
-            AntManage.postRequest(path: "chat/add/ticket", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "ticketID":ticketID, "message":textField.text!], successResult: { (response) in
+            AntManage.postRequest(path: "chat/add/ticket", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token, "ticketID":ticketID, "message":textField.text!], successResult: { (response) in
                 weakSelf?.textField.text = ""
                 weakSelf?.checkChat()
             }, failureResult: {})

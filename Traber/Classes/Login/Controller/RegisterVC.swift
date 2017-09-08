@@ -54,7 +54,7 @@ class RegisterVC: AntController {
             return
         }
         weak var weakSelf = self
-        AntManage.postRequest(path: "user/register", params: ["source":"home","identity":email.text!,"password":password.text!,"retypePwd":confirmPassword.text!,"firstname":firstName.text!,"lastname":lastName.text!,"agree":"true","referenceID":""], successResult: { (response) in
+        AntManage.postRequest(path: "user/register", params: ["identity":email.text!,"password":password.text!,"retypePwd":confirmPassword.text!,"firstname":firstName.text!,"lastname":lastName.text!,"agree":"true","referenceID":""], successResult: { (response) in
             AntManage.showDelayToast(message: NSLocalizedString("Successful registration", comment: ""))
             weakSelf?.navigationController?.popViewController(animated: true)
         }, failureResult: {})

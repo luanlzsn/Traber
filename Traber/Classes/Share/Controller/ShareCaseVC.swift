@@ -17,7 +17,7 @@ class ShareCaseVC: AntController,UICollectionViewDelegate,UICollectionViewDataSo
         super.viewDidLoad()
 
         weak var weakSelf = self
-        AntManage.postRequest(path: "ticket", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+        AntManage.postRequest(path: "ticket", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
             weakSelf?.ticketArray = TicketModel.mj_objectArray(withKeyValuesArray: response["tickets"]) as! [TicketModel]
             weakSelf?.collectionView.reloadData()
         }, failureResult: {

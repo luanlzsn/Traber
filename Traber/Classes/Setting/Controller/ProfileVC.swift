@@ -15,13 +15,20 @@ class ProfileVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var nameLabel: UILabel!
     let sectionTitleArray = ["", "Car Owner's Information", "Personal Information"]
     let titleArray = [["First Name", "Last Name", "E-mail", "Phone", "Store credit"],["Name", "Address", "City","Country", "Province", "Postcode"],["Address", "City", "Country", "Province"]]
-    let detailArray = [[AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone,"$\(AntManage.userModel!.store_credit)"],[AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licenseCountry,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode],[AntManage.userModel!.address,AntManage.userModel!.city,AntManage.userModel!.country,AntManage.userModel!.province]]
+    var detailArray = [[AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone,"$\(AntManage.userModel!.store_credit)"],[AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licenseCountry,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode],[AntManage.userModel!.address,AntManage.userModel!.city,AntManage.userModel!.country,AntManage.userModel!.province]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        detailArray = [[AntManage.userModel!.firstname,AntManage.userModel!.lastname,AntManage.userModel!.email,AntManage.userModel!.phone,"$\(AntManage.userModel!.store_credit)"],[AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licenseCountry,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode],[AntManage.userModel!.address,AntManage.userModel!.city,AntManage.userModel!.country,AntManage.userModel!.province]]
         nameLabel.text = AntManage.userModel!.firstname + " " + AntManage.userModel!.lastname
         imgView.sd_setImage(with: URL(string: AntManage.userModel!.image))
+        tableView.reloadData()
     }
     
     // MARK: UITableViewDelegate,UITableViewDataSource

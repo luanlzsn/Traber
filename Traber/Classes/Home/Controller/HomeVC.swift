@@ -54,7 +54,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     func checkChatStatus() {
         if AntManage.isLogin {
             weak var weakSelf = self
-            AntManage.postRequest(path: "chat/status", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+            AntManage.postRequest(path: "chat/status", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
                 let hasTicketChat = response["hasTicketChat"] as! Int
                 let hasUserChat = response["hasUserChat"] as! Int
                 if hasTicketChat + hasUserChat > 0 {
@@ -67,7 +67,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     }
     
     func getUserInfo() {
-        AntManage.postRequest(path: "user/info", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+        AntManage.postRequest(path: "user/info", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
             let token = AntManage.userModel!.token
             AntManage.userModel = UserModel.mj_object(withKeyValues: response)
             AntManage.userModel?.token = token

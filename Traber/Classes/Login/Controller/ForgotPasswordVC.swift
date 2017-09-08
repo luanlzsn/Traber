@@ -46,7 +46,7 @@ class ForgotPasswordVC: AntController {
 //        }
 //        performSegue(withIdentifier: "SetPassword", sender: nil)
         weak var weakSelf = self
-        AntManage.postRequest(path: "user/forget", params: ["identity":emailField.text!, "source":"home"], successResult: { (_) in
+        AntManage.postRequest(path: "user/forget", params: ["identity":emailField.text!], successResult: { (_) in
             AntManage.showDelayToast(message: "Please check your email")
             weakSelf?.navigationController?.popViewController(animated: true)
         }, failureResult: {

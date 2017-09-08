@@ -37,7 +37,7 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
 
     func getUserInfo() {
         weak var weakSelf = self
-        AntManage.postRequest(path: "user/info", params: ["source":"home", "identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
+        AntManage.postRequest(path: "user/info", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
             let token = AntManage.userModel!.token
             AntManage.userModel = UserModel.mj_object(withKeyValues: response)
             AntManage.userModel?.token = token
