@@ -39,7 +39,7 @@ class AntSingleton: NSObject {
         var params = params
         params?["source"] = UserDefaults.standard.bool(forKey: kIsFacebook) ? "facebook" : "home"
         manager.post(path, parameters: params, progress: nil, success: { (task, response) in
-            weakSelf?.requestSuccess(response: response, successResult: successResult, failureResult: failureResult)
+            weakSelf?.requestSuccess(response: response, successResult: successResult, failureResult: failureResult, path: path)
         }) { (task, error) in
             weakSelf?.hideMessage()
             weakSelf?.showDelayToast(message: NSLocalizedString("network server error", comment: ""))
@@ -55,7 +55,7 @@ class AntSingleton: NSObject {
         var params = params
         params?["source"] = UserDefaults.standard.bool(forKey: kIsFacebook) ? "facebook" : "home"
         manager.get(path, parameters: params, progress: nil, success: { (task, response) in
-            weakSelf?.requestSuccess(response: response, successResult: successResult, failureResult: failureResult)
+            weakSelf?.requestSuccess(response: response, successResult: successResult, failureResult: failureResult, path: path)
         }) { (task, error) in
             weakSelf?.hideMessage()
             weakSelf?.showDelayToast(message: NSLocalizedString("network server error", comment: ""))
@@ -64,9 +64,11 @@ class AntSingleton: NSObject {
     }
     
     //MARK: - 请求成功回调
-    func requestSuccess(response: Any?, successResult:@escaping ([String : Any]) -> Void, failureResult:@escaping () -> Void) {
+    func requestSuccess(response: Any?, successResult:@escaping ([String : Any]) -> Void, failureResult:@escaping () -> Void, path: String) {
         AntLog(message: "接口返回数据：\(String(describing: response))")
-        hideMessage()
+        if !kNoHUDPathArray.contains(path) {
+            hideMessage()
+        }
         if let data = response as? [String : Any] {
             if let status = data["status"] {
                 if status as! Int == 0 {

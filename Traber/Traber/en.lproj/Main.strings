@@ -482,3 +482,16 @@ vehicula sit amet.";
 
 
 "s6s-uj-Xe5.text" = "$0";
+
+//##################################################################################
+//#           AutoGenStrings            2017-09-11 11:41:40
+//##################################################################################
+
+/* Class = "UITextField"; text = "0.00"; ObjectID = "OCX-gu-GWz"; */
+"OCX-gu-GWz.text" = "0.00";
+
+
+"mM5-LR-Wt8.text" = "$:";
+
+/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
+"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet.";

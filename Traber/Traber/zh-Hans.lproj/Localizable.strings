@@ -141,5 +141,6 @@
 
 "Failed to load. Please try again" = "加载失败，请重试";
 "network server error" = "网络错误";
+"Invalid email" = "无效的电子邮件";
 
 

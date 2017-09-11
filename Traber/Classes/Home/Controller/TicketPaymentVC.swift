@@ -25,12 +25,16 @@ class TicketPaymentVC: AntController {
     }
     
     @IBAction func payClick(_ sender: UIButton) {
-        performSegue(withIdentifier: "Payment", sender: nil)
-//        weak var weakSelf = self
-//        AntManage.postRequest(path: "ticket/paySuccess", params: ["source":"home", "identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID], successResult: { (_) in
-//            AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
-//            weakSelf?.navigationController?.popToRootViewController(animated: true)
-//        }, failureResult: {})
+        let payFee = Float(amout)! - Float(AntManage.userModel!.store_credit)!
+        if payFee > 0 {
+            performSegue(withIdentifier: "Payment", sender: payFee)
+        } else {
+            weak var weakSelf = self
+            AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":"0.00", "used_credit":amout], successResult: { (_) in
+                AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
+                weakSelf?.navigationController?.popToRootViewController(animated: true)
+            }, failureResult: {})
+        }
     }
     
     // MARK: - 跳转
@@ -38,6 +42,8 @@ class TicketPaymentVC: AntController {
         if segue.identifier == "Payment" {
             let payment = segue.destination as! PaymentVC
             payment.amout = amout
+            payment.ticketID = ticketID
+            payment.payFeeF = sender as! Float
         }
     }
 

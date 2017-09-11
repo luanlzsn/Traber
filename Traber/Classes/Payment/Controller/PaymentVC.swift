@@ -12,16 +12,21 @@ import Stripe
 class PaymentVC: AntController,UITextFieldDelegate {
     
     @IBOutlet weak var totalFee: UILabel!
+    @IBOutlet weak var payFee: UITextField!
     @IBOutlet weak var cardName: UITextField!
     @IBOutlet weak var cardNumber: UITextField!
     @IBOutlet weak var expirationDate: UITextField!
     @IBOutlet weak var cvc: UITextField!
     var amout = ""
+    var ticketID = 0
+    var payFeeF: Float = 0.00
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         totalFee.text = "$" + amout
+        payFee.text = String.init(format: "%.2f", payFeeF)
     }
 
     @IBAction func submitPaymentClick(_ sender: UIButton) {
@@ -66,7 +71,11 @@ class PaymentVC: AntController,UITextFieldDelegate {
     }
     
     func submitTokenToBackend(token: STPToken) {
-        
+        weak var weakSelf = self
+        AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":payFee.text!, "used_credit":AntManage.userModel!.store_credit], successResult: { (_) in
+            AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
+            weakSelf?.navigationController?.popToRootViewController(animated: true)
+        }, failureResult: {})
     }
     
     // MARK: - 跳转

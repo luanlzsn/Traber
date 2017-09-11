@@ -164,8 +164,13 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        kWindow?.endEditing(true)
         if indexPath.section == 1 {
-            performSegue(withIdentifier: "DiverLicense", sender: nil)
+            if !detailArray[2].isEmpty, !Common.isValidateEmail(email: detailArray[2]) {
+                AntManage.showDelayToast(message: NSLocalizedString("Invalid email", comment: ""))
+            } else {
+                performSegue(withIdentifier: "DiverLicense", sender: nil)
+            }
         }
     }
     
