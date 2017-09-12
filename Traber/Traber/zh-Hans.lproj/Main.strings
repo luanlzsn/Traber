@@ -137,7 +137,7 @@
 /* Class = "UILabel"; text = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit..."; ObjectID = "Jzr-Lt-i1K"; */
 "Jzr-Lt-i1K.text" = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit...";
 
-/* Class = "UITextField"; placeholder = "city"; ObjectID = "K9Z-5k-0i3"; */
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "K9Z-5k-0i3"; */
 "K9Z-5k-0i3.placeholder" = "城市";
 
 /* Class = "UILabel"; text = "Driver's License Information"; ObjectID = "KDn-Gh-Ggo"; */
@@ -192,7 +192,7 @@ vehicula sit amet。";
 /* Class = "UILabel"; text = "File Ticket"; ObjectID = "SA0-Jo-TXt"; */
 "SA0-Jo-TXt.text" = "告票";
 
-/* Class = "UILabel"; text = "Service change:"; ObjectID = "SIS-A8-vWD"; */
+/* Class = "UILabel"; text = "Service charge:"; ObjectID = "SIS-A8-vWD"; */
 "SIS-A8-vWD.text" = "服务更改:";
 
 /* Class = "UILabel"; text = "Shawn Barrett"; ObjectID = "Tn1-90-Ivy"; */
@@ -249,7 +249,7 @@ vehicula sit amet。";
 /* Class = "UILabel"; text = "Title"; ObjectID = "c08-Af-DbQ"; */
 //"c08-Af-DbQ.text" = "Title";
 
-/* Class = "UITextField"; placeholder = "Unit no:"; ObjectID = "cxL-dV-MWq"; */
+/* Class = "UITextField"; placeholder = "Unit Number:"; ObjectID = "cxL-dV-MWq"; */
 "cxL-dV-MWq.placeholder" = "单位号码:";
 
 /* Class = "UILabel"; text = "Pending"; ObjectID = "e0j-xF-XNA"; */
@@ -493,5 +493,9 @@ vehicula sit amet.";
 
 "mM5-LR-Wt8.text" = "$:";
 
-/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
-"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet.";
+/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
+"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet.";

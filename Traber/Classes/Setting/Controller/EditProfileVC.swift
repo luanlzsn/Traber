@@ -50,6 +50,27 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
         })
     }
     
+    func checkFooterButtonClick(button: UIButton) {
+        kWindow?.endEditing(true)
+        if !detailArray[2].isEmpty, !Common.isValidateEmail(email: detailArray[2]) {
+            AntManage.showDelayToast(message: NSLocalizedString("Invalid email", comment: ""))
+            return
+        }
+        var params = ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token] as [String : Any]
+        params["firstname"] = detailArray[0]
+        params["lastname"] = detailArray[1]
+        params["email"] = detailArray[2]
+        params["phone"] = detailArray[3]
+        if image != nil {
+            params["image"] = "data:image/jpeg;base64," + UIImageJPEGRepresentation(image!, 0.1)!.base64EncodedString()
+            params["imageType"] = "jpeg"
+        }
+        
+        AntManage.postRequest(path: "user/edit", params: params, successResult: { (response) in
+            NotificationCenter.default.post(name: NSNotification.Name("UpdateInfoSuccess"), object: nil)
+        }, failureResult: {})
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DiverLicense" {
             let diver = segue.destination as! DiverLicenseVC
@@ -131,7 +152,7 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 25
+        return section == 0 ? 25 : 100
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -142,7 +163,18 @@ class EditProfileVC: AntController,UIImagePickerControllerDelegate,UINavigationC
             footer.addSubview(line)
             return footer
         } else {
-            return nil
+            let footer = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 100))
+            let button = UIButton(type: .custom)
+            button.frame = CGRect(x: 15, y: 25, width: kScreenWidth - 30, height: 50)
+            button.setTitle(NSLocalizedString("Update Information", comment: ""), for: .normal)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            button.backgroundColor = UIColor.init(rgb: 0x229d68)
+            button.layer.masksToBounds = true
+            button.layer.cornerRadius = 2.5
+            button.tag = section
+            button.addTarget(self, action: #selector(self.checkFooterButtonClick(button:)), for: .touchUpInside)
+            footer.addSubview(button)
+            return footer
         }
     }
     

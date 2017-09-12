@@ -72,7 +72,7 @@ class PaymentVC: AntController,UITextFieldDelegate {
     
     func submitTokenToBackend(token: STPToken) {
         weak var weakSelf = self
-        AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":payFee.text!, "used_credit":AntManage.userModel!.store_credit], successResult: { (_) in
+        AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":payFee.text!, "used_credit":AntManage.userModel!.store_credit, "currency":"CAD"], successResult: { (_) in
             AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
             weakSelf?.navigationController?.popToRootViewController(animated: true)
         }, failureResult: {})
@@ -81,11 +81,11 @@ class PaymentVC: AntController,UITextFieldDelegate {
     // MARK: - 跳转
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ExpirationDate" {
-            let expirationDate = segue.destination as! InfractionDateVC
+            let expirationDate = segue.destination as! ExpirationDateController
             weak var weakSelf = self
-            expirationDate.checkCardExpirationDate(confirmBlock: { (dateStr) in
+            expirationDate.confirm = { (dateStr) -> () in
                 weakSelf?.expirationDate.text = (dateStr as? String) ?? ""
-            })
+            }
         }
     }
     

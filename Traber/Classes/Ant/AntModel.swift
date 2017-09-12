@@ -35,6 +35,8 @@ class UserModel: AntModel {
     var licenseCountry = ""//许可证国家
     var licensePostcode = ""//许可证编号
     var unit_number = ""
+    var licenseUnit = ""
+    
 }
 
 class TicketModel: AntModel {

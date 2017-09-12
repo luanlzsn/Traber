@@ -30,7 +30,7 @@ class TicketPaymentVC: AntController {
             performSegue(withIdentifier: "Payment", sender: payFee)
         } else {
             weak var weakSelf = self
-            AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":"0.00", "used_credit":amout], successResult: { (_) in
+            AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":"0.00", "used_credit":amout, "currency":"CAD"], successResult: { (_) in
                 AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
                 weakSelf?.navigationController?.popToRootViewController(animated: true)
             }, failureResult: {})

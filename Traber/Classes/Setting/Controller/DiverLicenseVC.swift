@@ -11,8 +11,8 @@ import UIKit
 class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,EditProfile_Delegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["Car Owner's Name", "License Address", "License City", "License Province", "License PostCode"]
-    var detailArray = [AntManage.userModel!.licenseName,AntManage.userModel!.licenseAddress,AntManage.userModel!.licenseCity,AntManage.userModel!.licensePro,AntManage.userModel!.licensePostcode]
+    let titleArray = ["License Name", "License Address", "Unit Number", "License City", "License Province", "License Country", "License PostCode"]
+    var detailArray = [AntManage.userModel!.licenseName, AntManage.userModel!.licenseAddress, AntManage.userModel!.licenseUnit, AntManage.userModel!.licenseCity, AntManage.userModel!.licensePro, AntManage.userModel!.licenseCountry, AntManage.userModel!.licensePostcode]
     var editIndexPath: IndexPath?
     weak var editProfile: EditProfileVC?
     
@@ -35,9 +35,11 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
         }
         params["licenseName"] = detailArray[0]
         params["licenseAddress"] = detailArray[1]
-        params["licenseCity"] = detailArray[2]
-        params["licensePro"] = detailArray[3]
-        params["licensePostcode"] = detailArray[4]
+        params["licenseUnit"] = detailArray[2]
+        params["licenseCity"] = detailArray[3]
+        params["licensePro"] = detailArray[4]
+        params["licenseCountry"] = detailArray[5]
+        params["licensePostcode"] = detailArray[6]
         
         weak var weakSelf = self
         AntManage.postRequest(path: "user/edit", params: params, successResult: { (response) in
@@ -67,7 +69,7 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 55
+        return 30
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -75,16 +77,16 @@ class DiverLicenseVC: AntController,UITableViewDelegate,UITableViewDataSource,Ed
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 55))
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 30))
         header.backgroundColor = UIColor.init(rgb: 0xf3f3f6)
-        let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
-        sectionLabel.font = UIFont.systemFont(ofSize: 12)
-        sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
-        sectionLabel.text = NSLocalizedString("Car Owner's Information", comment: "")
-        header.addSubview(sectionLabel)
-        let lineView = UIView(frame: CGRect(x: 0, y: 54, width: kScreenWidth, height: 1))
-        lineView.backgroundColor = UIColor.init(rgb: 0xc7c7cc)
-        header.addSubview(lineView)
+//        let sectionLabel = UILabel(frame: CGRect(x: 15, y: 30, width: kScreenWidth - 30, height: 25))
+//        sectionLabel.font = UIFont.systemFont(ofSize: 12)
+//        sectionLabel.textColor = UIColor.init(rgb: 0x6d6d72)
+//        sectionLabel.text = NSLocalizedString("Car Owner's Information", comment: "")
+//        header.addSubview(sectionLabel)
+//        let lineView = UIView(frame: CGRect(x: 0, y: 54, width: kScreenWidth, height: 1))
+//        lineView.backgroundColor = UIColor.init(rgb: 0xc7c7cc)
+//        header.addSubview(lineView)
         return header
     }
     

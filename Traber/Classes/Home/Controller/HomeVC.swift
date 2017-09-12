@@ -15,19 +15,27 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     @IBOutlet weak var dateBtn: UIButton!
     @IBOutlet weak var unitNo: UITextField!
     @IBOutlet weak var postCode: UITextField!
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     var isClear = true//是否清理数据
+    var statusTimer: Timer?
+    
+    deinit {
+        statusTimer?.invalidate()
+        statusTimer = nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(checkChatStatus), userInfo: nil, repeats: true)
+        statusTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(checkChatStatus), userInfo: nil, repeats: true)
         navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon_white")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         checkTextFieldLeftView(textField: cityField)
         checkCityTextFieldRightView()
         checkTextFieldLeftView(textField: unitNo)
         checkTextFieldLeftView(textField: postCode)
+        checkTextFieldLeftView(textField: nameField)
         checkTextFieldLeftView(textField: addressField)
     }
     
@@ -45,7 +53,10 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             dateBtn.setTitle(NSLocalizedString("Infraction Date", comment: ""), for: .normal)
             unitNo.text = ""
             postCode.text = ""
+            nameField.text = ""
             addressField.text = ""
+            nameField.placeholder = NSLocalizedString("Car Owner's Name:", comment: "")
+            addressField.placeholder = NSLocalizedString("Car Owner's Address:", comment: "")
         }
         isClear = true
     }
@@ -75,8 +86,16 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     }
     
     @IBAction func typeClick(_ sender: SpinnerButton) {
+        weak var weakSelf = self
         sender.show(view: view, array: ["Parking", "Traffic violation"]) { (type) in
             sender.setTitle(type, for: .normal)
+            if type == NSLocalizedString("Parking", comment: "") {
+                weakSelf?.nameField.placeholder = NSLocalizedString("Car Owner's Name:", comment: "")
+                weakSelf?.addressField.placeholder = NSLocalizedString("Car Owner's Address:", comment: "")
+            } else {
+                weakSelf?.nameField.placeholder = NSLocalizedString("Driver’s License Name:", comment: "")
+                weakSelf?.addressField.placeholder = NSLocalizedString("Driver’s License Address:", comment: "")
+            }
         }
     }
     
@@ -90,11 +109,23 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             return
         }
         if (unitNo.text?.isEmpty)! {
-            AntManage.showDelayToast(message: NSLocalizedString("Unit no is required", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Unit Number is required", comment: ""))
+            return
+        }
+        if (nameField.text?.isEmpty)! {
+            if typeBtn.currentTitle == NSLocalizedString("Parking", comment: "") {
+                AntManage.showDelayToast(message: NSLocalizedString("Car Owner's Name is required", comment: ""))
+            } else {
+                AntManage.showDelayToast(message: NSLocalizedString("Driver’s License Name is required", comment: ""))
+            }
             return
         }
         if (addressField.text?.isEmpty)! {
-            AntManage.showDelayToast(message: NSLocalizedString("Car owner's address is required", comment: ""))
+            if typeBtn.currentTitle == NSLocalizedString("Parking", comment: "") {
+                AntManage.showDelayToast(message: NSLocalizedString("Car Owner's Address is required", comment: ""))
+            } else {
+                AntManage.showDelayToast(message: NSLocalizedString("Driver’s License Address is required", comment: ""))
+            }
             return
         }
         if (cityField.text?.isEmpty)! {
@@ -153,7 +184,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             })
         } else if segue.identifier == "Ticket" {
             let ticket = segue.destination as! TicketVC
-            ticket.dataDic = ["Type":((typeBtn.currentTitle == NSLocalizedString("Parking", comment: "")) ? "Parking" : "Traffic violation"),"City":cityField.text!,"Date":dateBtn.currentTitle!,"UnitNo":unitNo.text!,"PostCode":postCode.text!,"Address":addressField.text!]
+            ticket.dataDic = ["Type":((typeBtn.currentTitle == NSLocalizedString("Parking", comment: "")) ? "Parking" : "Traffic violation"), "City":cityField.text!, "Date":dateBtn.currentTitle!, "UnitNo":unitNo.text!, "PostCode":postCode.text!, "Name":nameField.text!, "Address":addressField.text!]
             ticket.image = sender as! UIImage
         }
     }

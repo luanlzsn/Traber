@@ -11,7 +11,7 @@ import UIKit
 class LanguageVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    let titleArray = ["English","Chinese"]
+    let titleArray = ["English","中文"]
     let languageArray = ["en","zh-Hans"]
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class LanguageVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
+        cell.textLabel?.text = titleArray[indexPath.row]
         if languageArray[indexPath.row] == LanguageManager.currentLanguageString() {
             cell.textLabel?.textColor = UIColor.init(rgb: 0x229D68)
         } else {

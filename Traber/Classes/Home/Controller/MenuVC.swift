@@ -16,8 +16,8 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var nameLabel: UILabel!
     var confirm : ConfirmBlock?
     
-    let titleArray = ["Home", "Notifications", "My cases"/*,"Payment"*/, "Share", "Help", "Settings", "More"]
-    let imgArray = ["menu_home","menu_notifications","menu_cases"/*,"menu_payment"*/,"menu_share","menu_help","menu_setting","menu_more"]
+    let titleArray = ["Home", "Notifications", "My cases"/*,"Payment"*/, "Share", "Help", "Settings"/*, "More"*/]
+    let imgArray = ["menu_home","menu_notifications","menu_cases"/*,"menu_payment"*/,"menu_share","menu_help","menu_setting"/*,"menu_more"*/]
     let identifierArray = ["","ShareCase","MyCases"/*,"Payment"*/,"Share","Help","Settings",""]
     
     override func viewDidLoad() {
@@ -96,10 +96,10 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == titleArray.count - 1 {
-            AntManage.showDelayToast(message: NSLocalizedString("NO MORE", comment: ""))
-            return
-        }
+//        if indexPath.row == titleArray.count - 1 {
+//            AntManage.showDelayToast(message: NSLocalizedString("NO MORE", comment: ""))
+//            return
+//        }
         if confirm != nil {
             confirm!(identifierArray[indexPath.row])
         }

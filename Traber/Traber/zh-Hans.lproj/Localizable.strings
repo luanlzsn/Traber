@@ -25,7 +25,6 @@
 "Province" = "省";
 "Postcode" = "邮政编码";
 "Personal Information" = "个人信息";
-"Car Owner's Name" = "车主姓名";
 "License Address" = "驾照地址";
 "License City" = "驾照城市";
 "License Province" = "驾照省份";
@@ -33,6 +32,7 @@
 "Update Information" = "更新信息";
 "Change Your Password" = "更改密码";
 "Your new password" = "您的新密码";
+"Unit Number" = "单位号码";
 
 // MARK: - 设置
 "Notification" = "通知";
@@ -65,6 +65,10 @@
 "Infraction Date" = "违规日期";
 "Parking Ticket" = "停车告票";
 "Traffic Ticket" = "交通告票";
+"Car Owner's Name:" = "车主姓名";
+"Car Owner's Address:" = "车主地址";
+"Driver’s License Name:" = "驾照姓名";
+"Driver’s License Address:" = "驾照地址";
 "My cases" = "我的案例";
 "Case" = "案例";
 "Pay" = "支付";
@@ -108,11 +112,14 @@
 "Two passwords are different" = "两个密码不同";
 "Change password success" = "变更密码成功";
 
-"Car owner's address is required" = "需要填写车主的地址";
+"Car Owner's Name is required" = "需要填写车主的姓名";
+"Driver’s License Name is required" = "需要填写驾照的姓名";
+"Car Owner's Address is required" = "需要填写车主的地址";
+"Driver’s License Address is required" = "需要填写驾照的地址";
 "Please choose Ticket Type" = "请选择告票类型";
 "City is required" = "需要填写城市";
 "Infraction Date is required" = "需要填写违规日期";
-"Unit no is required" = "需要填写单位号码";
+"Unit Number is required" = "需要填写单位号码";
 "Post code is required" = "需要填写邮政编码";
 "Fine amount is required" = "需要填写罚单金额";
 "Fine amount is number" = "罚款金额是数字";

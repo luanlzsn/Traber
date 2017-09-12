@@ -16,6 +16,9 @@ class TicketVC: AntController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var unitNoLabel: UILabel!
     @IBOutlet weak var postCodeLabel: UILabel!
+    @IBOutlet weak var nameTitle: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressTitle: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     var dataDic: [String : String]!
     var image: UIImage!
@@ -25,13 +28,18 @@ class TicketVC: AntController {
 
         if dataDic["Type"] == NSLocalizedString("Parking", comment: "") {
             typeTitle.text = NSLocalizedString("Parking Ticket", comment: "")
+            nameTitle.text = NSLocalizedString("Car Owner's Name:", comment: "")
+            addressTitle.text = NSLocalizedString("Car Owner's Address:", comment: "")
         } else {
             typeTitle.text = NSLocalizedString("Traffic Ticket", comment: "")
+            nameTitle.text = NSLocalizedString("Driver’s License Name:", comment: "")
+            addressTitle.text = NSLocalizedString("Driver’s License Address:", comment: "")
         }
         cityLabel.text = dataDic["City"]
         dateLabel.text = dataDic["Date"]
         unitNoLabel.text = dataDic["UnitNo"]
         postCodeLabel.text = dataDic["PostCode"]
+        nameLabel.text = dataDic["Name"]
         addressLabel.text = dataDic["Address"]
         imgView.image = image
     }

@@ -137,8 +137,8 @@
 /* Class = "UILabel"; text = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit..."; ObjectID = "Jzr-Lt-i1K"; */
 "Jzr-Lt-i1K.text" = "Donec a auctor elit.Mauris ornare finibus nunc.et interdum dolor blandit...";
 
-/* Class = "UITextField"; placeholder = "city"; ObjectID = "K9Z-5k-0i3"; */
-"K9Z-5k-0i3.placeholder" = "city";
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "K9Z-5k-0i3"; */
+"K9Z-5k-0i3.placeholder" = "City";
 
 /* Class = "UILabel"; text = "Driver's License Information"; ObjectID = "KDn-Gh-Ggo"; */
 "KDn-Gh-Ggo.text" = "Driver's License Information";
@@ -192,8 +192,8 @@ vehicula sit amet.";
 /* Class = "UILabel"; text = "File Ticket"; ObjectID = "SA0-Jo-TXt"; */
 "SA0-Jo-TXt.text" = "File Ticket";
 
-/* Class = "UILabel"; text = "Service change:"; ObjectID = "SIS-A8-vWD"; */
-"SIS-A8-vWD.text" = "Service change:";
+/* Class = "UILabel"; text = "Service charge:"; ObjectID = "SIS-A8-vWD"; */
+"SIS-A8-vWD.text" = "Service charge:";
 
 /* Class = "UILabel"; text = "Shawn Barrett"; ObjectID = "Tn1-90-Ivy"; */
 "Tn1-90-Ivy.text" = "Shawn Barrett";
@@ -249,8 +249,8 @@ vehicula sit amet.";
 /* Class = "UILabel"; text = "Title"; ObjectID = "c08-Af-DbQ"; */
 //"c08-Af-DbQ.text" = "Title";
 
-/* Class = "UITextField"; placeholder = "Unit no:"; ObjectID = "cxL-dV-MWq"; */
-"cxL-dV-MWq.placeholder" = "Unit no:";
+/* Class = "UITextField"; placeholder = "Unit Number:"; ObjectID = "cxL-dV-MWq"; */
+"cxL-dV-MWq.placeholder" = "Unit Number:";
 
 /* Class = "UILabel"; text = "Pending"; ObjectID = "e0j-xF-XNA"; */
 "e0j-xF-XNA.text" = "Pending";
@@ -493,5 +493,9 @@ vehicula sit amet.";
 
 "mM5-LR-Wt8.text" = "$:";
 
-/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
-"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean pretium sollicitudin ex, in euismod magna vehicula sit amet.";
+/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
+"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet.";
