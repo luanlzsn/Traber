@@ -16,6 +16,7 @@
 		0F8C47291F59098900DB1965 /* OnlineStaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C47281F59098900DB1965 /* OnlineStaffCell.swift */; };
 		0FA5234B1F57A63D000E3B2E /* AutoGenStrings.py in Resources */ = {isa = PBXBuildFile; fileRef = 0F3528E61F4C08C90088E524 /* AutoGenStrings.py */; };
 		0FA5234D1F57A924000E3B2E /* TicketPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5234C1F57A924000E3B2E /* TicketPaymentVC.swift */; };
+		0FABDB891F69166900D8C2AD /* TermsConditionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FABDB881F69166900D8C2AD /* TermsConditionsController.swift */; };
 		0FE085BC1F58053C000D8CC9 /* CasesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE085BB1F58053C000D8CC9 /* CasesDetailVC.swift */; };
 		0FE085C21F5808EE000D8CC9 /* CasesDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE085C11F5808EE000D8CC9 /* CasesDetailImageCell.swift */; };
 		0FF34E9C1F4AC37700931414 /* ShareWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF34E9B1F4AC37700931414 /* ShareWebVC.swift */; };
@@ -89,6 +90,7 @@
 		0F8C47261F59096600DB1965 /* OnlineUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUserCell.swift; sourceTree = "<group>"; };
 		0F8C47281F59098900DB1965 /* OnlineStaffCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineStaffCell.swift; sourceTree = "<group>"; };
 		0FA5234C1F57A924000E3B2E /* TicketPaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketPaymentVC.swift; sourceTree = "<group>"; };
+		0FABDB881F69166900D8C2AD /* TermsConditionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsConditionsController.swift; sourceTree = "<group>"; };
 		0FD1653E1F5FCB510025FC12 /* Traber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Traber.entitlements; sourceTree = "<group>"; };
 		0FE085BB1F58053C000D8CC9 /* CasesDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesDetailVC.swift; sourceTree = "<group>"; };
 		0FE085C11F5808EE000D8CC9 /* CasesDetailImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasesDetailImageCell.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				6B1954121EB5FBA600C920EC /* EditProfileVC.swift */,
 				6B1954181EB6146000C920EC /* DiverLicenseVC.swift */,
 				6BFF2D171EC874F400BA3693 /* ChangePasswordVC.swift */,
+				0FABDB881F69166900D8C2AD /* TermsConditionsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				6BD7606A1EA9E9FB0016823B /* NotificationsVC.swift in Sources */,
 				6B1954131EB5FBA600C920EC /* EditProfileVC.swift in Sources */,
 				6BB73D5E1EB706CF0085A44F /* FileTicketVC.swift in Sources */,
+				0FABDB891F69166900D8C2AD /* TermsConditionsController.swift in Sources */,
 				0FF8D07C1F4AE7C600C6FA73 /* OnlineChatVC.swift in Sources */,
 				6B339CA61EB4B9BC00DB6BF4 /* LanguageVC.swift in Sources */,
 				6B8CABE41EB5A922008B4967 /* LoginTextField.swift in Sources */,

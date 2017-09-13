@@ -27,10 +27,15 @@ class TicketPaymentVC: AntController {
     @IBAction func payClick(_ sender: UIButton) {
         let payFee = Float(amout)! - Float(AntManage.userModel!.store_credit)!
         if payFee > 0 {
-            performSegue(withIdentifier: "Payment", sender: payFee)
+            if Float(AntManage.userModel!.store_credit)! > 0 {
+                performSegue(withIdentifier: "Payment", sender: payFee)
+            } else {
+                performSegue(withIdentifier: "Payment", sender: Float(amout)!)
+            }
         } else {
             weak var weakSelf = self
             AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":"0.00", "used_credit":amout, "currency":"CAD"], successResult: { (_) in
+                NotificationCenter.default.post(name: NSNotification.Name("PaySuccess"), object: nil)
                 AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
                 weakSelf?.navigationController?.popToRootViewController(animated: true)
             }, failureResult: {})

@@ -49,6 +49,7 @@ class LanguageVC: AntController,UITableViewDelegate,UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let languageStr = languageArray[indexPath.row]
         if languageStr != LanguageManager.currentLanguageString() {
+            NotificationCenter.default.post(name: NSNotification.Name("SwitchLanguage"), object: nil)
             LanguageManager.saveLanguage(languageString: languageStr)
             tableView.reloadData()
             reloadRootViewController()

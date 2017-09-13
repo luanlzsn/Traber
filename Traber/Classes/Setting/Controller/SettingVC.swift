@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
+class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource,PushNotificationCell_Delegate {
 
     @IBOutlet weak var tableView: UITableView!
     let titleArray = ["Profile","Change password","Notification","Language","Logout"]
@@ -19,6 +19,14 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
 
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.layoutMargins = UIEdgeInsets.zero
+    }
+    
+    // MARK: - PushNotificationCell_Delegate
+    func switchChange(isOn: Bool) {
+        UserDefaults.standard.set(isOn, forKey: kIsOnNotification)
+        UserDefaults.standard.synchronize()
+        tableView.reloadData()
+        NotificationCenter.default.post(name: NSNotification.Name("NotificationStatusChange"), object: nil)
     }
     
     // MARK: UITableViewDelegate,UITableViewDataSource
@@ -37,6 +45,8 @@ class SettingVC: AntController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 2 {
             let cell: PushNotificationCell = tableView.dequeueReusableCell(withIdentifier: "PushNotificationCell", for: indexPath) as! PushNotificationCell
+            cell.delegate = self
+            cell.switchBtn.isOn = UserDefaults.standard.bool(forKey: kIsOnNotification)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)

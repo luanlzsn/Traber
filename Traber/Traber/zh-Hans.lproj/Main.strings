@@ -20,7 +20,7 @@
 /* Class = "UILabel"; text = "2017/03/07"; ObjectID = "5Rg-fQ-mEn"; */
 "5Rg-fQ-mEn.text" = "2017/03/07";
 
-/* Class = "UITextField"; placeholder = "Post code:"; ObjectID = "62q-wH-uJx"; */
+/* Class = "UITextField"; placeholder = "Post Code:"; ObjectID = "62q-wH-uJx"; */
 "62q-wH-uJx.placeholder" = "邮政编码:";
 
 /* Class = "UILabel"; text = "1"; ObjectID = "6IN-oM-xZW"; */
@@ -294,7 +294,7 @@ vehicula sit amet。";
 /* Class = "UIButton"; normalTitle = "Infraction Date"; ObjectID = "jBj-OA-2Mt"; */
 "jBj-OA-2Mt.normalTitle" = "违规日期";
 
-/* Class = "UILabel"; text = "Unit no:"; ObjectID = "jKk-iv-mOe"; */
+/* Class = "UILabel"; text = "Unit Number:"; ObjectID = "jKk-iv-mOe"; */
 "jKk-iv-mOe.text" = "单位号码:";
 
 /* Class = "UILabel"; text = "Language interpreter"; ObjectID = "k7B-RH-WUu"; */
@@ -470,16 +470,8 @@ vehicula sit amet。";
 /* Class = "UILabel"; text = "Card Number"; ObjectID = "bzA-dc-Lv3"; */
 "bzA-dc-Lv3.text" = "卡号";
 
-/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
-pretium sollicitudin ex, in euismod magna
-vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
-"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean
-pretium sollicitudin ex, in euismod magna
-vehicula sit amet.";
-
 /* Class = "UITextField"; placeholder = "CVC"; ObjectID = "uVy-9X-QQo"; */
 "uVy-9X-QQo.placeholder" = "验证号";
-
 
 "s6s-uj-Xe5.text" = "$0";
 
@@ -490,8 +482,37 @@ vehicula sit amet.";
 /* Class = "UITextField"; text = "0.00"; ObjectID = "OCX-gu-GWz"; */
 "OCX-gu-GWz.text" = "0.00";
 
-
 "mM5-LR-Wt8.text" = "$:";
+
+//##################################################################################
+//#           AutoGenStrings            2017-09-12 14:08:02
+//##################################################################################
+
+/* Class = "UITextField"; placeholder = "Car Owner's Name:"; ObjectID = "Daa-Oh-Far"; */
+"Daa-Oh-Far.placeholder" = "车主姓名:";
+
+/* Class = "UILabel"; text = "Car Owner's Name:"; ObjectID = "Gad-55-11k"; */
+"Gad-55-11k.text" = "车主姓名:";
+
+/* Class = "UILabel"; text = "2370 Davis Avenue"; ObjectID = "Zgr-cE-bRY"; */
+"Zgr-cE-bRY.text" = "2370 Davis Avenue";
+
+/* Class = "UIBarButtonItem"; title = "Confirm"; ObjectID = "HCS-bm-zCE"; */
+"HCS-bm-zCE.title" = "确认";
+
+/* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet."; ObjectID = "MFc-YW-DVB"; */
+"MFc-YW-DVB.text" = "Phasellus vel blandit neque. Aenean
+pretium sollicitudin ex, in euismod magna
+vehicula sit amet.";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "5o7-EU-jCV"; */
+"5o7-EU-jCV.title" = "取消";
+
+//##################################################################################
+//#           AutoGenStrings            2017-09-12 15:42:00
+//##################################################################################
 
 /* Class = "UILabel"; text = "Phasellus vel blandit neque. Aenean
 pretium sollicitudin ex, in euismod magna

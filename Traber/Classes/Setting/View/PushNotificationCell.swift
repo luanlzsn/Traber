@@ -8,9 +8,14 @@
 
 import UIKit
 
+@objc protocol PushNotificationCell_Delegate {
+    func switchChange(isOn: Bool)
+}
+
 class PushNotificationCell: UITableViewCell {
 
     @IBOutlet weak var switchBtn: UISwitch!
+    weak var delegate: PushNotificationCell_Delegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +23,7 @@ class PushNotificationCell: UITableViewCell {
     }
 
     @IBAction func switchChangedClick(_ sender: UISwitch) {
-        
+        delegate?.switchChange(isOn: sender.isOn)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

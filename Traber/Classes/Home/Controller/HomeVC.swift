@@ -21,14 +21,18 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     var statusTimer: Timer?
     
     deinit {
-        statusTimer?.invalidate()
-        statusTimer = nil
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        statusTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(checkChatStatus), userInfo: nil, repeats: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(cancelTimer), name: NSNotification.Name("SwitchLanguage"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(checkTimer), name: NSNotification.Name("NotificationStatusChange"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: NSNotification.Name("PaySuccess"), object: nil)
+        if UserDefaults.standard.bool(forKey: kIsOnNotification) {
+            statusTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(checkChatStatus), userInfo: nil, repeats: true)
+        }
         navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon_white")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         checkTextFieldLeftView(textField: cityField)
@@ -66,14 +70,29 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
         if AntManage.isLogin {
             weak var weakSelf = self
             AntManage.postRequest(path: "chat/status", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
-                let hasTicketChat = response["hasTicketChat"] as! Int
-                let hasUserChat = response["hasUserChat"] as! Int
-                if hasTicketChat + hasUserChat > 0 {
+                let hasTicketChat = response["hasTicketChat"] as! Bool
+                let hasUserChat = response["hasUserChat"] as! Bool
+                if hasTicketChat || hasUserChat {
                     weakSelf?.navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
                 } else {
                     weakSelf?.navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon_white")
                 }
             }, failureResult: {})
+        }
+    }
+    
+    func cancelTimer() {
+        statusTimer?.invalidate()
+        statusTimer = nil
+    }
+    
+    func checkTimer() {
+        if UserDefaults.standard.bool(forKey: kIsOnNotification) {
+            if statusTimer == nil {
+                statusTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(checkChatStatus), userInfo: nil, repeats: true)
+            }
+        } else {
+            cancelTimer()
         }
     }
     
@@ -87,7 +106,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     
     @IBAction func typeClick(_ sender: SpinnerButton) {
         weak var weakSelf = self
-        sender.show(view: view, array: ["Parking", "Traffic violation"]) { (type) in
+        sender.show(view: view, array: ["Parking", "Traffic Violation"]) { (type) in
             sender.setTitle(type, for: .normal)
             if type == NSLocalizedString("Parking", comment: "") {
                 weakSelf?.nameField.placeholder = NSLocalizedString("Car Owner's Name:", comment: "")
@@ -108,10 +127,6 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             AntManage.showDelayToast(message: NSLocalizedString("Infraction Date is required", comment: ""))
             return
         }
-        if (unitNo.text?.isEmpty)! {
-            AntManage.showDelayToast(message: NSLocalizedString("Unit Number is required", comment: ""))
-            return
-        }
         if (nameField.text?.isEmpty)! {
             if typeBtn.currentTitle == NSLocalizedString("Parking", comment: "") {
                 AntManage.showDelayToast(message: NSLocalizedString("Car Owner's Name is required", comment: ""))
@@ -128,12 +143,16 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             }
             return
         }
+        if (unitNo.text?.isEmpty)! {
+            AntManage.showDelayToast(message: NSLocalizedString("Unit Number is required", comment: ""))
+            return
+        }
         if (cityField.text?.isEmpty)! {
             AntManage.showDelayToast(message: NSLocalizedString("City is required", comment: ""))
             return
         }
         if (postCode.text?.isEmpty)! {
-            AntManage.showDelayToast(message: NSLocalizedString("Post code is required", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Post Code is required", comment: ""))
             return
         }
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -184,7 +203,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
             })
         } else if segue.identifier == "Ticket" {
             let ticket = segue.destination as! TicketVC
-            ticket.dataDic = ["Type":((typeBtn.currentTitle == NSLocalizedString("Parking", comment: "")) ? "Parking" : "Traffic violation"), "City":cityField.text!, "Date":dateBtn.currentTitle!, "UnitNo":unitNo.text!, "PostCode":postCode.text!, "Name":nameField.text!, "Address":addressField.text!]
+            ticket.dataDic = ["Type":((typeBtn.currentTitle == NSLocalizedString("Parking", comment: "")) ? "Parking" : "Traffic Violation"), "City":cityField.text!, "Date":dateBtn.currentTitle!, "UnitNo":unitNo.text!, "PostCode":postCode.text!, "Name":nameField.text!, "Address":addressField.text!]
             ticket.image = sender as! UIImage
         }
     }

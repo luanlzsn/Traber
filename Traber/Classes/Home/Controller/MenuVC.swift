@@ -61,7 +61,10 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     }
     
     @IBAction func termsAndConditionsClick(_ sender: UIButton) {
-        
+        if confirm != nil {
+            confirm!("TermsConditions")
+        }
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func cancelMenuClick(_ sender: UIButton) {

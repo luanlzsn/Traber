@@ -41,8 +41,7 @@ let kPassWordKey = "kPassWordKey"
 let kIsRemember = "kIsRemember"
 let kIsFacebook = "kIsFacebook"//是否是Facebook登录
 let kFacebookUserInfo = "kFacebookUserInfo"//Facebook的登录信息
-
-
+let kIsOnNotification = "kIsOnNotification"//通知开关(控制是否轮询消息)
 
 
 struct Platform {

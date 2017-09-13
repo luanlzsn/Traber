@@ -54,11 +54,10 @@ class InformationReviewVC: AntController {
         }
         params["image"] = "data:image/jpeg;base64," + UIImageJPEGRepresentation(image, 0.1)!.base64EncodedString()
         params["fight_type"] = dataDic["FightType"]!
-//        weak var weakSelf = self
-//        AntManage.postRequest(path: "ticket/add", params: params, successResult: { (response) in
-//            weakSelf?.performSegue(withIdentifier: "TicketPayment", sender: ["TicketID":response["ticketID"], "Amount":amout])
-//        }, failureResult: {})
-        performSegue(withIdentifier: "TicketPayment", sender: ["TicketID":0, "Amount":amout])
+        weak var weakSelf = self
+        AntManage.postRequest(path: "ticket/add", params: params, successResult: { (response) in
+            weakSelf?.performSegue(withIdentifier: "TicketPayment", sender: ["TicketID":response["ticketID"], "Amount":amout])
+        }, failureResult: {})
     }
     
     // MARK: - 跳转
