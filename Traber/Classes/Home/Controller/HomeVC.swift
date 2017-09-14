@@ -33,7 +33,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
         if UserDefaults.standard.bool(forKey: kIsOnNotification) {
             statusTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(checkChatStatus), userInfo: nil, repeats: true)
         }
-        navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon_white")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "menu_icon_white")
         
         checkTextFieldLeftView(textField: cityField)
         checkCityTextFieldRightView()
@@ -73,9 +73,9 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
                 let hasTicketChat = response["hasTicketChat"] as! Bool
                 let hasUserChat = response["hasUserChat"] as! Bool
                 if hasTicketChat || hasUserChat {
-                    weakSelf?.navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                    weakSelf?.navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "menu_icon").withRenderingMode(UIImageRenderingMode.alwaysOriginal)
                 } else {
-                    weakSelf?.navigationItem.leftBarButtonItem?.image = UIImage(named: "menu_icon_white")
+                    weakSelf?.navigationItem.leftBarButtonItem?.image = #imageLiteral(resourceName: "menu_icon_white")
                 }
             }, failureResult: {})
         }
@@ -188,6 +188,7 @@ class HomeVC: AntController,UIImagePickerControllerDelegate,UINavigationControll
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Menu" {
             let menu = segue.destination as! MenuVC
+            menu.isMessage = !(navigationItem.leftBarButtonItem?.image == #imageLiteral(resourceName: "menu_icon_white"))
             weak var weakSelf = self
             menu.checkSelectMenu(confirmBlock: { (identifier) in
                 if !((identifier as! String).isEmpty) {

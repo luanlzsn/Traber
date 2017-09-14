@@ -58,6 +58,7 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
         let cell : MyCasesCell = tableView.dequeueReusableCell(withIdentifier: "MyCasesCell", for: indexPath) as! MyCasesCell
         let model = ticketArray[indexPath.section]
         cell.caseNum.text = NSLocalizedString("Case", comment: "") + " " + model.caseNumber
+        cell.greenView.isHidden = model.userRead
         cell.statusLabel.text = model.statusID
         cell.statusImage.isHidden = !(model.statusID == "Paid")
         cell.infractionDate.text = model.infractionDate

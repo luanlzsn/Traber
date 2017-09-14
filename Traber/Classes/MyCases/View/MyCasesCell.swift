@@ -11,6 +11,7 @@ import UIKit
 class MyCasesCell: UITableViewCell {
 
     @IBOutlet weak var caseNum: UILabel!
+    @IBOutlet weak var greenView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
     @IBOutlet weak var infractionDate: UILabel!

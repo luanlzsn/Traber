@@ -124,7 +124,7 @@
 "Post Code is required" = "需要填写邮政编码";
 "Fine amount is required" = "需要填写罚单金额";
 "Fine amount is number" = "罚款金额是数字";
-"Pay Success!" = "支付成功！";
+"Payment Successful." = "支付成功.";
 
 "Submit Request" = "确认请求";
 "Cancel Request" = "取消请求";

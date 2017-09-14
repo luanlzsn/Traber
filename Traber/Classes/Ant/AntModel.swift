@@ -49,7 +49,7 @@ class TicketModel: AntModel {
     var ticketID = 0
     var ticketNumber = ""
     var ticketType = 0
-    var userRead = 0//用户是否已读？
+    var userRead = false//用户是否已读？
     var agentID = 0//代理人ID
     var agentRead = 0//代理人是否已读？
     var amount = 0.0//金额

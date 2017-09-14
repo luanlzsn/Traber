@@ -14,6 +14,8 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headPortraitBtn: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
+    var isMessage = false
+    
     var confirm : ConfirmBlock?
     
     let titleArray = ["Home", "Notifications", "My cases"/*,"Payment"*/, "Share", "Help", "Settings"/*, "More"*/]
@@ -24,7 +26,6 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
         super.viewDidLoad()
 
         nameLabel.text = AntManage.userModel!.firstname
-        headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal)
         headPortraitBtn.sd_setImage(with: URL(string: AntManage.userModel!.image), for: .normal, placeholderImage: UIImage(named: "default_image"), options: .refreshCached)
         if AntManage.userModel!.identity.isEmpty {
             getUserInfo()
@@ -88,12 +89,11 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
         let cell : MenuCell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         cell.imgView.image = UIImage(named: imgArray[indexPath.row])
         cell.title.text = NSLocalizedString(titleArray[indexPath.row], comment: "")
-//        if indexPath.row == 1 {
-//            cell.number.isHidden = false
-//        } else {
-//            cell.number.isHidden = true
-//        }
-        cell.number.isHidden = true
+        if indexPath.row == 1 {
+            cell.greenView.isHidden = !isMessage
+        } else {
+            cell.greenView.isHidden = true
+        }
         return cell
     }
     

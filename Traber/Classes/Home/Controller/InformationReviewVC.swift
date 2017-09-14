@@ -32,7 +32,7 @@ class InformationReviewVC: AntController {
             AntManage.showDelayToast(message: NSLocalizedString("Fine amount is required", comment: ""))
             return
         }
-        if Int(fineAmount.text!) == nil {
+        if Float(fineAmount.text!) == nil {
             AntManage.showDelayToast(message: NSLocalizedString("Fine amount is number", comment: ""))
             return
         }
@@ -42,7 +42,7 @@ class InformationReviewVC: AntController {
         } else {
             amout = String.init(format: "%.2f", 1.99 + Float(fineAmount.text!)!)
         }
-        var params = ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "licenseName":dataDic["Name"]!, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "imageType":"jpeg", "evidence":dataDic["Evidence"]!, "trial_language":dataDic["TrialLanguage"]!, "interpreter":dataDic["Interpreter"]!, "amount":amout, "unit_number":AntManage.userModel!.unit_number] as [String : Any]
+        var params = ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "unit_number":dataDic["UnitNo"]!, "licenseName":dataDic["Name"]!, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "imageType":"jpeg", "evidence":dataDic["Evidence"]!, "trial_language":dataDic["TrialLanguage"]!, "interpreter":dataDic["Interpreter"]!, "amount":amout] as [String : Any]
         if dataDic["Type"] == "Parking" {
             params["ticketType"] = "1"
             params["isDriverlicense"] = "0"

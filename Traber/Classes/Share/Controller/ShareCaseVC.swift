@@ -18,7 +18,12 @@ class ShareCaseVC: AntController,UICollectionViewDelegate,UICollectionViewDataSo
 
         weak var weakSelf = self
         AntManage.postRequest(path: "ticket", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
-            weakSelf?.ticketArray = TicketModel.mj_objectArray(withKeyValuesArray: response["tickets"]) as! [TicketModel]
+            let array = TicketModel.mj_objectArray(withKeyValuesArray: response["tickets"]) as! [TicketModel]
+            for model in array {
+                if !model.userRead {
+                    weakSelf?.ticketArray.append(model)
+                }
+            }
             weakSelf?.collectionView.reloadData()
         }, failureResult: {
             weakSelf?.navigationController?.popViewController(animated: true)

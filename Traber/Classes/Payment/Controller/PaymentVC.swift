@@ -74,12 +74,12 @@ class PaymentVC: AntController,UITextFieldDelegate {
         weak var weakSelf = self
 //        AntManage.postRequest(path: "ticket/paySuccess", params: ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "paid_amount":payFee.text!, "used_credit":AntManage.userModel!.store_credit, "currency":"CAD"], successResult: { (_) in
 //            NotificationCenter.default.post(name: NSNotification.Name("PaySuccess"), object: nil)
-//            AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
+//            AntManage.showDelayToast(message: NSLocalizedString("Payment Successful.", comment: ""))
 //            weakSelf?.navigationController?.popToRootViewController(animated: true)
 //        }, failureResult: {})
         AntManage.postRequest(path: "pay/realpay", params: ["myidentity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "pay_price":payFee.text!, "usedcredit":AntManage.userModel!.store_credit, "stripeToken":token.tokenId], successResult: { (_) in
             NotificationCenter.default.post(name: NSNotification.Name("PaySuccess"), object: nil)
-            AntManage.showDelayToast(message: NSLocalizedString("Pay Success!", comment: ""))
+            AntManage.showDelayToast(message: NSLocalizedString("Payment Successful.", comment: ""))
             weakSelf?.navigationController?.popToRootViewController(animated: true)
         }, failureResult: {})
     }

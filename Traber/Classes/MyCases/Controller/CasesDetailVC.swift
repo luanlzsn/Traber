@@ -36,7 +36,7 @@ class CasesDetailVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     func checkContent() {
         contentArray[0].replaceSubrange(Range(1..<2), with: ["\(ticketModel!.ticketID)"])
-        contentArray[0].replaceSubrange(Range(2..<3), with: [ticketModel!.statusID])
+        contentArray[0].replaceSubrange(Range(2..<3), with: [NSLocalizedString((ticketModel!.ticketType == 1) ? "Parking" : "Traffic Violation", comment: "")])
         contentArray[0].replaceSubrange(Range(3..<4), with: ["\(ticketModel!.amount)"])
         contentArray[0].replaceSubrange(Range(5..<6), with: [ticketModel!.infractionDate])
         contentArray[0].replaceSubrange(Range(6..<7), with: [ticketModel!.courtDate])
