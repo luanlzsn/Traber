@@ -238,7 +238,7 @@ vehicula sit amet。";
 "atX-gg-4ha.text" = "New York";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "bN6-w8-cg0"; */
-"bN6-w8-cg0.text" = "0";
+//"bN6-w8-cg0.text" = "0";
 
 /* Class = "UILabel"; text = "Type your message..."; ObjectID = "bph-PA-dAL"; */
 "bph-PA-dAL.text" = "输入您的消息...";

@@ -11,6 +11,7 @@
 		0F3528F31F4C0C4B0088E524 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3528F51F4C0C4B0088E524 /* Login.storyboard */; };
 		0F3E0A501F67AC2C00CCA432 /* ExpirationDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E0A4F1F67AC2C00CCA432 /* ExpirationDateController.swift */; };
 		0F58A1651EE6A77100ADADE3 /* AntModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58A1641EE6A77100ADADE3 /* AntModel.swift */; };
+		0F6A8F161F725D4B002274B8 /* PaymentWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A8F151F725D4B002274B8 /* PaymentWebVC.swift */; };
 		0F8C47241F59030D00DB1965 /* OnlineChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C47231F59030D00DB1965 /* OnlineChatListVC.swift */; };
 		0F8C47271F59096600DB1965 /* OnlineUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C47261F59096600DB1965 /* OnlineUserCell.swift */; };
 		0F8C47291F59098900DB1965 /* OnlineStaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C47281F59098900DB1965 /* OnlineStaffCell.swift */; };
@@ -86,6 +87,7 @@
 		0F3528F91F4C0C590088E524 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Login.strings"; sourceTree = "<group>"; };
 		0F3E0A4F1F67AC2C00CCA432 /* ExpirationDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpirationDateController.swift; sourceTree = "<group>"; };
 		0F58A1641EE6A77100ADADE3 /* AntModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntModel.swift; sourceTree = "<group>"; };
+		0F6A8F151F725D4B002274B8 /* PaymentWebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebVC.swift; sourceTree = "<group>"; };
 		0F8C47231F59030D00DB1965 /* OnlineChatListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineChatListVC.swift; sourceTree = "<group>"; };
 		0F8C47261F59096600DB1965 /* OnlineUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUserCell.swift; sourceTree = "<group>"; };
 		0F8C47281F59098900DB1965 /* OnlineStaffCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineStaffCell.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 			children = (
 				6BD7606F1EA9EA230016823B /* PaymentVC.swift */,
 				0F3E0A4F1F67AC2C00CCA432 /* ExpirationDateController.swift */,
+				0F6A8F151F725D4B002274B8 /* PaymentWebVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				6B4FFC071EA8E42A00DB1872 /* Common.swift in Sources */,
 				6B8CABE61EB5B63E008B4967 /* RegisterVC.swift in Sources */,
 				6B1954111EB5F6E000C920EC /* ProfileCell.swift in Sources */,
+				0F6A8F161F725D4B002274B8 /* PaymentWebVC.swift in Sources */,
 				6BD760741EA9EA3D0016823B /* ShareVC.swift in Sources */,
 				0FE085C21F5808EE000D8CC9 /* CasesDetailImageCell.swift in Sources */,
 				6B9DA2CF1EB4636200C00FC7 /* LookPictureCell.swift in Sources */,

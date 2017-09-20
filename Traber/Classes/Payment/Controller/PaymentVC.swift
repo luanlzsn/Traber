@@ -20,7 +20,7 @@ class PaymentVC: AntController,UITextFieldDelegate {
     var amout = ""
     var ticketID = 0
     var payFeeF: Float = 0.00
-    
+    var stpToken: STPToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,10 @@ class PaymentVC: AntController,UITextFieldDelegate {
 
     @IBAction func submitPaymentClick(_ sender: UIButton) {
         kWindow?.endEditing(true)
+        if stpToken != nil {
+            submitTokenToBackend(token: stpToken!)
+            return
+        }
         if cardName.text!.isEmpty {
             AntManage.showDelayToast(message: NSLocalizedString("Card Holder's Name is required", comment: ""))
             return
@@ -66,6 +70,7 @@ class PaymentVC: AntController,UITextFieldDelegate {
                 }
                 return
             }
+            weakSelf?.stpToken = token
             weakSelf?.submitTokenToBackend(token: token)
         }
     }
@@ -77,7 +82,11 @@ class PaymentVC: AntController,UITextFieldDelegate {
 //            AntManage.showDelayToast(message: NSLocalizedString("Payment Successful.", comment: ""))
 //            weakSelf?.navigationController?.popToRootViewController(animated: true)
 //        }, failureResult: {})
-        AntManage.postRequest(path: "pay/realpay", params: ["myidentity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "ticketID":ticketID, "pay_price":payFee.text!, "usedcredit":AntManage.userModel!.store_credit, "stripeToken":token.tokenId], successResult: { (_) in
+        var usedcredit = AntManage.userModel!.store_credit
+        if Float(AntManage.userModel!.store_credit)! < 0 {
+            usedcredit = "0.00"
+        }
+        AntManage.postRealpayRequest(path: "pay/realpay", params: "stripeToken=\(token.tokenId)&myidentity=\(UserDefaults.standard.object(forKey: kEmailKey)!)&pay_price=\(payFee.text!)&usedcredit=\(usedcredit)&source=\(UserDefaults.standard.bool(forKey: kIsFacebook) ? "facebook" : "home")&ticketID=\(ticketID)&toke=\(AntManage.userModel!.token)", successResult: { (_) in
             NotificationCenter.default.post(name: NSNotification.Name("PaySuccess"), object: nil)
             AntManage.showDelayToast(message: NSLocalizedString("Payment Successful.", comment: ""))
             weakSelf?.navigationController?.popToRootViewController(animated: true)

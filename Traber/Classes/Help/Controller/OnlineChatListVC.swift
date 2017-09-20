@@ -79,6 +79,14 @@ class OnlineChatListVC: AntController,UITableViewDelegate,UITableViewDataSource 
         }
     }
     
+    // MARK: - 跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PaymentWeb" {
+            let web = segue.destination as! PaymentWebVC
+            web.url = sender as! URL
+        }
+    }
+    
     // MARK: - UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatArray.count
@@ -105,7 +113,13 @@ class OnlineChatListVC: AntController,UITableViewDelegate,UITableViewDataSource 
             let cell: OnlineStaffCell = tableView.dequeueReusableCell(withIdentifier: "OnlineStaffCell", for: indexPath) as! OnlineStaffCell
             cell.nickName.text = NSLocalizedString("AgentID:", comment: "") + "\(model.agentID)"
             cell.time.text = model.tm
+//            let message = try! NSMutableAttributedString(data: (model.message).data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType], documentAttributes: nil)
+//            message.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 14), range: NSMakeRange(0, message.length))
+//            message.addAttribute(NSForegroundColorAttributeName, value: MainColor, range: NSMakeRange(0, message.length))
+//            cell.message.attributedText = message
             cell.message.text = model.message
+            cell.message.isHidden = true
+            cell.webView.loadHTMLString(model.message, baseURL: nil)
             return cell
         }
     }
