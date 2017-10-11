@@ -74,6 +74,7 @@ class TicketModel: AntModel {
     var trial_language = ""//庭审语言
     var userID = 0//用户ID
     var isDetail = false//是否请求了详情
+    var additionalPay = ""
     
 }
 

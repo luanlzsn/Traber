@@ -62,7 +62,7 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
         cell.statusLabel.text = model.statusID
         cell.statusImage.isHidden = !(model.statusID == "Paid")
         cell.infractionDate.text = model.infractionDate
-        cell.city.text = ""
+        cell.city.text = model.licenseCity
         cell.fileDate.text = model.submitTm.components(separatedBy: " ").first
         cell.courtDate.text = model.courtDate
         return cell

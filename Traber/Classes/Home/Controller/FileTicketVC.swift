@@ -22,7 +22,7 @@ class FileTicketVC: AntController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func addTicket(_ identifier: String) {
-        var params = ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "unit_number":dataDic["UnitNo"]!, "licenseName":dataDic["Name"]!, "licenseAddress":AntManage.userModel!.licenseAddress, "licenseCity":AntManage.userModel!.licenseCity, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "imageType":"jpeg", "evidence":"Yes", "trial_language":"", "interpreter":"No", "amount":""] as [String : Any]
+        var params = ["identity":UserDefaults.standard.object(forKey: kEmailKey)!, "token":AntManage.userModel!.token, "infractionDate":dataDic["Date"]!, "location":dataDic["City"]!, "unit_number":dataDic["UnitNo"]!, "licenseName":dataDic["Name"]!, "licenseAddress":dataDic["Address"]!, "licenseCity":dataDic["City"]!, "licensePro":AntManage.userModel!.licensePro, "licenseCountry":AntManage.userModel!.licenseCountry, "licensePostcode":dataDic["PostCode"]!, "imageType":"jpeg", "evidence":"Yes", "trial_language":"", "interpreter":"No", "amount":""] as [String : Any]
         if dataDic["Type"] == "Parking" {
             params["ticketType"] = "1"
             params["isDriverlicense"] = "0"

@@ -34,7 +34,7 @@ class TicketPaymentVC: AntController {
             }
         } else {
             weak var weakSelf = self
-            AntManage.postRealpayRequest(path: "pay/realpay", params: "stripeToken=&myidentity=\(UserDefaults.standard.object(forKey: kEmailKey)!)&pay_price=0.00&usedcredit=\(amout)&source=\(UserDefaults.standard.bool(forKey: kIsFacebook) ? "facebook" : "home")&ticketID=\(ticketID)&toke=\(AntManage.userModel!.token)", successResult: { (_) in
+            AntManage.postRealpayRequest(path: "pay/realpay", params: "stripeToken=&myidentity=\(UserDefaults.standard.object(forKey: kEmailKey)!)&pay_price=0.00&usedcredit=\(amout)&source=\(UserDefaults.standard.bool(forKey: kIsFacebook) ? "facebook" : "home")&ticket_id=\(ticketID)&toke=\(AntManage.userModel!.token)", successResult: { (_) in
                 NotificationCenter.default.post(name: NSNotification.Name("PaySuccess"), object: nil)
                 AntManage.showDelayToast(message: NSLocalizedString("Payment Successful.", comment: ""))
                 weakSelf?.navigationController?.popToRootViewController(animated: true)

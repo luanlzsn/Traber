@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LanguageManager.setupCurrentLanguage()
         initializationShareSDK()
         
-        STPPaymentConfiguration.shared().publishableKey = "pk_test_3xSd4exZJAZujNR6fOG17QSF"
-//        STPPaymentConfiguration.shared().publishableKey = "pk_live_2r1RbUmP0XvZeVh4vdC1aviZ"//正式环境
+//        STPPaymentConfiguration.shared().publishableKey = "pk_test_3xSd4exZJAZujNR6fOG17QSF"
+        STPPaymentConfiguration.shared().publishableKey = "pk_live_2r1RbUmP0XvZeVh4vdC1aviZ"//正式环境
         
         if UserDefaults.standard.object(forKey: kIsOnNotification) == nil {
             UserDefaults.standard.set(true, forKey: kIsOnNotification)

@@ -19,9 +19,9 @@ func AntLog<N>(message:N,fileName:String = #file,methodName:String = #function,l
 }
 
 #if DEBUG
-    let kRequestBaseUrl = "http://traber.auroraeducationonline.info/Api/"
+    let kRequestBaseUrl = "http://ticketez.com/Api/"
 #else
-    let kRequestBaseUrl = "http://traber.auroraeducationonline.info/Api/"
+    let kRequestBaseUrl = "http://ticketez.com/Api/"
 #endif
 
 let kWindow = UIApplication.shared.keyWindow

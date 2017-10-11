@@ -56,7 +56,7 @@ class AntSingleton: NSObject {
 
         let sarequestUrl = kRequestBaseUrl + path
         let formRequest = AFHTTPRequestSerializer().request(withMethod: "POST", urlString: sarequestUrl, parameters: nil, error: nil)
-        formRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        formRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         formRequest.timeoutInterval = kRequestTimeOut
         formRequest.httpBody = params.mj_JSONData()
         
