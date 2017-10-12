@@ -16,7 +16,7 @@ class TermsConditionsController: AntController,UIWebViewDelegate {
         super.viewDidLoad()
 
         navigationItem.title = NSLocalizedString("Terms & Conditions", comment: "")
-        let shareUrl = "http://ticketez.com/FrontendWeb/home/?token=" + AntManage.userModel!.token + "&identity=" + AntManage.userModel!.identity + "&redirecturl=FrontendWeb/refer&source=home&noheader=1"
+        let shareUrl = "http://www.ticketez.com/FrontendWeb/home/?token=" + AntManage.userModel!.token + "&identity=" + AntManage.userModel!.identity + "&redirecturl=terms&source=home"
         webView.loadRequest(URLRequest(url: URL(string: shareUrl)!))
     }
     

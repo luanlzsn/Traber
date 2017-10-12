@@ -219,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				6B339CAD1EB4CB4B00DB6BF4 /* Controller */,
-				6B339CAE1EB4CB4B00DB6BF4 /* View */,
 				0F3528F51F4C0C4B0088E524 /* Login.storyboard */,
 				6B8CABE31EB5A922008B4967 /* LoginTextField.swift */,
 			);
@@ -235,13 +234,6 @@
 				6B8CABE91EB5C0C0008B4967 /* SetPasswordVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		6B339CAE1EB4CB4B00DB6BF4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		6B4FFBFB1EA8E42A00DB1872 /* Classes */ = {
@@ -852,6 +844,7 @@
 			baseConfigurationReference = AF990E95B83428E0541E05ED /* Pods-Traber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Traber/Traber.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -874,6 +867,7 @@
 			baseConfigurationReference = 223C504E7D051457AF1422E2 /* Pods-Traber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Traber/Traber.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
