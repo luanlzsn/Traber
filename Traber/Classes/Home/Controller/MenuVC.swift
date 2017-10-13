@@ -103,9 +103,16 @@ class MenuVC: AntController,UITableViewDelegate,UITableViewDataSource {
 //            AntManage.showDelayToast(message: NSLocalizedString("NO MORE", comment: ""))
 //            return
 //        }
-        if confirm != nil {
-            confirm!(identifierArray[indexPath.row])
+        if indexPath.row == 3 {
+            let url = "http://www.ticketez.com/FrontendWeb/home/?token=" + AntManage.userModel!.token + "&identity="
+                + AntManage.userModel!.identity + "&redirecturl=refer&source=home&noheader=1"
+            UIApplication.shared.openURL(URL(string: url)!)
+        } else {
+            if confirm != nil {
+                confirm!(identifierArray[indexPath.row])
+            }
         }
+        
         dismiss(animated: false, completion: nil)
     }
     

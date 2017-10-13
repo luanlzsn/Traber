@@ -12,6 +12,7 @@
 "Last Name" = "姓氏";
 
 "Terms & Conditions" = "条款和条件";
+"You don't have any ticket." = "您还没有告票信息.";
 
 // MARK: - 个人资料
 "Profile" = "个人资料";

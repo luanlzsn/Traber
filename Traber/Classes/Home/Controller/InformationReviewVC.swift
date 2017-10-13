@@ -38,7 +38,7 @@ class InformationReviewVC: AntController {
         }
         var amout = ""
         if dataDic["FightType"] == "File" {
-            amout = "\(599 + Int(fineAmount.text!)!)"
+            amout = String.init(format: "%.2f", 599 + Float(fineAmount.text!)!)
         } else {
             amout = String.init(format: "%.2f", 1.99 + Float(fineAmount.text!)!)
         }

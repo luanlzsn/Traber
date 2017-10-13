@@ -16,7 +16,7 @@ class ShareWebVC: AntController,UIWebViewDelegate {
         super.viewDidLoad()
 
         let shareUrl = "http://www.ticketez.com/FrontendWeb/home/?token=" + AntManage.userModel!.token + "&identity="
-        + AntManage.userModel!.identity + "&redirecturl=refer&source=home"
+        + AntManage.userModel!.identity + "&redirecturl=refer&source=home&noheader=1"
         webView.loadRequest(URLRequest(url: URL(string: shareUrl)!))
     }
     

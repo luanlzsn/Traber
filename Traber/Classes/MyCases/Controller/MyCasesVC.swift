@@ -15,7 +15,7 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         weak var weakSelf = self
         AntManage.postRequest(path: "ticket", params: ["identity":(UserDefaults.standard.object(forKey: kEmailKey) as! String), "token":AntManage.userModel!.token], successResult: { (response) in
             weakSelf?.ticketArray = TicketModel.mj_objectArray(withKeyValuesArray: response["tickets"]) as! [TicketModel]
@@ -23,6 +23,10 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
         }, failureResult: {
             weakSelf?.navigationController?.popViewController(animated: true)
         })
+    }
+    
+    func addCasesClick() {
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: 跳转
@@ -39,7 +43,7 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
     
     // MARK: UITableViewDelegate,UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return ticketArray.count
+        return ticketArray.count == 0 ? 1 : ticketArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,17 +59,28 @@ class MyCasesVC: AntController,UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : MyCasesCell = tableView.dequeueReusableCell(withIdentifier: "MyCasesCell", for: indexPath) as! MyCasesCell
-        let model = ticketArray[indexPath.section]
-        cell.caseNum.text = NSLocalizedString("Case", comment: "") + " " + model.caseNumber
-        cell.greenView.isHidden = model.userRead
-        cell.statusLabel.text = model.statusID
-        cell.statusImage.isHidden = !(model.statusID == "Paid")
-        cell.infractionDate.text = model.infractionDate
-        cell.city.text = model.licenseCity
-        cell.fileDate.text = model.submitTm.components(separatedBy: " ").first
-        cell.courtDate.text = model.courtDate
-        return cell
+        if ticketArray.count > 0 {
+            let cell : MyCasesCell = tableView.dequeueReusableCell(withIdentifier: "MyCasesCell", for: indexPath) as! MyCasesCell
+            let model = ticketArray[indexPath.section]
+            cell.caseNum.text = NSLocalizedString("Case", comment: "") + " " + model.caseNumber
+            cell.greenView.isHidden = model.userRead
+            cell.statusLabel.text = model.statusID
+            cell.statusImage.isHidden = !(model.statusID == "Paid")
+            cell.infractionDate.text = model.infractionDate
+            cell.city.text = model.licenseCity
+            cell.fileDate.text = model.submitTm.components(separatedBy: " ").first
+            cell.courtDate.text = model.courtDate
+            return cell
+        } else {
+            var cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")
+            if cell == nil {
+                cell = UITableViewCell(style: .default, reuseIdentifier: "UITableViewCell")
+                cell?.textLabel?.textAlignment = .center
+                cell?.textLabel?.font = UIFont.systemFont(ofSize: 16)
+            }
+            cell?.textLabel?.text = NSLocalizedString("You don't have any ticket.", comment: "")
+            return cell!
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
